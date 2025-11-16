@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://myb7plg1nupe"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_density = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+
+[node name="Zone1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8428052, -0.53652287, -0.04269166, -0.013967001, -0.05749133, 0.99824834, -0.5380375, 0.84192514, 0.04096038, -0.18252158, 0.16442758, 0)
+shadow_enabled = true
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
+transform = Transform3D(0.5130552, -4.7820107e-05, 29.995611, 0.41938895, 0.19998047, -7.536937e-09, -29.992682, 0.0027955172, 0.5131053, -0.042112276, 0.048938334, 0.023727119)
+mesh = SubResource("BoxMesh_7dm0k")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D"]
