@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://87d0infql0yr"]
+
+[ext_resource type="Script" uid="uid://bu3ika8ayxusl" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_4flbx")
+camera = NodePath("Camera Pivot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="Camera Pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Camera Pivot"]

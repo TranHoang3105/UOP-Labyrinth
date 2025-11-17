@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://myb7plg1nupe"]
+[gd_scene load_steps=6 format=3 uid="uid://myb7plg1nupe"]
+
+[ext_resource type="PackedScene" uid="uid://87d0infql0yr" path="res://player.tscn" id="1_sycog"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -35,3 +37,6 @@ mesh = SubResource("BoxMesh_7dm0k")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_sycog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
