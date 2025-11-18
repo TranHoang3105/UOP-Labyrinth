@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://myb7plg1nupe"]
+[gd_scene load_steps=8 format=3 uid="uid://bmcpj6frtoxf3"]
 
-[ext_resource type="PackedScene" uid="uid://87d0infql0yr" path="res://player.tscn" id="1_sycog"]
+[ext_resource type="Script" uid="uid://bx8q8mfm0ntj0" path="res://Script/Scene/zone_1(Timer).gd" id="1_c0rng"]
+[ext_resource type="PackedScene" uid="uid://btcmfagu2n5kt" path="res://Scene/Character/player.tscn" id="2_h7ghx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,7 +21,10 @@ fog_density = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfali"]
+
 [node name="Zone1" type="Node3D"]
+script = ExtResource("1_c0rng")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0xm2m")
@@ -32,11 +36,24 @@ shadow_enabled = true
 [node name="Map" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(0.5130552, -4.7820107e-05, 29.995611, 0.41938895, 0.19998047, -7.536937e-09, -29.992682, 0.0027955172, 0.5131053, -0.042112276, 0.048938334, 0.023727119)
+transform = Transform3D(-1.3113417e-06, 0, 30, 0, 0.20000002, 0, -30.000002, 0, -1.3113416e-06, -0.042112276, 0.048938334, 0.023727119)
 mesh = SubResource("BoxMesh_7dm0k")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/MeshInstance3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_sycog")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_qfali")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+offset_right = 137.0
+offset_bottom = 56.0
+
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="Player" parent="." instance=ExtResource("2_h7ghx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19681482, 0)

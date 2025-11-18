@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://btcmfagu2n5kt"]
+[gd_scene load_steps=4 format=3 uid="uid://btcmfagu2n5kt"]
 
 [ext_resource type="PackedScene" uid="uid://bwd8wlhgqcnix" path="res://Assets/Character/GLB/Character_1.glb" id="1_5trst"]
+[ext_resource type="Script" uid="uid://bmgpe1jybjvwq" path="res://Script/Player/player.gd" id="1_087al"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_087al"]
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_087al")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3233933, 0)
@@ -15,8 +17,8 @@ shape = SubResource("CapsuleShape3D_087al")
 [node name="Character_12" parent="CollisionShape3D/Visual" instance=ExtResource("1_5trst")]
 transform = Transform3D(0.99994993, 0, 0.010017904, 0, 1, 0, -0.010017904, 0, 0.99994993, 0.028011799, -0.9497527, -0.1829145)
 
-[node name="Camera" type="Node3D" parent="."]
+[node name="camera_mount" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.997042, -0.076858245, 0, 0.076858245, 0.997042, 0, 1.5147889, -0.16946119)
 
-[node name="Camera3D" type="Camera3D" parent="Camera"]
+[node name="Camera3D" type="Camera3D" parent="camera_mount"]
 transform = Transform3D(-0.99998695, 4.086928e-11, -0.005113885, 0.00038263152, 0.9971969, -0.07482109, 0.0050995504, -0.074822076, -0.99718386, -0.0011560246, -0.17474115, -1.6323364)
