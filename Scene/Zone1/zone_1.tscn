@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=11 format=3 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="Script" uid="uid://bx8q8mfm0ntj0" path="res://Script/Scene/zone_1(Timer).gd" id="1_c0rng"]
+[ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="2_bk4wg"]
 [ext_resource type="PackedScene" uid="uid://btcmfagu2n5kt" path="res://Scene/Character/player.tscn" id="2_h7ghx"]
+[ext_resource type="PackedScene" uid="uid://cccmhnd52hscs" path="res://Assets/Map/Wall/wall.tscn" id="2_qfali"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,6 +20,9 @@ sdfgi_enabled = true
 glow_enabled = true
 fog_enabled = true
 fog_density = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qup8a"]
+albedo_texture = ExtResource("2_bk4wg")
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 
@@ -36,7 +41,8 @@ shadow_enabled = true
 [node name="Map" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(-1.3113417e-06, 0, 30, 0, 0.20000002, 0, -30.000002, 0, -1.3113416e-06, -0.042112276, 0.048938334, 0.023727119)
+transform = Transform3D(-1.3113417e-06, 0, 30, 0, 0.20000002, 0, -30.000002, 0, -1.3113416e-06, -0.039780542, 0.0144248605, 0.06460732)
+material_override = SubResource("StandardMaterial3D_qup8a")
 mesh = SubResource("BoxMesh_7dm0k")
 skeleton = NodePath("../..")
 
@@ -44,6 +50,9 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D/StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_qfali")
+
+[node name="Wall" parent="Map" instance=ExtResource("2_qfali")]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 14.79105, 1.375, 13.298574)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -56,4 +65,4 @@ wait_time = 60.0
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource("2_h7ghx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88845414, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0434518, 0.42218548, 0)

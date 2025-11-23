@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=4 uid="uid://um5qo534poha"]
+
+[ext_resource type="Texture2D" uid="uid://b3gnw17hblyvt" path="res://Assets/Map/halloween_34.png" id="1_8hgpl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6q4y"]
+resource_name = "Spiderweb"
+transparency = 2
+alpha_scissor_threshold = 0.35200107
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_8hgpl")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_elfim"]
+_surfaces = [{
+"aabb": AABB(-0.43953374, -0.40331423, 0, 0.8790675, 0.80662847, 1e-05),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAACAAEAAAABAAMAAAADAAEA"),
+"name": "Spiderweb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("kQrhvjR/zr4AAAAAkQrhPjR/zj4AAAAAkQrhPjR/zr4AAAAAkQrhvjR/zj4AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d5yos"]
+resource_name = "Sketchfab_Scene_Spiderweb_03_Spiderweb_0"
+_surfaces = [{
+"aabb": AABB(-0.43953374, -0.40331423, 0, 0.8790675, 0.80662847, 1e-05),
+"attribute_data": PackedByteArray("rMgAPwUEmz30TXE/NkD1PvRNcT8IBJs9rMgAPzZA9T6syAA/BQSbPfRNcT82QPU+rMgAPzZA9T70TXE/CASbPQ=="),
+"format": 34359742487,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_r6q4y"),
+"name": "Spiderweb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("kQrhvjR/zr4AAAAAkQrhPjR/zj4AAAAAkQrhPjR/zr4AAAAAkQrhvjR/zj4AAAAAkQrhvjR/zr4AAAAAkQrhPjR/zj4AAAAAkQrhvjR/zj4AAAAAkQrhPjR/zr4AAAAA/3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_elfim")
+
+[node name="Spiderweb_03" type="Node3D"]
+transform = Transform3D(1.1, 0, 0, 0, -4.8082526e-08, 1.1, 0, -1.1, -4.8082526e-08, 0, 0, 0)
+
+[node name="Spiderweb_03_Spiderweb_0" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_d5yos")
+skeleton = NodePath("")

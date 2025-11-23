@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=4 uid="uid://vcab267gsl2l"]
+
+[ext_resource type="Texture2D" uid="uid://b3gnw17hblyvt" path="res://Assets/Map/halloween_34.png" id="1_4cvq7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6q4y"]
+resource_name = "Spiderweb"
+transparency = 2
+alpha_scissor_threshold = 0.35200107
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_4cvq7")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vhfsp"]
+_surfaces = [{
+"aabb": AABB(-0.4536703, -0.4756683, 0, 0.9073406, 0.9513366, 1e-05),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAACAAEAAAABAAMAAAADAAEA"),
+"name": "Spiderweb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("eUfovsyK874AAAAAeUfoPsyK8z4AAAAAeUfoPsyK874AAAAAeUfovsyK8z4AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g4ami"]
+resource_name = "Sketchfab_Scene_Spiderweb_Spiderweb_0"
+_surfaces = [{
+"aabb": AABB(-0.4536703, -0.4756683, 0, 0.9073406, 0.9513366, 1e-05),
+"attribute_data": PackedByteArray("phkaPZo6Bj+uivs+AACAP66K+z6aOgY/pRkaPQAAgD+mGRo9mjoGP66K+z4AAIA/pRkaPQAAgD+uivs+mjoGPw=="),
+"format": 34359742487,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_r6q4y"),
+"name": "Spiderweb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("eUfovsyK874AAAAAeUfoPsyK8z4AAAAAeUfoPsyK874AAAAAeUfovsyK8z4AAAAAeUfovsyK874AAAAAeUfoPsyK8z4AAAAAeUfovsyK8z4AAAAAeUfoPsyK874AAAAA/3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vhfsp")
+
+[node name="Spiderweb" type="Node3D"]
+transform = Transform3D(1.125, 0, 0, 0, -4.9175313e-08, 1.125, 0, -1.125, -4.9175313e-08, 0, 0, 0)
+
+[node name="Spiderweb_Spiderweb_0" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_g4ami")
+skeleton = NodePath("")

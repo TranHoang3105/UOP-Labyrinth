@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://dexm36i0unklt"]
+
+[ext_resource type="Texture2D" uid="uid://bc1es4djihesv" path="res://Assets/Map/halloween_25.jpg" id="1_tk1xh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rew4h"]
+resource_name = "BrickSmallBrown"
+cull_mode = 2
+albedo_texture = ExtResource("1_tk1xh")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g8frk"]
+_surfaces = [{
+"aabb": AABB(-0.2228436, -0.1792332, -0.099459864, 0.3880024, 0.36314029, 0.13297667),
+"format": 34896613377,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAgABAAQABAABAAMAAgAFAAAABQADAAAAAgAEAAYAAgAGAAUABAADAAcABgAEAAcABQAHAAMABgAHAAUACAAJAAoACAALAAkACgAJAAwADAAJAAsACgANAAgADQALAAgACgAMAA4ACgAOAA0ADAALAA8ADgAMAA8ADQAPAAsADgAPAA0AEAARABIAEAATABEAEgARABQAFAARABMAEgAVABAAFQATABAAEgAUABYAEgAWABUAFAATABcAFgAUABcAFQAXABMAFgAXABUA"),
+"name": "BrickSmallBrown",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/N4kpP//AAD83o9Y8n4AAPzej1j//wAA/N4kpPJ+AAARR49Y8n4AABFHJKT//wAAEUePWP//AAARRySk8n4AAAAAuMkMgQAAOzH//wAAAAA7Mf//DIEAAAAAuMkAAAAAUp4HjwAAAAAXbcBYDIEAAFKeB48MgQAAF23AWAAAAAAsu2WvDIEAAP//7J0AAAAA///snQyBAAAsu2WvAAAAAN/cAAAAAAAADJh5EQyBAADf3AAADIEAAAyYeREAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ji5k1"]
+resource_name = "Sketchfab_Scene_Bricks_BrickSmallBrown_0"
+_surfaces = [{
+"aabb": AABB(-0.2228436, -0.1792332, -0.099459864, 0.3880024, 0.36314029, 0.13297667),
+"attribute_data": PackedByteArray("7cmLCTfCoQQ3wosJ7cmhBFnOiwnLvaEEy72LCVnOoQQ3wosJ7cmhBO3Jiwk3wqEEy72LCVnOoQRZzosJy72hBFnOKAPLvQULWc4FC8u9KAPLvSgDWc4FC8u9BQtZzigDhvlAZlbxB2FW8UBmhvkHYTn+QGaj7Adho+xAZjn+B2FW8UBmhvkHYYb5QGZW8Qdho+xAZjn+B2E5/kBmo+wHYTn+d1+j7NFnOf7RZ6Psd1+j7HdfOf7RZ6Ps0Wc5/ndf2OGfQqjZZj2o2Z9C2OFmPYvmn0L11GY99dSfQovmZj2o2Z9C2OFmPdjhn0Ko2WY99dSfQovmZj2L5p9C9dRmPYvm1jv11DBEi+YwRPXU1jv11NY7i+YwRPXUMESL5tY7"),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUA"),
+"material": SubResource("StandardMaterial3D_rew4h"),
+"name": "BrickSmallBrown",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("/N4kpP//qir83o9Y8n6qKvzej1j//6oq/N4kpPJ+qir83o9Y////PxFHj1jyfv8/EUePWP///z/83o9Y8n7/PxFHj1j//1TVEUckpPJ+VNURRySk//9U1RFHj1jyflTVEUckpP///7/83iSk8n7/v/zeJKT///+/EUckpPJ+/7/83o9Y///+fxFHJKT///5//N4kpP///n8RR49Y///+fxFHj1jyfv///N4kpPJ+//8RRySk8n7///zej1jyfv//AAC4yQyBwhY7Mf//AADCFjsx//8MgcIWAAC4yQAAwhY7Mf//DIHlFVKeB48AAOUVUp4HjwyB5RU7Mf//AADlFVKeB48MgTzpF23AWAAAPOkXbcBYDIE86VKeB48AADzpF23AWAyBGeoAALjJAAAZ6gAAuMkMgRnqF23AWAAAGeo7Mf//DIFcHxdtwFgMgVwfAAC4yQyBXB9SngePDIFcH1KeB48AAP//AAC4yQAA//8XbcBYAAD//zsx//8AAP//LLtlrwyBtgb//+ydAAC2Bv//7J0MgbYGLLtlrwAAtgb//+ydDIHsL9/cAAAAAOwv39wAAAyB7C///+ydAADsL9/cAAAMgUj5DJh5EQAASPkMmHkRDIFI+d/cAAAAAEj5DJh5EQyBEtAsu2WvAAAS0Cy7Za8MgRLQDJh5EQAAEtD//+ydDIGBSQyYeREMgYFJLLtlrwyBgUnf3AAADIGBSd/cAAAAAP//LLtlrwAA//8MmHkRAAD/////7J0AAP//qiqqKqoqqiqqKqoqqiqqKgAA/38AAP9/AAD/fwAA/39U1VTVVNVU1VTVVNVU1VTV////f////3////9/////f/9/////f////3////9///////9/////f////3////9/omnQtKJp0LSiadC0omnQtDg1jhU4NY4VODWOFTg1jhVcli5LXJYuS1yWLktcli5Lxspw6sbKcOrGynDqxspw6v/////////////////////mpBjb5qQY2+akGNvmpBjbdDwVB3Q8FQd0PBUHdDwVBzInmjEyJ5oxMieaMTInmjGKw+n4isPp+IrD6fiKw+n4zNhkzszYZM7M2GTOzNhkzv////////////////////9/x3+4f8d/uH/Hf7h/x3+4")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_g8frk")
+
+[node name="Bricks" type="Node3D"]
+transform = Transform3D(-0.8442949, 0.53587884, 2.3424008e-08, 0, -4.371139e-08, 1, 0.53587884, 0.8442949, 3.6905302e-08, 0, 0, 0)
+
+[node name="Bricks_BrickSmallBrown_0" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_ji5k1")
+skeleton = NodePath("")

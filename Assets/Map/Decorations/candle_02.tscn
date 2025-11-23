@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=4 uid="uid://b4al8unb01eo0"]
+
+[ext_resource type="Texture2D" uid="uid://bn0hndjhyx18m" path="res://Assets/Map/halloween_15.png" id="1_76ndy"]
+[ext_resource type="Texture2D" uid="uid://cscmcn7wu3y53" path="res://Assets/Map/halloween_16.png" id="2_2o3bu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbsrd"]
+resource_name = "Candles"
+cull_mode = 2
+albedo_texture = ExtResource("1_76ndy")
+emission_enabled = true
+emission_texture = ExtResource("2_2o3bu")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nxe0j"]
+_surfaces = [{
+"aabb": AABB(-0.11179567, -0.12906647, -0.108870514, 0.24312788, 0.29238975, 0.27386346),
+"format": 34896613377,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAMABAAFAAYABgAFAAcACAAHAAUABAAIAAUABgAHAAkABAAKAAgACAAKAAsABAAMAAoACAANAAcACAALAA0ADQAJAAcADQALAA4ADwAMAAQADwAEAAYADwAQAAwACQARAAYADwAGABEADQASAAkAEgARAAkAEgAPABEAEgAQAA8ADQAOABIAEgAOABAA"),
+"name": "Candles",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 19,
+"vertex_data": PackedByteArray("tnUAcf//AAC2dT1rFNsAALZv4XMU2wAAtnvhcxTbAAC2dVmdGC8AAHCotH47ywAAtnVZnebgAAAQlR9NgdMAAHCotH4YLwAAXFYfTUruAAD//0ysAAAAAOrMsDcAAAAApX7//wAAAAAQlR9NGC8AAIckAAAAAAAA/EK0fhgvAAAAAHyzAAAAAPxCtH6R9gAAXFYfTRgvAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s6xka"]
+resource_name = "Sketchfab_Scene_Candle_02_Candles_0"
+_surfaces = [{
+"aabb": AABB(-0.11179567, -0.12906647, -0.108870514, 0.24312788, 0.29238975, 0.27386346),
+"attribute_data": PackedByteArray("CMT5SwjE+UskxeNWJMXjVnrD41Z6w+NWT8T5S0/E+UtFxeNWRcXjVlnD41ZZw+NWCMT5SwjE+Ut6w+NWesPjViTF41YkxeNWMjXjwzI148PobNKz6GzSs6R048OkdOPDMjXSszI10rMyNfXTMjX101989dNffPXT+y0JlPstCZQXG7TOFxu0zvstwMv7LcDLFxsJlBcbCZTlFWiA5RVogAgCocQIAqHE5RUSu+UVErsIAmiACAJogOeb3G3nm9xtulTAgLpUwICuV9xtrlfcbeebwIDnm8CAF7XquBe16rj8v7nj/L+54+DFiMPgxYjDSeNFxEnjRcQ3k27JN5NuySnV2bYp1dm2/7mrpf+5q6VJ492KSePdinmfYpl5n2KZ0c1kpNHNZKR8t//9fLf//Z+9HOufvRzrjq1v346tb9+fo//9n6P//XydHOt8nRzr"),
+"format": 34896613431,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsACQAMAAoADQAJAAsADQALAA4ADwAQABEADwASABAAEwAUABUAEwAWABQAFwAYABkAFwAaABgAGwAcAB0AHQAcAB4AGwAfABwAHQAeACAAIQAfABsAIAAeACIAIQAjAB8AIAAiACQAJAAjACEAJAAiACMAJQAmACcAJwAoACUAJwApACgA"),
+"material": SubResource("StandardMaterial3D_kbsrd"),
+"name": "Candles",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 42,
+"vertex_data": PackedByteArray("tnUAcf//sce2dT1rFNuxx7Zv4XMU27HHtnUAcf////+2b+FzFNv//7Z74XMU2///tnUAcf//sx62e+FzFNuzHrZ1PWsU27MetnVZnRgvecZwqLR+O8tO9rZ1WZ3m4HPRcKi0fhgvuvf8QrR+GC8GqPxCtH6R9qTAcKi0fhgvFzwQlR9NgdNtRXCotH47yxwzEJUfTRgvIUcQlR9NGC/wVFxWH01K7hg6EJUfTYHT2VFcVh9NGC8QWFxWH00YL5zd/EK0fpH2vPhcVh9NSu6B6fxCtH4YL8z2tnVZnRgvrkX//0ysAABaTHCotH4YLyNG6sywNwAAsEylfv//AACgSxCVH00YL81C/EK0fhgvHUKHJAAAAADfSQAAfLMAAMdNXFYfTRgvtUZcVh9NSu4AAPxCtH6R9gAAtnVZnebgAAAQlR9NgdPBAXCotH47y3cB8UWEofFFhKHxRYSh/39Wvf9/Vr3/f1a9vJvzT7yb80+8m/NPRZ6tnt6v2oYrqKevuaighOKLCt3yjBnmsCmcFqwOoz6RLXUZaQnbP9gm4UW7Od2cDCmdQaI42aboWrhsXfguPA1L42mq+rYp3qfHmzScWWtjpOxbX3fmUE2aXZFtbKFKLm2fsXpX4XvUeyupDEKjhMSX/3/El/9/xJf/f3wegePXDdMr")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_nxe0j")
+
+[node name="Candle_02" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="Candle_02_Candles_0" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_s6xka")
+skeleton = NodePath("")

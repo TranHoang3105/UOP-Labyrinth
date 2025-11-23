@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://cotgj34v66kjm"]
+
+[ext_resource type="Texture2D" uid="uid://bn3pu2jbxwgiu" path="res://Assets/Map/halloween_17.png" id="1_q8h6s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0t81n"]
+resource_name = "Coffin"
+cull_mode = 2
+albedo_texture = ExtResource("1_q8h6s")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ujopm"]
+_surfaces = [{
+"aabb": AABB(-0.4088122, -1.0806261, -0.10874081, 0.8176244, 2.0000453, 0.30529034),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAAADAAQAAgAFAAMABAADAAUAAAAEAAYABAAFAAcABgAEAAcACAAAAAYAAAAIAAEACAAGAAkABgAHAAoACQAGAAoACAAJAAsACAALAAEACQAKAAsADAAHAAUADQAKAAcADQAHAAwADgALAAoADgAKAA0ADwABAAsADwALAA4ADgAQAA8AEQABAA8ADQASAA4ADgASABAAEQACAAEADwAQABMADwATABEAEgATABAADQAUABIAEgAUABMADAAUAA0AEQATABUAFAAVABMADAAWABQAFAAWABUAFwAWAAwAFwAVABYAEQAVABcAFwACABEADAAFABcAFwAFAAIA"),
+"name": "Coffin",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACZygAAAADzQf////8AAAAAmcr//wAAvU8AAAAAAABBsAAAAAAAAL1PAAD//wAA//+ZygAAAABBsAAA//8AAPNB//8AAAAAC77//wAAAAD//5nK//8AAAu+/////wAAxqdoA///AABN9xTK//8AAOq4lvz//wAAFEeW/P//AAAUR5b8ry4AALEIFMr//wAA6riW/K8uAACxCBTKry4AAE33FMqvLgAAOFhoA68uAADGp2gDry4AADhYaAP//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_orjt8"]
+resource_name = "Sketchfab_Scene_Coffin_Coffin_0"
+_surfaces = [{
+"aabb": AABB(-0.4088122, -1.0806261, -0.10874081, 0.8176244, 2.0000453, 0.30529034),
+"attribute_data": PackedByteArray("Aaj4QluARgZbgPhCAahGBsGLHX6uqUNXrqkdfsGLQ1epg2EJLKaJOCymYQmpg4k4W4D4QgGokesBqPhCW4CR640gc/sGaFTKOE9z+78HVMpER/IP+CLyDyym/zj0iWMMLKZjDPSJ/zjBi5RbrqnMea6plFvBi8x5LKb/OPSJcugspnLo9In/OKmDiTgspnXrLKaJOKmDdespCg3K7x82/OMhCvkhTzb82gaJyi5NCvkfJjkRNmiJyuUiDQ7oZA3KYUQ5EZtHDQ7/UMD78wfeyoQiw/xfacDIX2nAyBwkvQPzB97Kl0QJAyymYwz0if84LKb/OPSJYwwspnLo9In/OCym/zj0iXLoLqBhjVx/+GsuoPhrXH9hjS6gxWRcf5SULqCUlFx/xWQ="),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAEwAUABEAEwAVABQAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AIgAjACQAIgAlACMAJgAnACgAKAAnACkAJgAqACcAKAApACsALAAqACYAKwApAC0ALAAuACoAKwAtAC8AMAAuACwALwAtADEAMAAxAC4ALwAxADAAMgAzADQAMgA1ADMANgA3ADgANgA5ADcAOgA7ADwAOgA9ADsAPgA/AEAAPgBBAD8AQgBDAEQAQgBFAEMARgBHAEgARgBJAEcA"),
+"material": SubResource("StandardMaterial3D_0t81n"),
+"name": "Coffin",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 74,
+"vertex_data": PackedByteArray("AACZygAAaA3zQf////9oDQAAmcr//2gN80H//wAAaA3zQf//AABU1Qu+/////1TV80H/////VNULvv//AABU1Qu+//8AAGgN//+Zyv//aA0Lvv////9oDf//mcoAAGgNAACZyv//lwS9TwAAAACXBAAAmcoAAJcEvU8AAP//lwTzQf//AAD/////mcoAAP//C77//wAA//8AAJnKAAD//0GwAAAAAP//vU8AAAAA//9N9xTK//8vwuq4lvyvLi/C6riW/P//L8JN9xTKry4vwkGwAAAAAKoqvU8AAP//qipBsAAA//+qKr1PAAAAAKoqsQgUyv//qwQ4WGgDry6rBDhYaAP//6sEsQgUyq8uqwT//5nKAACXBEGwAAD//5cE//+Zyv//lwRBsAAAAACXBLEIFMr///5/80H//////n8UR5b8///+fwu+//////5/AACZyv///n/quJb8///+fzhYaAP///5///+Zyv///n+9TwAA///+f033FMr///5/xqdoA////n9BsAAA///+f+q4lvyvLhx/sQgUyq8uHH8UR5b8ry4cf033FMqvLhx/TfcUyq8uHH84WGgDry4cf7EIFMqvLhx/xqdoA68uHH8UR5b8//9oDbEIFMqvLmgNsQgUyv//aA0UR5b8ry5oDcanaAP//0PATfcUyq8uQ8BN9xTK//9DwManaAOvLkPAOFhoA///VNXGp2gDry5U1canaAP//1TVOFhoA68uVNXquJb8//+qKhRHlvyvLqoqFEeW/P//qirquJb8ry6qKmDyMDlg8jA5YPIwOWDyMDmqqqqqqqqqqqqqqqqqqqqqL7mejS+5no0vuZ6NL7mejXVCFHt1QhR7dUIUe3VCFHv///9/////f////3////9/////f////3+zVlnrs1ZZ67NWWeuzVlnrqipU1aoqVNWqKlTVqipU1X+9/4R/vf+Ef73/hH+9/4TrBHTC6wR0wusEdMLrBHTC/3////9/////f////3////9/////f////3////9/////f////3////9/////f////////////////////////wAA/v8AAP7/AAD+/wAA/v+eDc7Gng3Oxp4NzsaeDc7G8ogZ7vKIGe7yiBnu8ogZ7qqqqqqqqqqqqqqqqqqqqqqqKlTVqipU1aoqVNWqKlTV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ujopm")
+
+[node name="Coffin" type="Node3D"]
+transform = Transform3D(1.341, 0, 0, 0, -5.861697e-08, 1.341, 0, -1.341, -5.861697e-08, 0, 0, 0)
+
+[node name="Coffin_Coffin_0" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_orjt8")
+skeleton = NodePath("")
