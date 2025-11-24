@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8bgaqexu0yvn"]
+
+[ext_resource type="Script" uid="uid://b5bwyijvjal8t" path="res://Scene/Failure screen/Failscreen.gd" id="1_6jpve"]
+[ext_resource type="FontFile" uid="uid://eny0ektjfrha" path="res://Assets/Fonts/Rubik80sFade-Regular.ttf" id="1_pw5h0"]
+[ext_resource type="Texture2D" uid="uid://cgbbohh84pr47" path="res://Scene/Failure screen/pngtree-halloween-background-with-pumpkins-and-spooky-elements-image_16279701.jpg" id="2_cekfu"]
+
+[node name="Failurescreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6jpve")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 654.0
+texture = ExtResource("2_cekfu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 106.0
+offset_right = 781.0
+offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.9728847, 0.000782221, 0.9736298, 1)
+theme_override_fonts/font = ExtResource("1_pw5h0")
+theme_override_font_sizes/font_size = 128
+text = "Fail"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 297.0
+offset_right = 715.0
+offset_bottom = 465.0
+alignment = 1
+
+[node name="Button_MainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.09019608, 0.8745098, 1)
+theme_override_font_sizes/font_size = 54
+text = "MainMenu"
+
+[node name="Button_Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.09019608, 0.8745098, 1)
+theme_override_font_sizes/font_size = 54
+text = "Exit"

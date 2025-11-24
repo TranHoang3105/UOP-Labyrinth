@@ -1,8 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://bmcpj6frtoxf3"]
 
-[ext_resource type="Script" uid="uid://bx8q8mfm0ntj0" path="res://Script/Scene/zone_1(Timer).gd" id="1_c0rng"]
-[ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="2_bk4wg"]
 [ext_resource type="PackedScene" uid="uid://btcmfagu2n5kt" path="res://Scene/Character/player.tscn" id="2_h7ghx"]
+[ext_resource type="Script" uid="uid://bu13ljxc77kdk" path="res://Scene/Zone1/pause_menu.gd" id="3_bk4wg"]
+[ext_resource type="FontFile" uid="uid://bnjbg1pu5wh3y" path="res://Scene/Zone1/Rubik80sFade-Regular.ttf" id="3_qfali"]
+[ext_resource type="Script" uid="uid://cs6k0no2iiw3f" path="res://Scene/Zone1/countdown.gd" id="4_bk4wg"]
+[ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="2_bk4wg"]
 [ext_resource type="PackedScene" uid="uid://cccmhnd52hscs" path="res://Assets/Map/Wall/wall.tscn" id="2_qfali"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -28,8 +30,19 @@ albedo_texture = ExtResource("2_bk4wg")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfali"]
 
+[sub_resource type="FontFile" id="FontFile_qup8a"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+
 [node name="Zone1" type="Node3D"]
-script = ExtResource("1_c0rng")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0xm2m")
@@ -54,15 +67,53 @@ shape = SubResource("WorldBoundaryShape3D_qfali")
 [node name="Wall" parent="Map" instance=ExtResource("2_qfali")]
 transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 14.79105, 1.375, 13.298574)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
-offset_right = 137.0
-offset_bottom = 56.0
-
-[node name="CountdownTimer" type="Timer" parent="."]
-wait_time = 60.0
-one_shot = true
-
 [node name="Player" parent="." instance=ExtResource("2_h7ghx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0434518, 0.42218548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19681482, 0)
+
+[node name="CanvasLayer_Countdown" type="CanvasLayer" parent="."]
+
+[node name="Label_Countdown" type="Label" parent="CanvasLayer_Countdown"]
+offset_right = 115.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_qup8a")
+theme_override_font_sizes/font_size = 64
+script = ExtResource("4_bk4wg")
+
+[node name="PauseMenuCanvas" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("3_bk4wg")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenuCanvas"]
+offset_right = 40.003532
+offset_bottom = 49.97884
+scale = Vector2(28.797457, 13.105547)
+color = Color(0, 0, 0, 0.16470589)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas"]
+offset_left = 381.0
+offset_top = 271.0
+offset_right = 682.0
+offset_bottom = 372.0
+
+[node name="Button_Resume" type="Button" parent="PauseMenuCanvas/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Button_MainMenu" type="Button" parent="PauseMenuCanvas/VBoxContainer"]
+layout_mode = 2
+text = "MainMenu"
+
+[node name="Button_Exit" type="Button" parent="PauseMenuCanvas/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Pause" type="Label" parent="PauseMenuCanvas"]
+offset_left = 363.0
+offset_top = 81.0
+offset_right = 713.0
+offset_bottom = 260.0
+theme_override_fonts/font = ExtResource("3_qfali")
+theme_override_font_sizes/font_size = 100
+text = "PAUSE"
+horizontal_alignment = 1
