@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="MovementState" load_steps=2 format=3 uid="uid://bbwh2acnhtnv7"]
-
-[ext_resource type="Script" uid="uid://d26wu2rasoi8b" path="res://Script/Player/player_movement.gd" id="1_clgse"]
-
-[resource]
-script = ExtResource("1_clgse")
-metadata/_custom_type_script = "uid://d26wu2rasoi8b"

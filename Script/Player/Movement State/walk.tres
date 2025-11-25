@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="MovementState" load_steps=2 format=3 uid="uid://c6xxn1dftf8bh"]
-
-[ext_resource type="Script" uid="uid://d26wu2rasoi8b" path="res://Script/Player/player_movement.gd" id="1_rs1tt"]
-
-[resource]
-script = ExtResource("1_rs1tt")
-accel = 0.0
-camera_fov = 70.0
-metadata/_custom_type_script = "uid://d26wu2rasoi8b"

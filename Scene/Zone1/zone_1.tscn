@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=14 format=3 uid="uid://bmcpj6frtoxf3"]
 
-[ext_resource type="PackedScene" uid="uid://ch44a8vpu33xm" path="res://Script/Player/mc.tscn" id="2_7eqqd"]
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="2_bk4wg"]
 [ext_resource type="Script" uid="uid://bu13ljxc77kdk" path="res://Scene/Zone1/pause_menu.gd" id="3_bk4wg"]
 [ext_resource type="FontFile" uid="uid://bnjbg1pu5wh3y" path="res://Scene/Zone1/Rubik80sFade-Regular.ttf" id="3_qfali"]
@@ -112,9 +111,6 @@ theme_override_fonts/font = ExtResource("3_qfali")
 theme_override_font_sizes/font_size = 100
 text = "PAUSE"
 horizontal_alignment = 1
-
-[node name="MC" parent="." instance=ExtResource("2_7eqqd")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -9.184723, 0.2256239, 0.679821)
 
 [node name="HauntedHouse" parent="." instance=ExtResource("7_acf7w")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.871201, 0.1303209, 2.2982776)

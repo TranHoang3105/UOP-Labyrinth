@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://di3gcbwnrc51t"]
-
-[ext_resource type="PackedScene" uid="uid://cintu8ivqvh47" path="res://Assets/Character/MC/Idle.fbx" id="1_6tq6q"]
-
-[node name="Main Character" instance=ExtResource("1_6tq6q")]
