@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://t33nm0ploh4e"]
+[gd_scene load_steps=10 format=4 uid="uid://t33nm0ploh4e"]
 
 [ext_resource type="Texture2D" uid="uid://ckvyskgyneti6" path="res://Assets/Map/halloween_36.jpg" id="1_4u1gy"]
 [ext_resource type="Texture2D" uid="uid://wrxn3ptqbml0" path="res://Assets/Map/halloween_37.png" id="2_ha0i8"]
@@ -82,6 +82,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g8vjp")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4u1gy"]
+height = 2.256836
+radius = 0.1796875
+
 [node name="Tree" type="Node3D"]
 transform = Transform3D(1.436, 0, 0, 0, -6.276955e-08, 1.436, 0, -1.436, -6.276955e-08, 0, 0, 0)
 
@@ -92,3 +96,9 @@ skeleton = NodePath("")
 [node name="Tree_Tree_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_4np8y")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tree_Tree_0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree_Tree_0/StaticBody3D"]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0.00041109978, 0.00043135736, 0.925744)
+shape = SubResource("CylinderShape3D_4u1gy")

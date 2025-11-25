@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://deufsutkij4wg"]
+[gd_scene load_steps=10 format=4 uid="uid://deufsutkij4wg"]
 
 [ext_resource type="Texture2D" uid="uid://bc1es4djihesv" path="res://Assets/Map/halloween_25.jpg" id="1_2h15t"]
 [ext_resource type="Texture2D" uid="uid://bphcla72cbls" path="res://Assets/Map/halloween_22.jpg" id="2_f52d1"]
@@ -77,6 +77,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tmiej")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2h15t"]
+points = PackedVector3Array(-1.6336882, -0.15910803, -1.1924807, -1.6336882, 0.15910788, -1.1924807, 1.6411723, -0.15910803, -1.1924807, -1.6336882, -0.15910803, -0.9150921, -1.6423663, -0.13045116, 0.9132463, -1.6423663, 0.13041987, 0.9132463, -1.6336882, 0.15910788, -0.9150921, 1.6411723, 0.15910788, -1.1924807, 1.6411723, -0.15910803, -0.9150921, -1.6423663, -0.13045116, 1.1906351, -1.6423663, 0.13041987, 1.1906351, 1.6411723, 0.15910788, -0.9150921, 1.6411723, -0.13045116, 1.1906351, 1.6411723, 0.13041987, 1.1906351)
+
 [node name="Wall_02" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
@@ -87,3 +90,8 @@ skeleton = NodePath("")
 [node name="Wall_02_Concrete_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_70ejj")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_02_Concrete_0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_02_Concrete_0/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2h15t")

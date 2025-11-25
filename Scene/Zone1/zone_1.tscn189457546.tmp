@@ -1,0 +1,123 @@
+[gd_scene load_steps=15 format=3 uid="uid://bmcpj6frtoxf3"]
+
+[ext_resource type="PackedScene" uid="uid://ch44a8vpu33xm" path="res://Script/Player/mc.tscn" id="2_7eqqd"]
+[ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="2_bk4wg"]
+[ext_resource type="Script" uid="uid://bu13ljxc77kdk" path="res://Scene/Zone1/pause_menu.gd" id="3_bk4wg"]
+[ext_resource type="FontFile" uid="uid://bnjbg1pu5wh3y" path="res://Scene/Zone1/Rubik80sFade-Regular.ttf" id="3_qfali"]
+[ext_resource type="Script" uid="uid://cs6k0no2iiw3f" path="res://Scene/Zone1/countdown.gd" id="4_bk4wg"]
+[ext_resource type="PackedScene" uid="uid://qi551svn2r42" path="res://Assets/Map/House/haunted_house.tscn" id="7_acf7w"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_density = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qup8a"]
+albedo_texture = ExtResource("2_bk4wg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfali"]
+
+[sub_resource type="MeshLibrary" id="MeshLibrary_7eqqd"]
+
+[sub_resource type="FontFile" id="FontFile_qup8a"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+
+[node name="Zone1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xm2m")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
+transform = Transform3D(-1.3113417e-06, 0, 30, 0, 0.20000002, 0, -30.000002, 0, -1.3113416e-06, -0.039780542, 0.0144248605, 0.06460732)
+material_override = SubResource("StandardMaterial3D_qup8a")
+mesh = SubResource("BoxMesh_7dm0k")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_qfali")
+
+[node name="Wall Gridmap" type="GridMap" parent="Map"]
+mesh_library = SubResource("MeshLibrary_7eqqd")
+
+[node name="CanvasLayer_Countdown" type="CanvasLayer" parent="."]
+
+[node name="Label_Countdown" type="Label" parent="CanvasLayer_Countdown"]
+offset_right = 115.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_qup8a")
+theme_override_font_sizes/font_size = 64
+script = ExtResource("4_bk4wg")
+
+[node name="PauseMenuCanvas" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("3_bk4wg")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenuCanvas"]
+offset_right = 40.003532
+offset_bottom = 49.97884
+scale = Vector2(28.797457, 13.105547)
+color = Color(0, 0, 0, 0.16470589)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas"]
+offset_left = 381.0
+offset_top = 271.0
+offset_right = 682.0
+offset_bottom = 372.0
+
+[node name="Button_Resume" type="Button" parent="PauseMenuCanvas/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Button_MainMenu" type="Button" parent="PauseMenuCanvas/VBoxContainer"]
+layout_mode = 2
+text = "MainMenu"
+
+[node name="Button_Exit" type="Button" parent="PauseMenuCanvas/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Pause" type="Label" parent="PauseMenuCanvas"]
+offset_left = 363.0
+offset_top = 81.0
+offset_right = 713.0
+offset_bottom = 260.0
+theme_override_fonts/font = ExtResource("3_qfali")
+theme_override_font_sizes/font_size = 100
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="HauntedHouse" parent="." instance=ExtResource("7_acf7w")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -10.950442, 0.1303209, -3.28551)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.17596811, 0.98439586, 0, -0.98439586, 0.17596811, 0, 5.4369965, 0)
+
+[node name="MC" parent="." instance=ExtResource("2_7eqqd")]
+transform = Transform3D(-0.699529, 0, 0.025675008, 0, 0.7, 0, -0.025675008, 0, -0.699529, -9.9318, 0.33808243, -6.814852)

@@ -1,6 +1,6 @@
 extends Label
 
-@export var total_time: float = 5.0  # 测试用 5 秒
+@export var total_time: float = 60.0   # 测试用 5 秒
 @export var failure_scene_path := "res://Scene/Failure screen/Failurescreen.tscn"
 
 var remaining_time: float = 0.0
