@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buhg2xe2uwmok"
+path="res://.godot/imported/walk-mixkit-footsteps-on-heels-on-the-pavement-542.wav-2c49d85183fb1578b1cf9871082ac797.sample"
+
+[deps]
+
+source_file="res://Sounds Effect/Player/walk-mixkit-footsteps-on-heels-on-the-pavement-542.wav"
+dest_files=["res://.godot/imported/walk-mixkit-footsteps-on-heels-on-the-pavement-542.wav-2c49d85183fb1578b1cf9871082ac797.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

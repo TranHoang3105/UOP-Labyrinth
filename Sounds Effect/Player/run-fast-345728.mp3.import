@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1tb5dbk1qb3y"
+path="res://.godot/imported/run-fast-345728.mp3-d1204d338111b0e322e7b5e579ca97d9.mp3str"
+
+[deps]
+
+source_file="res://Sounds Effect/Player/run-fast-345728.mp3"
+dest_files=["res://.godot/imported/run-fast-345728.mp3-d1204d338111b0e322e7b5e579ca97d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

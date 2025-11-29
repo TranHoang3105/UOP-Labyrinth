@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bohpgl64grp6"
+path="res://.godot/imported/injuredSound3__aigei_com.mp3-92354cc7f0a289050c844d00a0ce7b18.mp3str"
+
+[deps]
+
+source_file="res://Sounds Effect/Player/injuredSound3__aigei_com.mp3"
+dest_files=["res://.godot/imported/injuredSound3__aigei_com.mp3-92354cc7f0a289050c844d00a0ce7b18.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
