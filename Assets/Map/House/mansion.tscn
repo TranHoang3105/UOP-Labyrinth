@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4lxr6idb2vu3"]
+
+[ext_resource type="PackedScene" uid="uid://bafyv8xq7e1gk" path="res://Assets/Map/House/mansion_stylized_for_halloween.glb" id="1_if47d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2i0n"]
+size = Vector3(18.350657, 6.8598633, 8.377762)
+
+[node name="Mansion" instance=ExtResource("1_if47d")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29611683, 2.9299316, -2.4835434)
+shape = SubResource("BoxShape3D_m2i0n")

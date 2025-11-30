@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bu13ljxc77kdk" path="res://Scene/Zone1/pause_menu.gd" id="3_bk4wg"]
 [ext_resource type="FontFile" uid="uid://bnjbg1pu5wh3y" path="res://Scene/Zone1/Rubik80sFade-Regular.ttf" id="3_qfali"]
 [ext_resource type="Script" uid="uid://cs6k0no2iiw3f" path="res://Scene/Zone1/countdown.gd" id="4_bk4wg"]
-[ext_resource type="PackedScene" uid="uid://qi551svn2r42" path="res://Assets/Map/House/haunted_house.tscn" id="7_acf7w"]
+[ext_resource type="PackedScene" uid="uid://c5nkyf0a6fksq" path="res://Scene/Player/player.tscn" id="5_qup8a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -112,8 +112,10 @@ theme_override_font_sizes/font_size = 100
 text = "PAUSE"
 horizontal_alignment = 1
 
-[node name="HauntedHouse" parent="." instance=ExtResource("7_acf7w")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -8.871201, 0.1303209, 2.2982776)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.17596811, 0.98439586, 0, -0.98439586, 0.17596811, 0, 5.4369965, 0)
+
+[node name="House" type="Node3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("5_qup8a")]
+transform = Transform3D(0.24672839, 0, 0.9690847, 0, 1, 0, -0.9690847, 0, 0.24672839, 7.557105, 1.0144249, 0.5914202)
