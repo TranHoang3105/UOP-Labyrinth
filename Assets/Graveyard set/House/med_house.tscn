@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddww5yysafqky"]
+
+[ext_resource type="PackedScene" uid="uid://dx4fp7xyrpvep" path="res://Assets/Graveyard set/GLB format/crypt-large.glb" id="1_eymju"]
+[ext_resource type="PackedScene" uid="uid://v4xh4k43si1j" path="res://Assets/Graveyard set/GLB format/crypt-large-roof.glb" id="2_ttggd"]
+[ext_resource type="PackedScene" uid="uid://c5o6hag6n68pf" path="res://Assets/Graveyard set/GLB format/crypt-large-door.glb" id="3_57vwj"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eymju"]
+points = PackedVector3Array(0.925, 0, 1.1500449, 0.8608946, 1, 1.0250554, 0.9054424, 0.2999217, 1.1354785, 0.84387237, 1, 1.1187975, 0.8748384, 0, 1.2000878, 0.925, 0, -1.1502799, 0.8608946, 1, -1.0252904, 0.7498874, 1, 1.1359484, 0.8603514, 0.2999217, 1.1803527, -0.8750196, 0, 1.2000878, 0.8748384, 0, -1.2000878, 0.84387237, 1, -1.1192675, 0.9054424, 0.2999217, -1.1357135, -0.75006855, 1, 1.1359484, -0.925, 0, 1.1500449, -0.8605325, 0.2999217, 1.1803527, -0.84405345, 1, 1.1187975, -0.8750196, 0, -1.2000878, 0.7498874, 1, -1.1361834, 0.8603514, 0.2999217, -1.1808225, -0.90562356, 0.2999217, 1.1354785, -0.86107576, 1, 1.0250554, -0.925, 0, -1.1502799, -0.84405345, 1, -1.1192675, -0.8605325, 0.2999217, -1.1808225, -0.75006855, 1, -1.1361834, -0.86107576, 1, -1.0252904, -0.90562356, 0.2999217, -1.1357135)
+
+[node name="Med_House" instance=ExtResource("1_eymju")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="crypt-large" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="crypt-large/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_eymju")
+
+[node name="crypt-large-roof2" parent="." index="1" instance=ExtResource("2_ttggd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008247793, 0.9524139, 0.004578769)
+
+[node name="crypt-large-door2" parent="." index="2" instance=ExtResource("3_57vwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003478378, 0, 1.042884)

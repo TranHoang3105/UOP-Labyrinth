@@ -1,10 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=17 format=3 uid="uid://bmcpj6frtoxf3"]
 
-[ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="2_bk4wg"]
+[ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="1_qup8a"]
+[ext_resource type="PackedScene" uid="uid://ddww5yysafqky" path="res://Assets/Graveyard set/House/med_house.tscn" id="3_75hy5"]
 [ext_resource type="Script" uid="uid://bu13ljxc77kdk" path="res://Scene/Zone1/pause_menu.gd" id="3_bk4wg"]
 [ext_resource type="FontFile" uid="uid://bnjbg1pu5wh3y" path="res://Scene/Zone1/Rubik80sFade-Regular.ttf" id="3_qfali"]
 [ext_resource type="Script" uid="uid://cs6k0no2iiw3f" path="res://Scene/Zone1/countdown.gd" id="4_bk4wg"]
-[ext_resource type="PackedScene" uid="uid://c5nkyf0a6fksq" path="res://Scene/Player/player.tscn" id="5_qup8a"]
+[ext_resource type="PackedScene" uid="uid://cfe1erhqqc3qt" path="res://Assets/Graveyard set/House/small_house.tscn" id="4_funos"]
+[ext_resource type="PackedScene" uid="uid://c5nkyf0a6fksq" path="res://Scene/Player/player.tscn" id="4_qup8a"]
+[ext_resource type="PackedScene" uid="uid://dshw5og747ckf" path="res://Assets/Graveyard set/House/mansion.tscn" id="6_7eqqd"]
+[ext_resource type="PackedScene" uid="uid://drex4oyuuk4bp" path="res://Assets/Graveyard set/House/well.tscn" id="9_nwole"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,14 +26,14 @@ glow_enabled = true
 fog_enabled = true
 fog_density = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qup8a"]
-albedo_texture = ExtResource("2_bk4wg")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7eqqd"]
+albedo_texture = ExtResource("1_qup8a")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_7eqqd"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfali"]
-
-[sub_resource type="MeshLibrary" id="MeshLibrary_7eqqd"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qup8a"]
 
 [sub_resource type="FontFile" id="FontFile_qup8a"]
 cache/0/16/0/ascent = 0.0
@@ -48,21 +52,42 @@ cache/0/64/0/scale = 1.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0xm2m")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.17596811, 0.98439586, 0, -0.98439586, 0.17596811, 0, 5.4369965, 0)
+
 [node name="Map" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(-1.3113417e-06, 0, 30, 0, 0.20000002, 0, -30.000002, 0, -1.3113416e-06, -0.039780542, 0.0144248605, 0.06460732)
-material_override = SubResource("StandardMaterial3D_qup8a")
-mesh = SubResource("BoxMesh_7dm0k")
-skeleton = NodePath("../..")
+transform = Transform3D(35, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7eqqd")
+mesh = SubResource("PlaneMesh_7eqqd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_qfali")
+transform = Transform3D(2.4999998, 0, 0, 0, 2.5, 0, 0, 0, 2.4999998, 0, -1.3012888, 0)
+shape = SubResource("BoxShape3D_qup8a")
 
-[node name="Wall Gridmap" type="GridMap" parent="Map"]
-mesh_library = SubResource("MeshLibrary_7eqqd")
+[node name="House" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.921415)
+
+[node name="Mansion" parent="House" instance=ExtResource("6_7eqqd")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 22.583101, -0.05128908, 4.435965)
+
+[node name="Med_House" parent="House" instance=ExtResource("3_75hy5")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 7.548218, -0.051288366, 10.435438)
+
+[node name="Small_House" parent="House" instance=ExtResource("4_funos")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, -8.157215, -0.0028366223, 14.737526)
+
+[node name="Small_House2" parent="House" instance=ExtResource("4_funos")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, -16.258257, -0.0028361455, 15.081253)
+
+[node name="Small_House3" parent="House" instance=ExtResource("4_funos")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -16.651632, -0.0028370991, 2.5358334)
+
+[node name="Small_House4" parent="House" instance=ExtResource("4_funos")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.181683, -0.002837576, 2.8445373)
 
 [node name="CanvasLayer_Countdown" type="CanvasLayer" parent="."]
 
@@ -112,10 +137,16 @@ theme_override_font_sizes/font_size = 100
 text = "PAUSE"
 horizontal_alignment = 1
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.17596811, 0.98439586, 0, -0.98439586, 0.17596811, 0, 5.4369965, 0)
+[node name="Player" parent="." instance=ExtResource("4_qup8a")]
+transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 18.10081, 0.88039804, -0.1100834)
 
-[node name="House" type="Node3D" parent="."]
+[node name="Walls" type="Node3D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("5_qup8a")]
-transform = Transform3D(0.24672839, 0, 0.9690847, 0, 1, 0, -0.9690847, 0, 0.24672839, 7.557105, 1.0144249, 0.5914202)
+[node name="Grasses" type="Node3D" parent="."]
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="Decorations" type="Node3D" parent="."]
+
+[node name="Well" parent="." instance=ExtResource("9_nwole")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.650788, -0.048551176, 19.97861)

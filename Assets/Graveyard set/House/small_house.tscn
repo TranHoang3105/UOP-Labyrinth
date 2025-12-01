@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfe1erhqqc3qt"]
+
+[ext_resource type="PackedScene" uid="uid://bhriqd30rvyjg" path="res://Assets/Graveyard set/GLB format/crypt-small.glb" id="1_la36s"]
+[ext_resource type="PackedScene" uid="uid://nqdu5saqup3r" path="res://Assets/Graveyard set/GLB format/crypt-small-roof.glb" id="2_ooxq1"]
+[ext_resource type="PackedScene" uid="uid://bxykvw4sx4k" path="res://Assets/Graveyard set/GLB format/crypt-door.glb" id="3_ua3dv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ka2qv"]
+points = PackedVector3Array(0.6748679, 0, 0.65006185, 0.6109094, 1, 0.5250658, 0.65544254, 0.2999217, 0.6355337, 0.5938627, 1, 0.6189499, 0.62491685, 0, 0.70008767, 0.6748679, 0, -0.6501989, 0.6109094, 1, -0.5252028, 0.49990708, 1, 0.63594496, 0.6103808, 0.2999217, 0.68048847, -0.62504894, 0, 0.70008767, 0.62491685, 0, -0.70008767, 0.5938627, 1, -0.6190869, 0.65544254, 0.2999217, -0.63567084, -0.50003916, 1, 0.63594496, -0.675, 0, 0.65006185, -0.6105129, 0.2999217, 0.68048847, -0.59399474, 1, 0.6189499, 0.6103808, 0.2999217, -0.68062556, -0.62504894, 0, -0.70008767, 0.49990708, 1, -0.636082, -0.6555746, 0.2999217, 0.6355337, -0.6110415, 1, 0.5250658, -0.675, 0, -0.6501989, -0.59399474, 1, -0.6190869, -0.6105129, 0.2999217, -0.68062556, -0.50003916, 1, -0.636082, -0.6110415, 1, -0.5252028, -0.6555746, 0.2999217, -0.63567084)
+
+[node name="Small_House" instance=ExtResource("1_la36s")]
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="crypt-small" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="crypt-small/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ka2qv")
+
+[node name="crypt-small-roof2" parent="crypt-small/StaticBody3D" index="1" instance=ExtResource("2_ooxq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009232819, 0.95158803, -0.0027034879)
+
+[node name="crypt-door2" parent="crypt-small/StaticBody3D" index="2" instance=ExtResource("3_ua3dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012288272, -0.01615066, 0.5428088)
