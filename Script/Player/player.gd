@@ -13,6 +13,9 @@ var t_bob = 0.0
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+@onready var flashlight: Node3D = $Head/Flashlight
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -37,6 +40,10 @@ func _physics_process(delta: float) -> void:
 		speed = SPRINT_SPEED
 	else:
 		speed = WALK_SPEED
+	
+	if Input.is_action_just_pressed("interaction"):
+		flashlight.set_light()
+		
 		
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("up", "down", "right", "left")
