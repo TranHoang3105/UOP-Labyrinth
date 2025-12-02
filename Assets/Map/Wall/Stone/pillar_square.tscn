@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://gannjcimlo61"]
+
+[ext_resource type="PackedScene" uid="uid://culpt6yugcpwr" path="res://Assets/Graveyard set/GLB format/pillar-square.glb" id="1_oiwx1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vjife"]
+points = PackedVector3Array(-0.175, 0, -0.12501468, -0.12501468, 0, -0.175, -0.175, 0, 0.124980435, -0.175, 1.0499265, -0.12501468, 0.124980435, 0, -0.175, -0.12501468, 1.0499265, -0.175, -0.12501468, 0, 0.17496575, -0.175, 1.0499265, 0.124980435, -0.10939213, 1.0999069, -0.10939213, 0.17496575, 0, -0.12501468, 0.124980435, 1.0499265, -0.175, 0.124980435, 0, 0.17496575, -0.12501468, 1.0499265, 0.17496575, -0.10939213, 1.0999069, 0.10935788, -0.041386053, 1.15, -0.041386053, 0.10935788, 1.0999069, -0.10939213, 0.17496575, 0, 0.124980435, 0.17496575, 1.0499265, -0.12501468, 0.124980435, 1.0499265, 0.17496575, 0.10935788, 1.0999069, 0.10935788, -0.041386053, 1.15, 0.04135181, 0.04135181, 1.15, -0.041386053, 0.17496575, 1.0499265, 0.124980435, 0.04135181, 1.15, 0.04135181)
+
+[node name="pillar-square" instance=ExtResource("1_oiwx1")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar-square" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar-square/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_vjife")

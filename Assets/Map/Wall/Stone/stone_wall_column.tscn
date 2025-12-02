@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://drpx5farhnlaw"]
+
+[ext_resource type="PackedScene" uid="uid://ckulg6s2yxf8r" path="res://Assets/Graveyard set/GLB format/stone-wall-column.glb" id="1_wjj0w"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6qmoq"]
+points = PackedVector3Array(0.17492169, 0.85, -0.2750196, 0.5, 0.6999853, -0.32003722, 0.5, 0.7249462, -0.40003425, 0.17492169, 0.85, -0.5250147, 0.12490213, 0.85, -0.22500002, 0.5, 0.6799335, -0.30002937, 0.5, 0.6999853, -0.4800313, 0.12490213, 0.85, -0.575, 0.12490213, 0, -0.22500002, -0.12509787, 0.85, -0.22500002, 0.5, 0, -0.30002937, 0.5, 0.6799335, -0.5000049, 0.12490213, 0, -0.575, -0.12509787, 0.85, -0.575, -0.12509787, 0, -0.22500002, -0.17501956, 0.85, -0.2750196, -0.5, 0.6999853, -0.32003722, -0.5, 0.6799335, -0.30002937, 0.5, 0, -0.5000049, -0.12509787, 0, -0.575, -0.5, 0.6799335, -0.5000049, -0.5, 0.6999853, -0.4800313, -0.17501956, 0.85, -0.5250147, -0.5, 0, -0.30002937, -0.5, 0.7249462, -0.40003425, -0.5, 0, -0.5000049)
+
+[node name="stone-wall-column" instance=ExtResource("1_wjj0w")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone-wall-column" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone-wall-column/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_6qmoq")

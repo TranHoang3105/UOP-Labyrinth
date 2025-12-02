@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgb5gwub3lkth"]
+
+[ext_resource type="PackedScene" uid="uid://e8v8ihqx50l6" path="res://Assets/Graveyard set/GLB format/brick-wall-end.glb" id="1_gsspg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6vxtc"]
+points = PackedVector3Array(-0.050019562, 0.85, -0.17503917, -0.050019562, 0.85, -0.52500486, -0.100039154, 0.85, -0.125, 0.5, 0.6999853, -0.22001272, 0.5, 0.7249462, -0.35004404, -0.100039154, 0.85, -0.575, 0.5, 0.6999853, -0.4800313, -0.100039154, 0, -0.125, 0.5, 0.6799335, -0.20001468, -0.4500783, 0.85, -0.125, 0.5, 0.6799335, -0.5000293, -0.100039154, 0, -0.575, -0.4500783, 0.85, -0.575, 0.5, 0, -0.20001468, -0.4500783, 0, -0.125, -0.5, 0.85, -0.17503917, 0.5, 0, -0.5000293, -0.4500783, 0, -0.575, -0.5, 0.85, -0.52500486, -0.5, 0, -0.17503917, -0.5, 0, -0.52500486)
+
+[node name="brick-wall-end" instance=ExtResource("1_gsspg")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="brick-wall-end" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="brick-wall-end/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_6vxtc")

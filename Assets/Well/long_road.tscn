@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcmmvkmcpauow"]
+
+[ext_resource type="PackedScene" uid="uid://c02we0t2kbqys" path="res://Assets/Well/road.glb" id="1_uy2cg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4kk0"]
+albedo_color = Color(0.0043666773, 0.073150836, 0.116149, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tjser"]
+points = PackedVector3Array(0.37036, 0, 0.13716859, 0.37036, 0, 0.06571719, 0.3591216, 0.016022723, 0.12600195, 0.26515397, 0.016022723, 0.35159832, 0.2763199, 0, 0.36276495, 0.3591216, 0.016022723, 0.07695928, 0.26877925, 0, -0.2914644, 0.25761333, 0.032049686, -0.28029776, 0.26515397, 0.043315202, 0.2576627, -0.11463177, 0.016022723, 0.3741579, -0.103465885, 0, 0.3853246, 0.26515397, 0.043315202, 0.07695928, 0.23868933, 0, -0.3854, 0.22752342, 0.016022723, -0.3743088, -0.08454186, 0.043315202, -0.3743088, 0.14109644, 0.043315202, -0.14871249, 0.08446935, 0.043315202, 0.2576627, -0.16371825, 0.016022723, 0.3741579, -0.17488416, 0, 0.3853246, -0.27639237, 0, -0.3854, -0.26522648, 0.043315202, -0.3743088, -0.16371825, 0.032049686, 0.28022236, -0.26522648, 0.043315202, 0.15610665, -0.27639237, 0, 0.16727328, -0.37036, 0, -0.2538147, -0.35919407, 0.016022723, -0.24264808, -0.35919407, 0.016022723, -0.1936054, -0.37036, 0, -0.18243876)
+
+[node name="road" instance=ExtResource("1_uy2cg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="road" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_k4kk0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="road" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="road/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_tjser")

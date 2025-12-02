@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvh4uidexjlvd"]
+
+[ext_resource type="PackedScene" uid="uid://dcq2lstcdeb7e" path="res://Assets/Graveyard set/GLB format/stone-wall.glb" id="1_xyx7o"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0e7u2"]
+points = PackedVector3Array(0.5, 0.7249291, -0.4000196, 0.5, 0.69994867, -0.32000783, 0.5, 0.69994867, -0.48001176, -0.5, 0.7249291, -0.4000196, -0.5, 0.69994867, -0.32000783, 0.5, 0.67993593, -0.30001956, 0.5, 0.67993593, -0.5, -0.5, 0.69994867, -0.48001176, -0.5, 0.67993593, -0.30001956, 0.5, 0, -0.30001956, 0.5, 0, -0.5, -0.5, 0.67993593, -0.5, -0.5, 0, -0.30001956, -0.5, 0, -0.5)
+
+[node name="stone-wall" instance=ExtResource("1_xyx7o")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stone-wall" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone-wall/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_0e7u2")
