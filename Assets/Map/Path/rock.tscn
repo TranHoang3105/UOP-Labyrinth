@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=4 uid="uid://ch1c7j6d30ya6"]
+
+[ext_resource type="Texture2D" uid="uid://62pwemjhcv41" path="res://Assets/Map/halloween_27.jpg" id="1_6itkc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k66m3"]
+resource_name = "Farmland"
+cull_mode = 2
+albedo_texture = ExtResource("1_6itkc")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4ayyj"]
+_surfaces = [{
+"aabb": AABB(-0.15542775, -0.15542775, -0.042450167, 0.3108555, 0.31085557, 0.1253514),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("BAAGAAIAAwAEAAIABAAAAAYAAwACAAcABgAHAAIABAADAAEAAQADAAcABAABAAAABgAFAAcAAQAHAAUAAAAFAAYAAAABAAUA"),
+"lods": [0.10336862, PackedByteArray("BAAAAAIAAAAFAAIAAwAEAAIAAwACAAUABAABAAAABAADAAEAAAABAAUAAQADAAUA"), 0.22915135, PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAADAAEA")],
+"name": "Farmland",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8QQwAAAAAQQwAAAAAAAO+d4r7//wAAAADuvAAAAADuvP//AAAAAA9iHEH//wAA4r4PYv//AAAcQe+d//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ldtwi"]
+resource_name = "Sketchfab_Scene_Farmland_03_Farmland_0"
+_surfaces = [{
+"aabb": AABB(-0.15542775, -0.15542775, -0.042450167, 0.3108555, 0.31085557, 0.1253514),
+"attribute_data": PackedByteArray("c4zdfP9/3Xz/f+6Fi3PdfHOM/3+Lc/9//3+Lc/9/3Xz/f+6F/39zjB2G7oXhee6FHYb/f+F5/3//fx2G/3/heQ=="),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("BwAKAAIABwAAAAoAAwAHAAIAAAAIAAoAAwACAAsAAAABAAgAAQADAAsAAQALAAgADAANAA4ADAAPAA0ACQAGAAQACQAFAAYA"),
+"lods": [0.10336862, PackedByteArray("BwAAAAIAAwAHAAIAAAAIAAIAAwACAAgAAAABAAgAAQADAAgACQAGAAQACQAFAAYA"), 0.22915135, PackedByteArray("AAABAAIAAQADAAIAAwAAAAIABAAFAAYA")],
+"material": SubResource("StandardMaterial3D_k66m3"),
+"name": "Farmland",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//8QQwAApSMQQwAAAAD/L++d4r7//9GfAADuvAAAWdz//xBDAAC+9QAA7rwAAL71EEMAAAAA/8/uvP//AAD/zw9iHEH//y1g7rz//wAA/8/ivg9i///5XxxB753//wWg4r4PYv//LWAcQe+d//8tYO+d4r7//y1gD2IcQf//LWDGG7xCaCPplGjDxXA45EK9EQ9Kve3wtEJoI+mUltwVa5Y8OY+W3BVrUzBcJqvPotnFcJY8OY9ow2jDxXCWPDmP")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4ayyj")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6itkc"]
+points = PackedVector3Array(-0.15542775, 0.07397124, -0.042450167, -0.07637503, 0.03633143, 0.08290123, 0.0739712, 0.15542781, -0.042450167, -0.074001625, -0.15542775, -0.042450167, -0.036361814, -0.076375015, 0.08290123, 0.0363314, 0.076344654, 0.08290123, 0.15542775, -0.07400161, -0.042450167, 0.07634461, -0.03636179, 0.08290123)
+
+[node name="rock" type="Node3D"]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 0, 0, 0)
+
+[node name="Farmland_03_Farmland_0" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_ldtwi")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Farmland_03_Farmland_0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Farmland_03_Farmland_0/StaticBody3D"]
+transform = Transform3D(1, -2.9802322e-08, 3.5527133e-15, 2.9802322e-08, 1, 0, -3.5527133e-15, 1.05879106e-22, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_6itkc")

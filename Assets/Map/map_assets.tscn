@@ -4860,19 +4860,6 @@ transform = Transform3D(100, 0, 0, 0, -1.6292068e-05, 100, 0, -100, -1.6292068e-
 mesh = SubResource("ArrayMesh_5ytb2")
 skeleton = NodePath("")
 
-[node name="Wall" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, -859.7895, 125.58271, -706.4282)
-script = null
-
 [node name="Wall_01" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
 transform = Transform3D(100, 0, 0, 0, -9.4446295e-06, 100, 0, -57.970722, -1.6292068e-05, -385.6287, 122.88184, -706.4282)
 

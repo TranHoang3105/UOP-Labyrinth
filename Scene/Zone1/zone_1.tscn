@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=29 format=3 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="1_qup8a"]
 [ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="2_snhcr"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bnda4yknfgjh2" path="res://Assets/Well/road.tscn" id="13_momr4"]
 [ext_resource type="PackedScene" uid="uid://bcmmvkmcpauow" path="res://Assets/Well/long_road.tscn" id="14_avmvt"]
 [ext_resource type="PackedScene" uid="uid://dscnnea5qunlb" path="res://Assets/Graveyard set/House/mansion1.tscn" id="19_cwqc1"]
+[ext_resource type="PackedScene" uid="uid://ch1c7j6d30ya6" path="res://Assets/Map/Path/rock.tscn" id="21_wocrf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -64,7 +65,8 @@ cache/0/64/0/scale = 1.0
 environment = SubResource("Environment_0xm2m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.17596811, 0.98439586, 0, -0.98439586, 0.17596811, 0, 5.4369965, 0)
+transform = Transform3D(1, 0, 0, 0, 0.29315612, 0.9560646, 0, -0.9560646, 0.29315612, -3.6860292, 27.243744, 2.664526)
+light_negative = true
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -129,13 +131,13 @@ text = "PAUSE"
 horizontal_alignment = 1
 
 [node name="Player" parent="." instance=ExtResource("4_qup8a")]
-transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 29.205605, 1.1387722, 2.721345)
+transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 30.566523, 1.1387722, 2.721345)
 
 [node name="House" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.921415)
 
 [node name="Mansion" parent="House" instance=ExtResource("6_7eqqd")]
-transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 25, 0, 3.0785847)
+transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 24.999743, 0, 3.0788221)
 
 [node name="Med_House" parent="House" instance=ExtResource("3_75hy5")]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 8, 0, 3.0785847)
@@ -151,6 +153,9 @@ transform = Transform3D(3, 0, 5.2453663e-07, 0, 3, 0, -5.2453663e-07, 0, 3, -11,
 
 [node name="Small_House4" parent="House" instance=ExtResource("8_1tbaf")]
 transform = Transform3D(3, 0, 5.2453663e-07, 0, 3, 0, -5.2453663e-07, 0, 3, -20, 0, 0.07858467)
+
+[node name="Mansion2" parent="House" instance=ExtResource("19_cwqc1")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 8, 0, -31.921415)
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -204,11 +209,47 @@ transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -5
 [node name="stone-wall9" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -5, 0, 10)
 
+[node name="stone-wall17" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -23, 0, 8)
+
+[node name="stone-wall18" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -23, 0, 10)
+
+[node name="stone-wall19" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -23, 0, 13)
+
+[node name="stone-wall20" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -23, 0, 15)
+
+[node name="stone-wall21" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -23, 0, 18)
+
+[node name="stone-wall22" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -23, 0, 20)
+
+[node name="stone-wall23" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -23, 0, 22)
+
+[node name="stone-wall24" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -23, 0, 24)
+
 [node name="pillar-square" parent="Walls/Stone" instance=ExtResource("10_cwqc1")]
 transform = Transform3D(2.7, 0, -7.1054274e-15, 0, 2.7, 0, 7.1054274e-15, 0, 2.7, -6.1314635, 0, 25.858152)
 
 [node name="pillar-square2" parent="Walls/Stone" instance=ExtResource("10_cwqc1")]
 transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -6.2149043, 0, 6.743623)
+
+[node name="stone-wall15" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -23, 0, 8)
+
+[node name="stone-wall16" parent="Walls/Stone" instance=ExtResource("9_1tbaf")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -23, 0, 27)
+
+[node name="pillar-square3" parent="Walls/Stone" instance=ExtResource("10_cwqc1")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -24.263557, 0, 6.583755)
+
+[node name="pillar-square4" parent="Walls/Stone" instance=ExtResource("10_cwqc1")]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -24.440441, 0, 25.75284)
 
 [node name="Brick" type="Node3D" parent="Walls"]
 
@@ -411,6 +452,63 @@ transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 31, 
 [node name="road51" parent="Path/90-path" instance=ExtResource("13_momr4")]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 31, 0, 7)
 
+[node name="road6" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.9147297, 0, 0.57776284, 0, 2, 0, -0.57776284, 0, 1.9147297, 24.835785, -0.0043058395, -4.2514205)
+
+[node name="road44" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.9274011, 0, 0.5339722, 0, 2, 0, -0.5339722, 0, 1.9274011, 25.976702, -0.004307747, -4.5726113)
+
+[node name="road45" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.955178, 0, 0.42104596, 0, 2, 0, -0.42104596, 0, 1.955178, 27.105453, -0.0043058395, -4.878641)
+
+[node name="road52" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.9551045, 0, 0.42138717, 0, 2, 0, -0.42138717, 0, 1.9551045, 28.331358, -0.004303932, -5.211012)
+
+[node name="road53" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.9538158, 0, 0.42732263, 0, 2, 0, -0.42732263, 0, 1.9538158, 29.611881, -0.0043058395, -5.5581894)
+
+[node name="road54" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.9685518, 0, 0.3532762, 0, 2, 0, -0.3532762, 0, 1.9685518, 30.772985, -0.004307747, -5.8706326)
+
+[node name="road55" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.6471248, 0, 1.1344519, 0, 2, 0, -1.1344519, 0, 1.6471248, 15.882708, 0.025137901, 0.09322262)
+
+[node name="road56" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.7139575, 0, 1.0307046, 0, 2, 0, -1.0307046, 0, 1.7139575, 16.924324, 0.025135994, -0.622777)
+
+[node name="road57" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.7358779, 0, 0.99334216, 0, 2, 0, -0.99334216, 0, 1.7358779, 19.095709, 0.025137901, -1.8786745)
+
+[node name="road58" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.7424963, 0, 0.9816859, 0, 2, 0, -0.9816859, 0, 1.7424963, 20.168694, 0.025139809, -2.4923935)
+
+[node name="road59" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.7353576, 0, 0.99425066, 0, 2, 0, -0.99425066, 0, 1.7353576, 17.967234, 0.025137901, -1.2318897)
+
+[node name="road60" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.8777083, 0, 0.68863034, 0, 2, 0, -0.68863034, 0, 1.8777083, 22.337137, 0.020300388, -3.50984)
+
+[node name="road61" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(0.72464836, 0, 1.8641044, 0, 2, 0, -1.8641044, 0, 0.72464836, 10.984497, 0.004629135, 5.640418)
+
+[node name="road62" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(0.9567402, 0, 1.7563168, 0, 2, 0, -1.7563168, 0, 0.9567402, 11.467418, 0.004627228, 4.5215626)
+
+[node name="road63" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.1482391, 0, 1.6375428, 0, 2, 0, -1.6375428, 0, 1.1482391, 12.080677, 0.004629135, 3.4629443)
+
+[node name="road64" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.4894388, 0, 1.3347554, 0, 2, 0, -1.3347554, 0, 1.4894388, 12.847491, 0.037508726, 2.5078778)
+
+[node name="road65" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.577396, 0, 1.2295617, 0, 2, 0, -1.2295617, 0, 1.577396, 13.779165, 0.03750682, 1.6734986)
+
+[node name="road66" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.6181777, 0, 1.1753727, 0, 2, 0, -1.1753727, 0, 1.6181777, 14.814476, 0.025135994, 0.8581324)
+
+[node name="road67" parent="Path/90-path" instance=ExtResource("14_avmvt")]
+transform = Transform3D(1.769585, 0, 0.93197036, 0, 2, 0, -0.93197036, 0, 1.769585, 21.258642, 0.025136948, -3.0750086)
+
 [node name="0-path" type="Node3D" parent="Path"]
 
 [node name="road" parent="Path/0-path" instance=ExtResource("14_avmvt")]
@@ -489,64 +587,144 @@ transform = Transform3D(-0.41578957, 0, 1.956303, 0, 2, 0, -1.956303, 0, -0.4157
 transform = Transform3D(0.4260614, 0, -1.9540911, 0, 2, 0, 1.9540911, 0, 0.4260614, 24.387667, 0, 0.6829535)
 
 [node name="road5" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(0.49068314, 0, -1.9388736, 0, 2, 0, 1.9388736, 0, 0.49068314, 24.127905, 0, -0.44855487)
+transform = Transform3D(0.49068314, 0, -1.9388736, 0, 2, 0, 1.9388736, 0, 0.49068314, 24.127907, 0, -0.44855487)
 
 [node name="road6" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
 transform = Transform3D(-0.09843179, 0, 1.9975779, 0, 2, 0, -1.9975779, 0, -0.09843179, 25.003983, 0, 5.0231504)
 
 [node name="road7" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-0.67156106, 0, 1.8838813, 0, 2, 0, -1.8838813, 0, -0.67156106, 23.577093, 0.01538372, -2.3454108)
+transform = Transform3D(-0.6232773, 0, 1.9004029, 0, 2, 0, -1.9004029, 0, -0.6232773, 23.614405, 0.01538372, -2.5153651)
 
 [node name="road8" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-0.785798, 0, 1.8391633, 0, 2, 0, -1.8391633, 0, -0.785798, 23.209814, 0.01538372, -3.4236212)
+transform = Transform3D(-0.738618, 0, 1.8586137, 0, 2, 0, -1.8586137, 0, -0.738618, 23.274757, 0.01538372, -3.6025958)
 
 [node name="road9" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-0.9007893, 0, 1.7856592, 0, 2, 0, -1.7856592, 0, -0.9007893, 22.80227, 0.01538372, -4.4522777)
+transform = Transform3D(-0.7773156, 0, 1.8427647, 0, 2, 0, -1.8427647, 0, -0.7773156, 22.89358, 0.01538372, -4.6413155)
 
 [node name="road10" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(0.9101578, 0, -1.7809023, 0, 2, 0, 1.7809023, 0, 0.9101578, 22.226675, 0.01538372, -5.4318614)
-
-[node name="road11" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(0.9101578, 0, -1.7809023, 0, 2, 0, 1.7809023, 0, 0.9101578, 21.678139, 0.01538372, -6.4690084)
+transform = Transform3D(0.79765886, 0, -1.8340513, 0, 2, 0, 1.8340513, 0, 0.79765886, 22.359213, 0.01538372, -5.7324805)
 
 [node name="road12" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-0.6187644, 0, 1.901876, 0, 2, 0, -1.901876, 0, -0.6187644, 23.930826, 0, -1.4376823)
+transform = Transform3D(-0.5700386, 0, 1.9170445, 0, 2, 0, -1.9170445, 0, -0.5700386, 23.944862, 0, -1.5989085)
 
 [node name="road13" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-0.95379615, 0, 1.7579174, 0, 2, 0, -1.7579174, 0, -0.95379615, 20.768604, 0, -8.412128)
+transform = Transform3D(-0.80012244, 0, 1.8329778, 0, 2, 0, -1.8329778, 0, -0.80012244, 22.082626, 0, -6.8913407)
 
 [node name="road14" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-1.0597801, 0, 1.6961337, 0, 2, 0, -1.6961337, 0, -1.0597801, 20.239578, 0, -9.4208765)
+transform = Transform3D(-0.9109979, 0, 1.780474, 0, 2, 0, -1.780474, 0, -0.9109979, 21.598925, 0, -7.939299)
 
 [node name="road15" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-1.1651541, 0, 1.625551, 0, 2, 0, -1.625551, 0, -1.1651541, 19.678423, 0, -10.374462)
+transform = Transform3D(-1.0220164, 0, 1.7191519, 0, 2, 0, -1.7191519, 0, -1.0220164, 21.12128, 0, -8.937342)
 
 [node name="road16" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(1.1736779, 0, -1.6194078, 0, 2, 0, 1.6194078, 0, 1.1736779, 18.958769, 0, -11.253669)
+transform = Transform3D(1.031034, 0, -1.7137599, 0, 2, 0, 1.7137599, 0, 1.031034, 20.47937, 0, -9.87482)
 
 [node name="road17" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(1.1736779, 0, -1.6194078, 0, 2, 0, 1.6194078, 0, 1.1736779, 18.25699, 0, -12.193913)
-
-[node name="road18" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-0.8774647, 0, 1.7972369, 0, 2, 0, -1.7972369, 0, -0.8774647, 21.354565, 0.01538372, -7.5722957)
+transform = Transform3D(1.031034, 0, -1.7137599, 0, 2, 0, 1.7137599, 0, 1.031034, 19.860487, 0, -10.871581)
 
 [node name="road19" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-1.2514663, 0, 1.5600755, 0, 2, 0, -1.5600755, 0, -1.2514663, 17.175821, 0, -13.829303)
+transform = Transform3D(-1.0622665, 0, 1.6945788, 0, 2, 0, -1.6945788, 0, -1.0622665, 18.867298, 0, -12.552541)
 
 [node name="road20" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-1.3447598, 0, 1.4804125, 0, 2, 0, -1.4804125, 0, -1.3447598, 16.4757, 0, -14.727781)
+transform = Transform3D(-1.1641625, 0, 1.6262622, 0, 2, 0, -1.6262622, 0, -1.1641625, 18.276003, 0, -13.526093)
 
 [node name="road21" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-1.4358888, 0, 1.3922014, 0, 2, 0, -1.3922014, 0, -1.4358888, 15.753771, 0, -15.566259)
+transform = Transform3D(-1.264898, 0, 1.549204, 0, 2, 0, -1.549204, 0, -1.264898, 17.65609, 0, -14.442575)
 
 [node name="road22" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(1.4431833, 0, -1.384639, 0, 2, 0, 1.384639, 0, 1.4431833, 14.88911, 0, -16.303324)
+transform = Transform3D(1.2730196, 0, -1.5425389, 0, 2, 0, 1.5425389, 0, 1.2730196, 16.882662, 0, -15.274868)
 
 [node name="road23" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(1.4431833, 0, -1.384639, 0, 2, 0, 1.384639, 0, 1.4431833, 14.031183, 0, -17.103647)
+transform = Transform3D(1.2730196, 0, -1.5425389, 0, 2, 0, 1.5425389, 0, 1.2730196, 16.123243, 0, -16.169207)
 
 [node name="road24" parent="Path/Cross-path" instance=ExtResource("13_momr4")]
-transform = Transform3D(-1.1954467, 0, 1.6034058, 0, 2, 0, -1.6034058, 0, -1.1954467, 17.8206, 0, -13.0439415)
+transform = Transform3D(-1.0540903, 0, 1.6996768, 0, 2, 0, -1.6996768, 0, -1.0540903, 19.498316, 0, -11.755785)
 
-[node name="Mansion" parent="." instance=ExtResource("19_cwqc1")]
-transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 8, 0, -21)
+[node name="rock" type="Node3D" parent="Path"]
+
+[node name="rock" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, 6)
+
+[node name="rock2" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 27, 0, 6)
+
+[node name="rock3" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 28, 0, 6)
+
+[node name="rock4" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 29, 0, 6)
+
+[node name="rock5" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 30, 0, 6)
+
+[node name="rock6" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, 6)
+
+[node name="rock7" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, 5)
+
+[node name="rock8" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, 4)
+
+[node name="rock9" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, 3)
+
+[node name="rock10" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, 2)
+
+[node name="rock11" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, 5)
+
+[node name="rock12" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, 4)
+
+[node name="rock13" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, 3)
+
+[node name="rock14" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, 2)
+
+[node name="rock15" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, 1)
+
+[node name="rock16" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, 0)
+
+[node name="rock17" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, -1)
+
+[node name="rock18" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, -2)
+
+[node name="rock19" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 26, 0, -3)
+
+[node name="rock20" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 27, 0, -4)
+
+[node name="rock21" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 28, 0, -4)
+
+[node name="rock22" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 29, 0, -4)
+
+[node name="rock23" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 30, 0, -4)
+
+[node name="rock24" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, -4)
+
+[node name="rock25" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, -3)
+
+[node name="rock26" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, -2)
+
+[node name="rock27" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, -1)
+
+[node name="rock28" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, 0)
+
+[node name="rock29" parent="Path/rock" instance=ExtResource("21_wocrf")]
+transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, 1)
