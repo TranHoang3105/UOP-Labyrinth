@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=33 format=3 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="1_qup8a"]
 [ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="2_snhcr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cs6k0no2iiw3f" path="res://Scene/Zone1/countdown.gd" id="4_bk4wg"]
 [ext_resource type="PackedScene" uid="uid://c5nkyf0a6fksq" path="res://Scene/Player/player.tscn" id="4_qup8a"]
 [ext_resource type="PackedScene" uid="uid://dshw5og747ckf" path="res://Assets/Graveyard set/House/mansion.tscn" id="6_7eqqd"]
+[ext_resource type="AudioStream" uid="uid://dxfla2ts1p230" path="res://Sounds Effect/Player/item-pick-up-38258.mp3" id="8_1i2ph"]
 [ext_resource type="PackedScene" uid="uid://cfe1erhqqc3qt" path="res://Assets/Graveyard set/House/small_house.tscn" id="8_1tbaf"]
 [ext_resource type="PackedScene" uid="uid://drpx5farhnlaw" path="res://Assets/Map/Wall/Stone/stone_wall_column.tscn" id="8_aryjj"]
 [ext_resource type="PackedScene" uid="uid://bvh4uidexjlvd" path="res://Assets/Map/Wall/Stone/stone_wall.tscn" id="9_1tbaf"]
@@ -19,8 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://jk5714pi36xo" path="res://Assets/Map/Wall/Brick/brick_wall.tscn" id="12_avmvt"]
 [ext_resource type="PackedScene" uid="uid://bnda4yknfgjh2" path="res://Assets/Well/road.tscn" id="13_momr4"]
 [ext_resource type="PackedScene" uid="uid://bcmmvkmcpauow" path="res://Assets/Well/long_road.tscn" id="14_avmvt"]
+[ext_resource type="AudioStream" uid="uid://buhg2xe2uwmok" path="res://Sounds Effect/Player/walk-mixkit-footsteps-on-heels-on-the-pavement-542.wav" id="17_nyuku"]
+[ext_resource type="AudioStream" uid="uid://1tb5dbk1qb3y" path="res://Sounds Effect/Player/run-fast-345728.mp3" id="18_6gna6"]
 [ext_resource type="PackedScene" uid="uid://dscnnea5qunlb" path="res://Assets/Graveyard set/House/mansion1.tscn" id="19_cwqc1"]
 [ext_resource type="PackedScene" uid="uid://ch1c7j6d30ya6" path="res://Assets/Map/Path/rock.tscn" id="21_wocrf"]
+[ext_resource type="AudioStream" uid="uid://dkog8gcngi8fv" path="res://Sounds Effect/Background/GameBack-mixkit-creepy-tomb-ambience-2500.wav" id="22_ts663"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -132,6 +136,16 @@ horizontal_alignment = 1
 
 [node name="Player" parent="." instance=ExtResource("4_qup8a")]
 transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 30.566523, 1.1387722, 2.721345)
+
+[node name="AudioStreamPlayer_walk" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("17_nyuku")
+
+[node name="AudioStreamPlayer_run" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("18_6gna6")
+
+[node name="AudioStreamPlayer_collect" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("8_1i2ph")
+volume_db = 24.0
 
 [node name="House" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.921415)
@@ -728,3 +742,7 @@ transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1
 
 [node name="rock29" parent="Path/rock" instance=ExtResource("21_wocrf")]
 transform = Transform3D(1.4135802, 0.5017877, 2.1933838e-08, 0, -6.556708e-08, 1.5, 0.5017877, -1.4135802, -6.178956e-08, 31, 0, 1)
+
+[node name="BackGround" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_ts663")
+autoplay = true
