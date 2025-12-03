@@ -1,4 +1,4 @@
-[gd_scene load_steps=341 format=4 uid="uid://db4arx10gf16p"]
+[gd_scene load_steps=339 format=4 uid="uid://db4arx10gf16p"]
 
 [ext_resource type="Texture2D" uid="uid://bst0fh71f0stn" path="res://Assets/Map/halloween_0.png" id="1_ly3yd"]
 [ext_resource type="Texture2D" uid="uid://c7gtuykrmjjt0" path="res://Assets/Map/halloween_1.png" id="2_1jk4f"]
@@ -25,12 +25,12 @@
 [ext_resource type="Texture2D" uid="uid://bphcla72cbls" path="res://Assets/Map/halloween_22.jpg" id="23_lxfsj"]
 [ext_resource type="Texture2D" uid="uid://5or0p7t6dwtd" path="res://Assets/Map/halloween_23.png" id="24_k6dou"]
 [ext_resource type="Texture2D" uid="uid://bqv7pd81bgjww" path="res://Assets/Map/halloween_24.png" id="25_14bgr"]
-[ext_resource type="PackedScene" uid="uid://cccmhnd52hscs" path="res://Assets/Map/Wall/wall.tscn" id="26_rcqwp"]
 [ext_resource type="Texture2D" uid="uid://bc1es4djihesv" path="res://Assets/Map/halloween_25.jpg" id="27_lgjcu"]
 [ext_resource type="Texture2D" uid="uid://c7t7cpchv2ycb" path="res://Assets/Map/halloween_26.png" id="28_njo3a"]
 [ext_resource type="Texture2D" uid="uid://62pwemjhcv41" path="res://Assets/Map/halloween_27.jpg" id="29_036xn"]
 [ext_resource type="Texture2D" uid="uid://tfaa5wg0iv7n" path="res://Assets/Map/halloween_28.png" id="30_qvt6b"]
 [ext_resource type="Texture2D" uid="uid://d4cillfpdj7av" path="res://Assets/Map/halloween_29.png" id="31_b1bsf"]
+[ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="31_ly3yd"]
 [ext_resource type="Texture2D" uid="uid://d1j6a73c5bflb" path="res://Assets/Map/halloween_30.png" id="32_qunhj"]
 [ext_resource type="Texture2D" uid="uid://cm2fp6tconguu" path="res://Assets/Map/halloween_31.png" id="33_vyp3f"]
 [ext_resource type="Texture2D" uid="uid://m380vy5ky84v" path="res://Assets/Map/halloween_32.png" id="34_gxlqb"]
@@ -3170,38 +3170,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vc8te")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mml50"]
-_surfaces = [{
-"aabb": AABB(-0.11901918, -0.07151699, -0.07863314, 0.24676555, 0.15033817, 0.15167934),
-"format": 34896613377,
-"index_count": 120,
-"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwAEAAAABAAFAAAABQABAAAAAwAGAAQABAAHAAUABAAGAAcABwAIAAUACAABAAUABwAJAAgABwAGAAkACQAKAAgACgABAAgAAgABAAoACQALAAoACwACAAoACwADAAIACQAGAAsACwAGAAMAAQAMAA0AAQANAAwAAQAOAA0AAQANAA4AAQAMAA8AAQAPAAwAAQAQAA4AAQAOABAAAQAPABAAAQAQAA8ABgARABIABgASABEABgASABMABgATABIABgARABQABgAUABEABgATABUABgAVABMABgAVABQABgAUABUA"),
-"name": "Sweets_01",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 22,
-"vertex_data": PackedByteArray("QJv//+1zAACeyg9+V4EAAECb7rL//wAAtmXusv//AAC2Zf//7XMAAECbaZEAAAAAWTZwfcWBAAC2ZWmRAAAAAECbAABrRAAAtmUAAGtEAABAm7YUoeIAALZlthSh4gAA//8PkwMXAAD//8sbIU8AAP//yCzl0AAA///D7Rl2AAD//42u++gAAAAAcrFE/AAAAADXF8LfAAAAALoDJ0YAAAAARPxHdAAAAADnkLoDAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_j1ghd"]
-resource_name = "Sketchfab_Scene_Sweets_05_Sweets_01_0"
-_surfaces = [{
-"aabb": AABB(-0.11901918, -0.07151699, -0.07863314, 0.24676555, 0.15033817, 0.15167934),
-"attribute_data": PackedByteArray("XtlqDfDKUxGj0wwfGMEMH13KhAJdu2oNipaVue+GPrqji5WqAXpQsKOLlsgBetvC+WBn3BFrM9ARa0DbEWua6Kthj9p6ahTQemqf3YNLy/abVff8m1UE7mM8QvR7Rhn9e0YE7rJt+ffKdwTuynfB+6thX916ar3memqT16th0dt6ajfiemrr0qthQN56asnaemq56CNhgNw2agno+2pY0flgZ9wRa0DbEWsz0BFrmuirYY/aemqf3XpqFNCDS8v2m1UE7ptV9/xjPEL0e0YE7ntGGf2ybfn3ynfB+8p3BO6rYV/demqT13pqvearYdHbemrr0npqN+KrYUDeemq56HpqydojYYDc+2pY0TZqCeikyxUkHtk0LqTLNC4e2RUkXbsVJF27NC5m3hqiJu85rGbeOawm7xqiyfDxLmbeEDnJ8BA5Zt7xLqDwGD5m3jhIoPA4SGbeGD4="),
-"format": 34896613399,
-"index_count": 120,
-"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABQABAAQABgAHAAgACAAHAAkACgAHAAYACQAHAAsACwAHAAoADAANAA4ADAAOAA8AEAARABIAEwAUABUAFgAXABgAGQAaABsAHAAdAB4AHwAgACEAIgAjACQAJQAmACcAKAApACoAKAArACkALAAtAC4ALwAwADEAMgAzADQANQA2ADcAOAA5ADoAOwA8AD0APgA/AEAAQQBCAEMARABFAEYARABHAEUASABEAEYASABGAEkASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMA"),
-"material": SubResource("StandardMaterial3D_arhit"),
-"name": "Sweets_01",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 86,
-"vertex_data": PackedByteArray("QJv//+1zXAWeyg9+V4G2IECb7rL//5crQJu2FKHiVUNAm2mRAAB9B0CbAABrRMwstmUAAGtEf9VZNnB9xYF+8LZlthSh4rTFtmXusv//b+G2ZWmRAADy+rZl///tc3H7nsoPfleBsCL//w+TAxeX6P//w+0ZdqPK//+Nrvvol7lZNnB9xYH3MgAAcrFE/ObdAABE/Ed03uieyg9+V4HD+f//ja776DpX///ILOXQalGeyg9+V4Fb2f//yCzl0I5F///LGyFP7Cyeyg9+V4FVOv//yxshT9rl//8PkwMXL/1ZNnB9xYG8zAAA1xfC3wkEAABysUT8QwVZNnB9xYEV4AAAugMnRkYZAADXF8LfyiFZNnB9xYEDAwAA55C6A03YAAC6AydGjdFZNnB9xYE65gAARPxHdIwoAADnkLoDZySeyg9+V4GSK///w+0Zdrw6//8PkwMX4kb//42u++iGHVk2cH3FgdwtAABE/Ed0eB8AAHKxRPwcHp7KD35XgVL+///ILOXQ9+z//42u++iV9p7KD35XgXvV///LGyFP277//8gs5dB72p7KD35XgXpA//8PkwMXkVr//8sbIU8OTFk2cH3FgWe/AABysUT8YdYAANcXwt9I01k2cH3FgcnTAADXF8LfuOQAALoDJ0b53lk2cH3FgScEAAC6AydG2wIAAOeQugORBVk2cH3Fgc3pAADnkLoDQuwAAET8R3TO9LZl///tc9fjQJtpkQAAIe1Am///7XNVzrZlaZEAAEH7tmXusv//R9NAm+6y///ctLZlaZEAANz1QJsAAGtEvvRAm2mRAABx77ZlAABrRMTTtmUAAGtEzhdAm7YUoeJUSECbAABrRBUmtmW2FKHidSa2ZbYUoeLPO0Cb7rL//6VDQJu2FKHiXzS2Ze6y//+gNI03EhSmKMosqx9JCfMAs8X+NXY4tBrMWGYiu4wZUYGkYk4aeKxyQJuZQCGuEc+1HPMqcyuI2cTBEeAYvoPbQ9cwxH7P6R1vH2gxqR30w/p+Hpej3MxQidmDsSVZd02Xop08U6JukmMZmTM6fE76LlKLg/vjAhEM1Rqrp4g2XnS2Wp8+SeibW1kwSE6Yx4sBCfN7jiTb84S7jkQNDZpVJhgnKwwqax9TP1gnOyE3JQtAF9E82PnLjehVv6/dpb5LfgTO4ISSBcev0apAVl25XmE7w15eWoeiDrt3IRfytAkvDXyn+rhr8/fahbbhXFUFq2BfjbpMZlas/UEkg6XpyypDVAh+dOniyyXwNdr+2q/b7t5eMamy7TdBxrQmvD8nrSz72iFi01UGjk8Gv38tI9RUwv5MVDiQxVxEw1/BaDxPIFyYPcZaO24iTRl5Zag6eZB5LVAXeluj")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_mml50")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_sj4yn"]
 _surfaces = [{
 "aabb": AABB(-0.14755028, -0.2233181, -0.05330476, 0.30610493, 0.46470737, 0.10660958),
@@ -4892,8 +4860,18 @@ transform = Transform3D(100, 0, 0, 0, -1.6292068e-05, 100, 0, -100, -1.6292068e-
 mesh = SubResource("ArrayMesh_5ytb2")
 skeleton = NodePath("")
 
-[node name="Wall" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode" instance=ExtResource("26_rcqwp")]
+[node name="Wall" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(100, 0, 0, 0, -4.371139e-06, 100, 0, -100, -4.371139e-06, -859.7895, 125.58271, -706.4282)
+script = null
 
 [node name="Wall_01" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
 transform = Transform3D(100, 0, 0, 0, -9.4446295e-06, 100, 0, -57.970722, -1.6292068e-05, -385.6287, 122.88184, -706.4282)
@@ -5124,12 +5102,8 @@ transform = Transform3D(64.29924, 0, 0, 0, -1.04756755e-05, 64.29924, 0, -64.299
 mesh = SubResource("ArrayMesh_pj7oa")
 skeleton = NodePath("")
 
-[node name="Sweets_05" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
-transform = Transform3D(99.714806, 0, 0, 0, -1.3986526e-05, 85.84869, 0, -85.84869, -1.3986526e-05, -790.60614, 11.607059, 662.34393)
-
-[node name="Sweets_05_Sweets_01_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode/Sweets_05"]
-mesh = SubResource("ArrayMesh_j1ghd")
-skeleton = NodePath("")
+[node name="Sweets_05" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode" instance=ExtResource("31_ly3yd")]
+transform = Transform3D(99.714806, 0, 0, 0, -3.7525654e-06, 85.84869, 0, -85.84869, -3.7525654e-06, -790.60614, 11.607059, 662.34393)
 
 [node name="Sweets_03" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
 transform = Transform3D(35.854095, -58.77573, 4.437444e-06, 0, 5.19791e-06, 68.848404, -58.77573, -35.854095, 2.7069088e-06, -788.3324, 12.73124, 629.2802)

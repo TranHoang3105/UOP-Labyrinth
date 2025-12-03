@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=4 uid="uid://bywjhcf5316w0"]
+
+[ext_resource type="Texture2D" uid="uid://d4cillfpdj7av" path="res://Assets/Map/halloween_29.png" id="1_i8fsb"]
+[ext_resource type="Script" uid="uid://bq1opwqumpbc7" path="res://Script/Candy/sweets_candy.gd" id="1_pn57d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arhit"]
+resource_name = "Sweets_01"
+cull_mode = 2
+albedo_texture = ExtResource("1_i8fsb")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mml50"]
+_surfaces = [{
+"aabb": AABB(-0.11901918, -0.07151699, -0.07863314, 0.24676555, 0.15033817, 0.15167934),
+"format": 34896613377,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwAEAAAABAAFAAAABQABAAAAAwAGAAQABAAHAAUABAAGAAcABwAIAAUACAABAAUABwAJAAgABwAGAAkACQAKAAgACgABAAgAAgABAAoACQALAAoACwACAAoACwADAAIACQAGAAsACwAGAAMAAQAMAA0AAQANAAwAAQAOAA0AAQANAA4AAQAMAA8AAQAPAAwAAQAQAA4AAQAOABAAAQAPABAAAQAQAA8ABgARABIABgASABEABgASABMABgATABIABgARABQABgAUABEABgATABUABgAVABMABgAVABQABgAUABUA"),
+"name": "Sweets_01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 22,
+"vertex_data": PackedByteArray("QJv//+1zAACeyg9+V4EAAECb7rL//wAAtmXusv//AAC2Zf//7XMAAECbaZEAAAAAWTZwfcWBAAC2ZWmRAAAAAECbAABrRAAAtmUAAGtEAABAm7YUoeIAALZlthSh4gAA//8PkwMXAAD//8sbIU8AAP//yCzl0AAA///D7Rl2AAD//42u++gAAAAAcrFE/AAAAADXF8LfAAAAALoDJ0YAAAAARPxHdAAAAADnkLoDAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j1ghd"]
+resource_name = "Sketchfab_Scene_Sweets_05_Sweets_01_0"
+_surfaces = [{
+"aabb": AABB(-0.11901918, -0.07151699, -0.07863314, 0.24676555, 0.15033817, 0.15167934),
+"attribute_data": PackedByteArray("XtlqDfDKUxGj0wwfGMEMH13KhAJdu2oNipaVue+GPrqji5WqAXpQsKOLlsgBetvC+WBn3BFrM9ARa0DbEWua6Kthj9p6ahTQemqf3YNLy/abVff8m1UE7mM8QvR7Rhn9e0YE7rJt+ffKdwTuynfB+6thX916ar3memqT16th0dt6ajfiemrr0qthQN56asnaemq56CNhgNw2agno+2pY0flgZ9wRa0DbEWsz0BFrmuirYY/aemqf3XpqFNCDS8v2m1UE7ptV9/xjPEL0e0YE7ntGGf2ybfn3ynfB+8p3BO6rYV/demqT13pqvearYdHbemrr0npqN+KrYUDeemq56HpqydojYYDc+2pY0TZqCeikyxUkHtk0LqTLNC4e2RUkXbsVJF27NC5m3hqiJu85rGbeOawm7xqiyfDxLmbeEDnJ8BA5Zt7xLqDwGD5m3jhIoPA4SGbeGD4="),
+"format": 34896613399,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAABAAAAAwABAAUABQABAAQABgAHAAgACAAHAAkACgAHAAYACQAHAAsACwAHAAoADAANAA4ADAAOAA8AEAARABIAEwAUABUAFgAXABgAGQAaABsAHAAdAB4AHwAgACEAIgAjACQAJQAmACcAKAApACoAKAArACkALAAtAC4ALwAwADEAMgAzADQANQA2ADcAOAA5ADoAOwA8AD0APgA/AEAAQQBCAEMARABFAEYARABHAEUASABEAEYASABGAEkASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMA"),
+"material": SubResource("StandardMaterial3D_arhit"),
+"name": "Sweets_01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 86,
+"vertex_data": PackedByteArray("QJv//+1zXAWeyg9+V4G2IECb7rL//5crQJu2FKHiVUNAm2mRAAB9B0CbAABrRMwstmUAAGtEf9VZNnB9xYF+8LZlthSh4rTFtmXusv//b+G2ZWmRAADy+rZl///tc3H7nsoPfleBsCL//w+TAxeX6P//w+0ZdqPK//+Nrvvol7lZNnB9xYH3MgAAcrFE/ObdAABE/Ed03uieyg9+V4HD+f//ja776DpX///ILOXQalGeyg9+V4Fb2f//yCzl0I5F///LGyFP7Cyeyg9+V4FVOv//yxshT9rl//8PkwMXL/1ZNnB9xYG8zAAA1xfC3wkEAABysUT8QwVZNnB9xYEV4AAAugMnRkYZAADXF8LfyiFZNnB9xYEDAwAA55C6A03YAAC6AydGjdFZNnB9xYE65gAARPxHdIwoAADnkLoDZySeyg9+V4GSK///w+0Zdrw6//8PkwMX4kb//42u++iGHVk2cH3FgdwtAABE/Ed0eB8AAHKxRPwcHp7KD35XgVL+///ILOXQ9+z//42u++iV9p7KD35XgXvV///LGyFP277//8gs5dB72p7KD35XgXpA//8PkwMXkVr//8sbIU8OTFk2cH3FgWe/AABysUT8YdYAANcXwt9I01k2cH3FgcnTAADXF8LfuOQAALoDJ0b53lk2cH3FgScEAAC6AydG2wIAAOeQugORBVk2cH3Fgc3pAADnkLoDQuwAAET8R3TO9LZl///tc9fjQJtpkQAAIe1Am///7XNVzrZlaZEAAEH7tmXusv//R9NAm+6y///ctLZlaZEAANz1QJsAAGtEvvRAm2mRAABx77ZlAABrRMTTtmUAAGtEzhdAm7YUoeJUSECbAABrRBUmtmW2FKHidSa2ZbYUoeLPO0Cb7rL//6VDQJu2FKHiXzS2Ze6y//+gNI03EhSmKMosqx9JCfMAs8X+NXY4tBrMWGYiu4wZUYGkYk4aeKxyQJuZQCGuEc+1HPMqcyuI2cTBEeAYvoPbQ9cwxH7P6R1vH2gxqR30w/p+Hpej3MxQidmDsSVZd02Xop08U6JukmMZmTM6fE76LlKLg/vjAhEM1Rqrp4g2XnS2Wp8+SeibW1kwSE6Yx4sBCfN7jiTb84S7jkQNDZpVJhgnKwwqax9TP1gnOyE3JQtAF9E82PnLjehVv6/dpb5LfgTO4ISSBcev0apAVl25XmE7w15eWoeiDrt3IRfytAkvDXyn+rhr8/fahbbhXFUFq2BfjbpMZlas/UEkg6XpyypDVAh+dOniyyXwNdr+2q/b7t5eMamy7TdBxrQmvD8nrSz72iFi01UGjk8Gv38tI9RUwv5MVDiQxVxEw1/BaDxPIFyYPcZaO24iTRl5Zag6eZB5LVAXeluj")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mml50")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pn57d"]
+points = PackedVector3Array(-0.020998955, 0.013864964, -0.07863314, -0.020998955, -0.07151699, -0.03810019, -0.11901918, 0.013570644, -0.076435745, -0.020998955, 0.07882118, -0.009949833, 0.030619875, 0.013864964, -0.07863314, 0.030619875, -0.07151699, -0.03810019, -0.020998955, -0.059361614, 0.05564525, -0.11901918, -0.06933903, -0.037075732, -0.11901918, 0.076628506, -0.009741969, -0.020998955, 0.03355491, 0.0730462, 0.030619875, 0.07882118, -0.009949833, -0.11901918, 0.032686673, 0.07083396, 0.12774637, 0.014836222, -0.06500338, 0.12774637, -0.055197, -0.03176042, 0.030619875, -0.059361614, 0.05564525, -0.11901918, -0.057522118, 0.053937815, 0.030619875, 0.03355491, 0.0730462, 0.12774637, 0.06810796, -0.008672975, 0.12774637, -0.045219585, 0.045133404, 0.12774637, 0.030979618, 0.059401594)
+
+[node name="Sweets_05" type="Node3D"]
+transform = Transform3D(0.896, 0, 0, 0, -3.3701482e-08, 0.771, 0, -0.771, -3.3701482e-08, 0, 0, 0)
+script = ExtResource("1_pn57d")
+
+[node name="Sweets_05_Sweets_01_0" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_j1ghd")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="Sweets_05_Sweets_01_0"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sweets_05_Sweets_01_0/Area3D"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_pn57d")

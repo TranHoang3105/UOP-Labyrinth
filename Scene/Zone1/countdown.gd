@@ -1,35 +1,32 @@
 extends Label
 
-@export var total_time: float = 60.0   # 测试用 5 秒
 @export var failure_scene_path := "res://Scene/Failure screen/Failurescreen.tscn"
 
-var remaining_time: float = 0.0
-var is_paused: bool = false
-
 func _ready() -> void:
-	remaining_time = total_time
 	add_theme_color_override("font_color", Color.RED)
-	update_label()
-	# 暂停时停止 _process
-	process_mode = 0  # 0 = STOP, 1 = ALWAYS
+	#update_display()
+	
+	# Connect to TimerManager
+	TimerManager.time_updated.connect(_on_time_updated)
+	TimerManager.game_over.connect(_on_game_over)
 
-func _process(delta: float) -> void:
-	if is_paused:
-		return
+func _on_time_updated(current_time: float):
+	text = format_time(current_time)
+	
+	# Change color based on time remaining
+	if current_time < 60:
+		add_theme_color_override("font_color", Color.RED)
+	elif current_time < 120:
+		add_theme_color_override("font_color", Color.ORANGE)
+	else:
+		add_theme_color_override("font_color", Color.WHITE)
 
-	remaining_time -= delta
-	if remaining_time <= 0:
-		remaining_time = 0
-		update_label()
-		go_to_failure_screen()
-		return
+func format_time(seconds: float) -> String:
+	var minutes = int(seconds) / 60
+	var secs = int(seconds) % 60
+	return "%02d:%02d" % [minutes, secs]
 
-	update_label()
-
-func update_label() -> void:
-	text = str(int(ceil(remaining_time)))
-
-func go_to_failure_screen() -> void:
+func _on_game_over():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file(failure_scene_path)

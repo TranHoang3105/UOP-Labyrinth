@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://nr4gaishufla"]
+
+[ext_resource type="PackedScene" uid="uid://bxykvw4sx4k" path="res://Assets/Graveyard set/GLB format/crypt-door.glb" id="1_ctnre"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dj444"]
+points = PackedVector3Array(0, 0.049979314, -0.06250001, 0.049971614, 0, -0.06250001, 0, 0.049979314, 0.062499993, 0, 0.56414515, -0.06250001, 0.049971614, 0, 0.062499993, 0.2799961, 0, -0.06250001, 0, 0.56414515, 0.062499993, 0.014536022, 0.6373085, -0.06250001, 0.2799961, 0, 0.062499993, 0.3299677, 0.049979314, -0.06250001, 0.014536022, 0.6373085, 0.062499993, 0.049842406, 0.69010454, -0.06250001, 0.3299677, 0.049979314, 0.062499993, 0.33, 0.56414515, -0.06250001, 0.049842406, 0.69010454, 0.062499993, 0.10265662, 0.7254223, -0.06250001, 0.33, 0.56414515, 0.062499993, 0.31543168, 0.6373085, -0.06250001, 0.10265662, 0.7254223, 0.062499993, 0.1649677, 0.73784494, -0.06250001, 0.31543168, 0.6373085, 0.062499993, 0.28012532, 0.69010454, -0.06250001, 0.1649677, 0.73784494, 0.062499993, 0.22731109, 0.7254223, -0.06250001, 0.28012532, 0.69010454, 0.062499993, 0.22731109, 0.7254223, 0.062499993)
+
+[node name="crypt-door2" instance=ExtResource("1_ctnre")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="crypt-door/door" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="crypt-door/door/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_dj444")

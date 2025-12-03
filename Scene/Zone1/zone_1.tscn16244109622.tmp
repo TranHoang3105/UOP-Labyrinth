@@ -73,12 +73,15 @@ transform = Transform3D(34.99901, 0, -0.22566895, 0, 1, 0, 0.26328042, 0, 29.999
 material_override = SubResource("StandardMaterial3D_7eqqd")
 mesh = SubResource("PlaneMesh_7eqqd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Map/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, -9.313226e-10, 0, 1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(2.4999998, 0, -1.8626451e-09, 0, 2.5, 0, -1.8626451e-09, 0, 2.499999, 0, -1.3012888, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D/Area3D"]
+transform = Transform3D(2.4999998, 0, 0, 0, 2.5, 0, 0, 0, 2.4999993, 0, -1.3012888, 0)
 shape = SubResource("BoxShape3D_qup8a")
+
+[node name="Sweets_05" parent="Map" instance=ExtResource("2_snhcr")]
+transform = Transform3D(0.99, 0, 0, 0, -3.7242103e-08, 0.852, 0, -0.852, -3.7242103e-08, 27, 0, 3)
 
 [node name="CanvasLayer_Countdown" type="CanvasLayer" parent="."]
 
@@ -213,7 +216,7 @@ transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, -6.2149043, 0, 6.743623
 [node name="Brick" type="Node3D" parent="Walls"]
 
 [node name="long_brick-wall4" parent="Walls/Brick" instance=ExtResource("10_funos")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -23, 0, -29)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -29, 0, -29)
 
 [node name="brick-wall-curve-small" parent="Walls/Brick" instance=ExtResource("10_nwole")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 34, 0, -29)
@@ -240,25 +243,22 @@ transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 34
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 34, 0, 29)
 
 [node name="brick-wall" parent="Walls/Brick" instance=ExtResource("12_avmvt")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -29, 0, 31)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -35, 0, 31)
 
 [node name="brick-wall2" parent="Walls/Brick" instance=ExtResource("12_avmvt")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -28, 0, -29)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -34, 0, -29)
 
 [node name="long_brick-wall7" parent="Walls/Brick" instance=ExtResource("10_funos")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -20.875599, 0, 31)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -27, 0, 31)
 
 [node name="brick-wall4" parent="Walls/Brick" instance=ExtResource("12_avmvt")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -26, 0, 31)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -32, 0, 31)
 
 [node name="Grasses" type="Node3D" parent="."]
 
 [node name="Trees" type="Node3D" parent="."]
 
 [node name="Decorations" type="Node3D" parent="."]
-
-[node name="Sweets_05" parent="Decorations" instance=ExtResource("2_snhcr")]
-transform = Transform3D(0.99, 0, 0, 0, -3.7242103e-08, 0.852, 0, -0.852, -3.7242103e-08, 27, 0.92415214, 3)
 
 [node name="Well" parent="." instance=ExtResource("9_nwole")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.650788, -0.048551176, 14.978609)
