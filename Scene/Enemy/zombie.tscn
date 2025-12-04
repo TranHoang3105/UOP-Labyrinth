@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://camb0m8pyuy2a"]
+
+[ext_resource type="PackedScene" uid="uid://dvovpfmv81ysb" path="res://Assets/Graveyard set/GLB format/character-zombie.glb" id="1_orgnx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_orgnx"]
+radius = 0.41015625
+height = 0.9211426
+
+[node name="zombie" instance=ExtResource("1_orgnx")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="character-zombie/root" index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="character-zombie/root/Area3D" index="0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.015487641, 0.40491733, -1.443823e-15)
+shape = SubResource("CapsuleShape3D_orgnx")

@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://7i6xrafmqu1w" path="res://Assets/Map/Decorations/scarecrow.tscn" id="32_0hbvu"]
 [ext_resource type="PackedScene" uid="uid://cqfewv3ymbae8" path="res://Assets/Map/Pumpkin/pumpkin_03_001.tscn" id="32_4k6ea"]
 [ext_resource type="PackedScene" uid="uid://flhv38oof0tb" path="res://Assets/Lightpost/lightpost_single.tscn" id="33_0hrmi"]
-[ext_resource type="PackedScene" path="res://Assets/Map/Bench/bench_dec.tscn" id="33_4k6ea"]
+[ext_resource type="PackedScene" uid="uid://tccjai38v8g1" path="res://Assets/Map/Bench/bench_dec.tscn" id="33_4k6ea"]
 [ext_resource type="PackedScene" uid="uid://cs5qkcv7qp4c3" path="res://Assets/Map/Graveyard/stone_02.tscn" id="37_jl7oh"]
 [ext_resource type="PackedScene" uid="uid://7nvs0crp1e6j" path="res://Assets/Map/Graveyard/stone_03.tscn" id="38_n4eqk"]
 [ext_resource type="PackedScene" uid="uid://u0oyjpx3xt3l" path="res://Assets/Map/Graveyard/stone_05.tscn" id="39_el5rf"]
@@ -208,7 +208,7 @@ text = "PAUSE"
 horizontal_alignment = 1
 
 [node name="Player" parent="." instance=ExtResource("4_qup8a")]
-transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 30.566523, 1.1387722, 2.721345)
+transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 32.265656, 1.1387722, 1.8904941)
 
 [node name="AudioStreamPlayer_walk" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("17_nyuku")
@@ -1317,6 +1317,7 @@ transform = Transform3D(1.3855212, 0, -1.4423381, 0, 2, 0, 1.4423381, 0, 1.38552
 [node name="BackGround" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_ts663")
 autoplay = true
+playback_type = 1
 
 [node name="Lightpost" type="Node3D" parent="."]
 
@@ -1785,3 +1786,9 @@ sgt_tool_shape = {
 }
 metadata/_custom_type_script = "uid://2juaclm8gc1n"
 metadata/SimpleGrassTextured = "2.0.5"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Ghost" type="Node3D" parent="Enemies"]
+
+[node name="Zombie" type="Node3D" parent="Enemies"]

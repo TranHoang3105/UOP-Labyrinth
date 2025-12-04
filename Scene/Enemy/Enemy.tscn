@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d1p3u0c03x7rh" path="res://Assets/Graveyard set/GLB format/Textures/colormap.png" id="2_y4lbw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nn6od"]
-height = 1.7104492
+radius = 0.37402344
+height = 1.1295166
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlhpv"]
 resource_name = "colormap"
@@ -573,13 +574,14 @@ states/idle/position = Vector2(217.92015, 100.47999)
 states/sprint/node = SubResource("AnimationNodeAnimation_i2akm")
 states/sprint/position = Vector2(409.86017, 93.12998)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_m47ht"), "idle", "sprint", SubResource("AnimationNodeStateMachineTransition_clt2m"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_isy3k"), "sprint", "die", SubResource("AnimationNodeStateMachineTransition_y4iy7")]
-graph_offset = Vector2(-321.21487, -167.12251)
+graph_offset = Vector2(-321.21487, -82.54639)
 
 [node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.39924896, 0)
 script = ExtResource("1_rxmje")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0425038, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007171929, 1.2831154, 0.004388829)
 shape = SubResource("CapsuleShape3D_nn6od")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

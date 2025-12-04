@@ -46,9 +46,7 @@ func _unhandled_input(event: InputEvent):
 		camera.rotate_x(-event.relative.y * SENS)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
-# ---------------------
-# Physics Process
-# ---------------------
+
 func _physics_process(delta: float) -> void:
 	# Gravity
 	if not is_on_floor():
@@ -91,17 +89,11 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-# ---------------------
-# Head Bob
-# ---------------------
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	return pos
 
-# ---------------------
-# Footstep Sound Control
-# ---------------------
 func stop_footsteps():
 	if walk_sound.playing:
 		walk_sound.stop()
@@ -118,9 +110,7 @@ func play_run_sound():
 	if not run_sound.playing:
 		run_sound.play()
 
-# ---------------------
-# Candy Collect Functions
-# ---------------------
+
 func add_time_with_candy_sound(seconds: float) -> void:
 	TimerManager.add_time(seconds)
 	if collect_sound:
@@ -128,9 +118,6 @@ func add_time_with_candy_sound(seconds: float) -> void:
 		collect_sound.play()
 	print("🎵 Added ", seconds, " seconds and played candy sound!")
 
-# ---------------------
-
-# ---------------------
 func collect_candy(candy_node):
 	GameManager.add_candy(1)
 	add_time_with_candy_sound(10.0)
