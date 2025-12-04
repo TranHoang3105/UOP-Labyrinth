@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=35 format=3 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="1_qup8a"]
 [ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="2_snhcr"]
@@ -19,7 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://dpehh7v78dc38" path="res://Assets/Map/Wall/Brick/brick_wall_section.tscn" id="11_momr4"]
 [ext_resource type="PackedScene" uid="uid://jk5714pi36xo" path="res://Assets/Map/Wall/Brick/brick_wall.tscn" id="12_avmvt"]
 [ext_resource type="PackedScene" uid="uid://bnda4yknfgjh2" path="res://Assets/Well/road.tscn" id="13_momr4"]
+[ext_resource type="PackedScene" uid="uid://da67cn6kxlvxe" path="res://Assets/UOP building/Burns tower/Burns tower.glb" id="13_nch2b"]
 [ext_resource type="PackedScene" uid="uid://bcmmvkmcpauow" path="res://Assets/Well/long_road.tscn" id="14_avmvt"]
+[ext_resource type="PackedScene" uid="uid://d4dprq3po8484" path="res://Assets/UOP building/Knoles Hall/Knoles Hall.glb" id="14_nfqus"]
 [ext_resource type="AudioStream" uid="uid://buhg2xe2uwmok" path="res://Sounds Effect/Player/walk-mixkit-footsteps-on-heels-on-the-pavement-542.wav" id="17_nyuku"]
 [ext_resource type="AudioStream" uid="uid://1tb5dbk1qb3y" path="res://Sounds Effect/Player/run-fast-345728.mp3" id="18_6gna6"]
 [ext_resource type="PackedScene" uid="uid://dscnnea5qunlb" path="res://Assets/Graveyard set/House/mansion1.tscn" id="19_cwqc1"]
@@ -170,6 +172,12 @@ transform = Transform3D(3, 0, 5.2453663e-07, 0, 3, 0, -5.2453663e-07, 0, 3, -20,
 
 [node name="Mansion2" parent="House" instance=ExtResource("19_cwqc1")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 8, 0, -31.921415)
+
+[node name="Knoles Hall" parent="House" instance=ExtResource("14_nfqus")]
+transform = Transform3D(-4.5, 0, -6.794811e-07, 0, 4.5, 0, 6.794811e-07, 0, -4.5, -30.3032, 0, -21.934055)
+
+[node name="Burns tower" parent="House" instance=ExtResource("13_nch2b")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -3.5354576, 0, -21.934055)
 
 [node name="Walls" type="Node3D" parent="."]
 
