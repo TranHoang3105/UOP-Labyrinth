@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://dfji7yfohepq4"]
+[gd_scene load_steps=6 format=4 uid="uid://dfji7yfohepq4"]
 
 [ext_resource type="Texture2D" uid="uid://dfxcw25s23o2o" path="res://Assets/Map/halloween_4.png" id="1_dbfyh"]
 
@@ -39,9 +39,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_y14gk")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dbfyh"]
+points = PackedVector3Array(0.043348372, 0.7374697, 1.1322083, -0.044329256, 0.7374697, 1.1322083, 0.043348372, 0.6751169, 1.1322083, 0.18119204, 0.7374697, 0.992815, 0.4629355, 0.7594869, 0.38514337, 0.2504303, 0.7594869, 0.5334921, 0.18453646, 0.7594869, 0.57281816, -0.18226334, 0.7374697, 0.992815, -0.044329256, 0.6751169, 1.1322083, -0.18181139, 0.7594869, 0.57281816, -0.24752443, 0.7594869, 0.5334921, -0.45713723, 0.7594869, 0.38514337, 0.45715064, -1.039936, 0.051585853, 0.18119204, 0.6751169, 0.992815, 0.4629355, 0.7594869, 0.35853663, 0.45950073, 0.6097698, 0.38514337, -0.46048164, 0.6097698, 0.38514337, -0.18226334, 0.6751169, 0.992815, -0.45813152, -1.039936, 0.051585853, -0.45713723, 0.7594869, 0.35853663, 0.45715064, -1.039936, -0.19371518, 0.460495, 0.7594869, -0.19371518, -0.46048164, 0.6097698, 0.35853663, -0.45813152, -1.039936, -0.19371518, -0.4547871, 0.7594869, -0.19371518, -0.45813152, 0.6097698, -0.19371518)
+
 [node name="Stone_06" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, 1.5, 0, -1.5, -6.556708e-08, 0, 0, 0)
 
 [node name="Stone_06_Stone_06_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_1pguv")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stone_06_Stone_06_0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stone_06_Stone_06_0/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_dbfyh")

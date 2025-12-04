@@ -7,7 +7,7 @@ signal time_changed(new_time)
 signal game_over()
 
 # Timer Variables
-var current_time: float = 300.0  # 5 minutes default
+var current_time: float = 180.0 
 var max_time: float = 600.0      # 10 minutes max
 var is_game_active: bool = true
 
@@ -15,7 +15,7 @@ func _ready():
 	reset_timer()
 
 func reset_timer():
-	current_time = 300.0
+	current_time = 180.0
 	is_game_active = true
 	time_updated.emit(current_time)
 

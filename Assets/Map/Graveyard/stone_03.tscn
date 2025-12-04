@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://7nvs0crp1e6j"]
+[gd_scene load_steps=6 format=4 uid="uid://7nvs0crp1e6j"]
 
 [ext_resource type="Texture2D" uid="uid://bvnmtdkupmc1y" path="res://Assets/Map/halloween_7.png" id="1_tapbt"]
 
@@ -39,9 +39,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eo5ho")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tapbt"]
+points = PackedVector3Array(0.34500426, 0.08491907, -0.35083622, 0.34500426, -0.08491907, -0.35083622, 0.34500426, 0.08491907, -0.4432347, -0.34500438, 0.08491907, -0.35083622, 0.046198636, 0.04209379, 0.782495, 0.20559764, 0.04209379, 0.6815845, 0.2433536, 0.03851948, 0.6976217, 0.32149965, 0.03851948, 0.4290615, -0.34500438, -0.08491907, -0.35083622, 0.34500426, -0.08491907, -0.4432347, 0.32149965, -0.0385361, 0.4290615, 0.2433536, -0.0385361, 0.6976217, 0.20559764, -0.042110417, 0.6815845, 0.046198636, -0.042110417, 0.782495, -0.34500438, 0.08491907, -0.4432347, -0.32156733, 0.03851948, 0.4290615, -0.24342127, 0.03851948, 0.6976217, -0.20566532, 0.04209379, 0.6815845, -0.046266288, 0.04209379, 0.782495, 0.054641396, 0.03851948, 0.81691325, -0.34500438, -0.08491907, -0.4432347, -0.046266288, -0.042110417, 0.782495, -0.20566532, -0.042110417, 0.6815845, -0.24342127, -0.0385361, 0.6976217, -0.32156733, -0.0385361, 0.4290615, 0.054641396, -0.0385361, 0.81691325, -0.05477658, 0.03851948, 0.81691325, -0.05477658, -0.0385361, 0.81691325)
+
 [node name="Stone_03" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, 1.5, 0, -1.5, -6.556708e-08, 0, 0, 0)
 
 [node name="Stone_03_Stone_03_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_4ttdm")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stone_03_Stone_03_0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stone_03_Stone_03_0/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_tapbt")
