@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=58 format=4 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="1_qup8a"]
 [ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="2_snhcr"]
@@ -25,14 +25,15 @@
 [ext_resource type="PackedScene" uid="uid://t33nm0ploh4e" path="res://Assets/Map/Tree/tree.tscn" id="20_21li5"]
 [ext_resource type="PackedScene" uid="uid://b4ahav8qxoqwa" path="res://Assets/Map/Tree/tree_01.tscn" id="21_6ptmj"]
 [ext_resource type="PackedScene" uid="uid://cdyl3s37hyjfe" path="res://Assets/Map/Tree/tree_04.tscn" id="22_0hbvu"]
-[ext_resource type="AudioStream" uid="uid://dkog8gcngi8fv" path="res://Sounds Effect/Background/GameBack-mixkit-creepy-tomb-ambience-2500.wav" id="22_ts663"]
 [ext_resource type="PackedScene" uid="uid://dqdkqfg64j6ds" path="res://Assets/Map/Decorations/scarecrow_01.tscn" id="25_0hbvu"]
 [ext_resource type="PackedScene" uid="uid://d228ovxux8v8o" path="res://Assets/Map/Decorations/body_001.tscn" id="26_rug7y"]
 [ext_resource type="PackedScene" uid="uid://b3cdqqvpru436" path="res://Assets/Lightpost/lightpost_double.tscn" id="27_4k6ea"]
 [ext_resource type="PackedScene" uid="uid://ctrs5ahvm1wbb" path="res://Assets/Map/Decorations/body_01_001.tscn" id="27_xxxy4"]
 [ext_resource type="PackedScene" uid="uid://b5lnskl3nliea" path="res://Assets/Lightpost/lightpost_all.tscn" id="29_ed730"]
 [ext_resource type="PackedScene" uid="uid://crrhe2v1oh7ja" path="res://Assets/Map/Tree/tree_03.tscn" id="30_kbpru"]
+[ext_resource type="AudioStream" uid="uid://cknwcut0u3f56" path="res://Sounds Effect/Background/GameBack.wav" id="30_lpk8c"]
 [ext_resource type="PackedScene" uid="uid://chit3nsyrdswd" path="res://Assets/Map/Pumpkin/pumpkin_01_001.tscn" id="31_0hbvu"]
+[ext_resource type="Script" uid="uid://cgshob0kwiet2" path="res://Scene/Zone1/back_ground.gd" id="31_jq01e"]
 [ext_resource type="PackedScene" uid="uid://7i6xrafmqu1w" path="res://Assets/Map/Decorations/scarecrow.tscn" id="32_0hbvu"]
 [ext_resource type="PackedScene" uid="uid://cqfewv3ymbae8" path="res://Assets/Map/Pumpkin/pumpkin_03_001.tscn" id="32_4k6ea"]
 [ext_resource type="PackedScene" uid="uid://flhv38oof0tb" path="res://Assets/Lightpost/lightpost_single.tscn" id="33_0hrmi"]
@@ -1315,9 +1316,10 @@ transform = Transform3D(-1.5668472, 0, 1.2429806, 0, 2, 0, -1.2429806, 0, -1.566
 transform = Transform3D(1.3855212, 0, -1.4423381, 0, 2, 0, 1.4423381, 0, 1.3855212, 10.522568, 0, -2.4324565)
 
 [node name="BackGround" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_ts663")
+stream = ExtResource("30_lpk8c")
 autoplay = true
 playback_type = 1
+script = ExtResource("31_jq01e")
 
 [node name="Lightpost" type="Node3D" parent="."]
 

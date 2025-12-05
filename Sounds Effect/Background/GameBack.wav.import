@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cknwcut0u3f56"
+path="res://.godot/imported/GameBack.wav-541435d945f945dd3aa9daede7e9ff48.sample"
+
+[deps]
+
+source_file="res://Sounds Effect/Background/GameBack.wav"
+dest_files=["res://.godot/imported/GameBack.wav-541435d945f945dd3aa9daede7e9ff48.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

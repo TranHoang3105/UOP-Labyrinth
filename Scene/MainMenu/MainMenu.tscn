@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d03fy01p7yqe5"]
+[gd_scene load_steps=6 format=3 uid="uid://d03fy01p7yqe5"]
 
 [ext_resource type="Script" uid="uid://bulvjyfg1bj21" path="res://Scene/MainMenu/main_menu.gd" id="1_b4s8y"]
 [ext_resource type="FontFile" uid="uid://eny0ektjfrha" path="res://Assets/Fonts/Rubik80sFade-Regular.ttf" id="1_lck82"]
 [ext_resource type="Texture2D" uid="uid://basg1pdwhl7ym" path="res://Scene/MainMenu/Couverture-BXL-25-1024x576.jpg" id="2_x4kti"]
-[ext_resource type="AudioStream" uid="uid://qhw2ure025wf" path="res://Sounds Effect/Background/Main-mixkit-terror-transition-2484.wav" id="4_f0l23"]
+[ext_resource type="AudioStream" uid="uid://ddfn2jfkbesdj" path="res://Sounds Effect/Background/Main.wav" id="4_f0l23"]
+[ext_resource type="Script" uid="uid://usfyy0nh8yu3" path="res://Scene/MainMenu/audio_stream_player.gd" id="5_bqsmv"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -51,3 +52,5 @@ text = "Quit
 stream = ExtResource("4_f0l23")
 volume_db = -15.0
 autoplay = true
+playback_type = 1
+script = ExtResource("5_bqsmv")
