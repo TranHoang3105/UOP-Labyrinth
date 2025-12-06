@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://7a0le6p6fbv3"]
+[gd_scene load_steps=27 format=4 uid="uid://7a0le6p6fbv3"]
 
 [ext_resource type="Script" uid="uid://dynxmqoyo06qn" path="res://Scene/Enemy/Enemy.gd" id="1_rxmje"]
 [ext_resource type="Texture2D" uid="uid://d1p3u0c03x7rh" path="res://Assets/Graveyard set/GLB format/Textures/colormap.png" id="2_y4lbw"]
@@ -542,9 +542,6 @@ _data = {
 &"walk": SubResource("Animation_lf3mw")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nvenx"]
-animation = &"die"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75161"]
 animation = &"idle"
 
@@ -558,26 +555,21 @@ advance_mode = 2
 advance_mode = 2
 advance_condition = &"sprint"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_isy3k"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y4iy7"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y4lbw"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wutxb"]
 states/End/position = Vector2(860, 98)
 states/Start/position = Vector2(-43, 107.02001)
-states/die/node = SubResource("AnimationNodeAnimation_nvenx")
-states/die/position = Vector2(232.41013, -66.09747)
 states/idle/node = SubResource("AnimationNodeAnimation_75161")
 states/idle/position = Vector2(217.92015, 100.47999)
 states/sprint/node = SubResource("AnimationNodeAnimation_i2akm")
 states/sprint/position = Vector2(409.86017, 93.12998)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_m47ht"), "idle", "sprint", SubResource("AnimationNodeStateMachineTransition_clt2m"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_isy3k"), "sprint", "die", SubResource("AnimationNodeStateMachineTransition_y4iy7")]
-graph_offset = Vector2(-321.21487, -82.54639)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_m47ht"), "idle", "sprint", SubResource("AnimationNodeStateMachineTransition_clt2m"), "sprint", "idle", SubResource("AnimationNodeStateMachineTransition_y4lbw")]
+graph_offset = Vector2(-221.49486, -101.85893)
 
 [node name="Enemy" type="CharacterBody3D"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.39924896, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -2.8800876, 0)
 script = ExtResource("1_rxmje")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -591,7 +583,7 @@ shape = SubResource("CapsuleShape3D_nn6od")
 [node name="root" type="Node3D" parent="character-ghost"]
 
 [node name="torso" type="MeshInstance3D" parent="character-ghost/root"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1458523, -7.219114e-16)
+transform = Transform3D(0.043270625, 0, 0.9990634, 0, 1, 0, -0.9990634, 0, 0.043270625, 0, 1.1458524, -7.2191146e-16)
 mesh = SubResource("ArrayMesh_p3ehc")
 skeleton = NodePath("")
 

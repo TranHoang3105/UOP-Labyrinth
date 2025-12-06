@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=60 format=4 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="1_qup8a"]
 [ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="2_snhcr"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cfe1erhqqc3qt" path="res://Assets/Graveyard set/House/small_house.tscn" id="8_1tbaf"]
 [ext_resource type="PackedScene" uid="uid://drpx5farhnlaw" path="res://Assets/Map/Wall/Stone/stone_wall_column.tscn" id="8_aryjj"]
 [ext_resource type="PackedScene" uid="uid://bvh4uidexjlvd" path="res://Assets/Map/Wall/Stone/stone_wall.tscn" id="9_1tbaf"]
+[ext_resource type="PackedScene" uid="uid://7a0le6p6fbv3" path="res://Scene/Enemy/Enemy.tscn" id="9_jq01e"]
 [ext_resource type="PackedScene" uid="uid://gannjcimlo61" path="res://Assets/Map/Wall/Stone/pillar_square.tscn" id="10_cwqc1"]
 [ext_resource type="PackedScene" uid="uid://b6evaab5e3nws" path="res://Assets/Map/Wall/Brick/long_brick_wall.tscn" id="10_funos"]
 [ext_resource type="PackedScene" uid="uid://c58mrsdkmd4h4" path="res://Assets/Map/Wall/Brick/brick_wall_curve_small.tscn" id="10_nwole"]
@@ -48,6 +49,19 @@
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="45_lpk8c"]
 [ext_resource type="Script" uid="uid://2juaclm8gc1n" path="res://addons/simplegrasstextured/grass.gd" id="46_jq01e"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_jq01e"]
+vertices = PackedVector3Array(-1.3533859, 0.42989516, -1.0136108, 0.14661407, 0.42989516, -1.2636108, 0.14661407, 0.42989516, -37.26361, -1.6033859, 0.42989516, -0.01361084, -43.103386, 0.42989516, -37.51361, -43.353386, 0.42989516, -0.01361084, 0.8966141, 0.42989516, -1.2636108, 1.6466141, 0.42989516, -0.01361084, 43.396614, 0.42989516, -0.01361084, 43.396614, 0.42989516, -37.01361, -0.103385925, 0.42989516, 36.98639, -0.103385925, 0.42989516, 1.2363892, -1.1033859, 0.42989516, 1.2363892, -43.603386, 0.42989516, 36.73639, 1.3966141, 0.42989516, 0.98638916, 43.146614, 0.42989516, 37.23639)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 5), PackedInt32Array(2, 5, 4), PackedInt32Array(6, 1, 2), PackedInt32Array(6, 2, 7), PackedInt32Array(7, 2, 8), PackedInt32Array(8, 2, 9), PackedInt32Array(12, 11, 10), PackedInt32Array(12, 10, 3), PackedInt32Array(3, 10, 5), PackedInt32Array(5, 10, 13), PackedInt32Array(10, 11, 14), PackedInt32Array(14, 7, 10), PackedInt32Array(10, 7, 8), PackedInt32Array(10, 8, 15)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7eqqd"]
+albedo_texture = ExtResource("1_qup8a")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7eqqd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qup8a"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -65,15 +79,6 @@ fog_enabled = true
 fog_density = 0.0
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(1, 0.62352943, 0.5568628, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7eqqd"]
-albedo_texture = ExtResource("1_qup8a")
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_7eqqd"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qup8a"]
 
 [sub_resource type="FontFile" id="FontFile_qup8a"]
 cache/0/16/0/ascent = 0.0
@@ -138,6 +143,44 @@ buffer = PackedFloat32Array(0.9074885, 0, -0.42007694, 8.159866, 0, 1, 0, -0.070
 
 [node name="Zone1" type="Node3D"]
 
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_jq01e")
+
+[node name="Player" parent="NavigationRegion3D" instance=ExtResource("4_qup8a")]
+transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 32.265656, 1.1387722, 1.8904941)
+
+[node name="AudioStreamPlayer_walk" type="AudioStreamPlayer" parent="NavigationRegion3D/Player"]
+stream = ExtResource("17_nyuku")
+
+[node name="AudioStreamPlayer_run" type="AudioStreamPlayer" parent="NavigationRegion3D/Player"]
+stream = ExtResource("18_6gna6")
+
+[node name="AudioStreamPlayer_collect" type="AudioStreamPlayer" parent="NavigationRegion3D/Player"]
+stream = ExtResource("8_1i2ph")
+volume_db = 24.0
+
+[node name="Map" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map"]
+transform = Transform3D(34.99901, 0, -0.22566895, 0, 1, 0, 0.26328042, 0, 29.99915, -0.07254219, -0.018815994, -0.18558478)
+material_override = SubResource("StandardMaterial3D_7eqqd")
+mesh = SubResource("PlaneMesh_7eqqd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -9.313226e-10, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Map/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(2.4999998, 0, -1.8626451e-09, 0, 2.5, 0, -1.8626451e-09, 0, 2.499999, 0, -1.3012888, 0)
+shape = SubResource("BoxShape3D_qup8a")
+
+[node name="Enemy" parent="NavigationRegion3D" instance=ExtResource("9_jq01e")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.5998, -2.6388714, 2.592414)
+player_path = NodePath("../Player")
+
+[node name="Enemy2" parent="NavigationRegion3D" instance=ExtResource("9_jq01e")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16.02533, -2.6051502, 5.851193)
+player_path = NodePath("../Player")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0xm2m")
 
@@ -145,20 +188,6 @@ environment = SubResource("Environment_0xm2m")
 transform = Transform3D(1, 0, 0, 0, 0.29315612, 0.9560646, 0, -0.9560646, 0.29315612, -3.6860292, 27.243744, 2.664526)
 light_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
 light_negative = true
-
-[node name="Map" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(34.99901, 0, -0.22566895, 0, 1, 0, 0.26328042, 0, 29.99915, -0.07254219, -0.018815994, -0.18558478)
-material_override = SubResource("StandardMaterial3D_7eqqd")
-mesh = SubResource("PlaneMesh_7eqqd")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -9.313226e-10, 0, 1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(2.4999998, 0, -1.8626451e-09, 0, 2.5, 0, -1.8626451e-09, 0, 2.499999, 0, -1.3012888, 0)
-shape = SubResource("BoxShape3D_qup8a")
 
 [node name="CanvasLayer_Countdown" type="CanvasLayer" parent="."]
 
@@ -207,19 +236,6 @@ theme_override_fonts/font = ExtResource("3_qfali")
 theme_override_font_sizes/font_size = 100
 text = "PAUSE"
 horizontal_alignment = 1
-
-[node name="Player" parent="." instance=ExtResource("4_qup8a")]
-transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 32.265656, 1.1387722, 1.8904941)
-
-[node name="AudioStreamPlayer_walk" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("17_nyuku")
-
-[node name="AudioStreamPlayer_run" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("18_6gna6")
-
-[node name="AudioStreamPlayer_collect" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("8_1i2ph")
-volume_db = 24.0
 
 [node name="House" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.921415)
@@ -427,7 +443,7 @@ transform = Transform3D(1.436, 0, 0, 0, -6.276955e-08, 1.436, 0, -1.436, -6.2769
 transform = Transform3D(1.436, 0, 0, 0, -6.276955e-08, 1.436, 0, -1.436, -6.276955e-08, 3.1478138, 0, 23)
 
 [node name="Tree_17" parent="Trees" instance=ExtResource("21_6ptmj")]
-transform = Transform3D(1.436, 0, 0, 0, -6.276955e-08, 1.436, 0, -1.436, -6.276955e-08, 3.1478138, 0, 11)
+transform = Transform3D(1.436, 0, 0, 0, -6.276955e-08, 1.436, 0, -1.436, -6.276955e-08, 3.4235077, 0.15605783, 10.968809)
 
 [node name="Tree_18" parent="Trees" instance=ExtResource("21_6ptmj")]
 transform = Transform3D(1.436, 0, 0, 0, -6.276955e-08, 1.436, 0, -1.436, -6.276955e-08, 3.1478138, 0, 15)
