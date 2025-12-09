@@ -1,13 +1,14 @@
 extends Node3D
 
-@export var spin_speed: float = 2.0
-@export var float_height: float = 0.2
-@export var float_speed: float = 2.0
+
+@export var min_candy: int = 2
+@export var max_candy: int = 6
 
 var start_y: float
+var collected: bool = false
 
 func _ready():
-	add_to_group("candy")
+	add_to_group("candy_bowl")
 	start_y = global_position.y
 	
 	# Add an Area3D as child for collision detection
@@ -19,19 +20,17 @@ func _ready():
 	area.body_entered.connect(_on_body_entered)
 	add_child(area)
 
-func _process(delta):
-	# Floating animation
-	global_position.y = start_y + sin(Time.get_ticks_msec() * 0.001 * float_speed) * float_height
-	
-	# Spinning animation
-	rotate_y(delta * spin_speed)
-
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		collect()
 
 func collect():
-	GameManager.add_candy(1)
-	TimerManager.add_time(5.0)
-	print("🍬 Candy collected automatically!")
+	var random_amount = randi_range(min_candy, max_candy)
+	# Add candy and time
+	GameManager.add_candy(random_amount)
+	TimerManager.add_time(random_amount * 5.0)
+	
+	print("Collected candy bowl! +", random_amount, " candy")
 	queue_free()
+	
+	return random_amount

@@ -164,11 +164,18 @@ func collect_candy(candy_node):
 	GameManager.add_candy(1)
 	add_time_with_candy_sound(10.0)
 	candy_node.queue_free()
-	print("🎵 Collected 1 candy! +10 seconds")
+	print("Collected 1 candy! +5 seconds")
 
+# Update just the bowl collection part:
 func collect_candy_bowl(bowl_node):
-	var random_amount = randi_range(3, 5)
-	GameManager.add_candy(random_amount)
-	add_time_with_candy_sound(random_amount * 10.0)
-	bowl_node.queue_free()
-	print("🎵 Collected bowl with ", random_amount, " candies! +", random_amount * 10, " seconds")
+	# Call the bowl's collect() method if it exists
+	if bowl_node.has_method("collect"):
+		var amount = bowl_node.collect()  # This handles everything
+		print("Collected bowl with", amount, "candies!")
+	else:
+		# Fallback for old bowls
+		var random_amount = randi_range(2, 6)
+		GameManager.add_candy(random_amount)
+		add_time_with_candy_sound(random_amount * 10.0)
+		bowl_node.queue_free()
+		print("Collected bowl with ", random_amount, " candies! +", random_amount * 5, " seconds")

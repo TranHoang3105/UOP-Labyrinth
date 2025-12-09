@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=62 format=4 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="1_qup8a"]
 [ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="2_snhcr"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="45_lpk8c"]
 [ext_resource type="Script" uid="uid://2juaclm8gc1n" path="res://addons/simplegrasstextured/grass.gd" id="46_jq01e"]
 [ext_resource type="Script" uid="uid://c242or4pguh2r" path="res://Script/UI/candy_label.gd" id="49_xvioe"]
+[ext_resource type="PackedScene" uid="uid://bybd7isracy6g" path="res://Assets/Map/Candy/candy_bowl.tscn" id="50_dtwjb"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_jq01e"]
 vertices = PackedVector3Array(-1.3533859, 0.42989516, -1.0136108, 0.14661407, 0.42989516, -1.2636108, 0.14661407, 0.42989516, -37.26361, -1.6033859, 0.42989516, -0.01361084, -43.103386, 0.42989516, -37.51361, -43.353386, 0.42989516, -0.01361084, 0.8966141, 0.42989516, -1.2636108, 1.6466141, 0.42989516, -0.01361084, 43.396614, 0.42989516, -0.01361084, 43.396614, 0.42989516, -37.01361, -0.103385925, 0.42989516, 36.98639, -0.103385925, 0.42989516, 1.2363892, -1.1033859, 0.42989516, 1.2363892, -43.603386, 0.42989516, 36.73639, 1.3966141, 0.42989516, 0.98638916, 43.146614, 0.42989516, 37.23639)
@@ -1782,6 +1783,12 @@ transform = Transform3D(2, 0, 0, 0, -7.527101e-08, 1.722, 0, -1.722, -7.527101e-
 [node name="Sweets_14" parent="Candy" instance=ExtResource("2_snhcr")]
 transform = Transform3D(2, 0, 0, 0, -7.527101e-08, 1.722, 0, -1.722, -7.527101e-08, 7.386319, 0.67326, -2.60043)
 
+[node name="Sweets_15" parent="Candy" instance=ExtResource("2_snhcr")]
+transform = Transform3D(2, 0, 0, 0, -7.527101e-08, 1.722, 0, -1.722, -7.527101e-08, -11.206465, 0.28047013, 21.294697)
+
+[node name="Sweets_16" parent="Candy" instance=ExtResource("2_snhcr")]
+transform = Transform3D(2, 0, 0, 0, -7.527101e-08, 1.722, 0, -1.722, -7.527101e-08, -28.695778, 0.6914953, 24.114738)
+
 [node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="."]
 multimesh = SubResource("MultiMesh_yh371")
 script = ExtResource("46_jq01e")
@@ -1819,3 +1826,21 @@ offset_top = 2.0
 offset_right = 676.0
 offset_bottom = 64.0
 script = ExtResource("49_xvioe")
+
+[node name="Candy_Bowls" type="Node3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, -5.2453668e-08, 1.2, 0, -1.2, -5.2453668e-08, 9.341861, 0.61831814, -21.035978)
+
+[node name="Candy_Bowl" parent="Candy_Bowls" instance=ExtResource("50_dtwjb")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, -3.5527137e-15, 0, 3.5527137e-15, 0.99999994, 13.19199, -28.382477, 0.06956291)
+
+[node name="Candy_Bowl2" parent="Candy_Bowls" instance=ExtResource("50_dtwjb")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, -3.5527137e-15, 0, 3.5527137e-15, 0.99999994, 15.477072, -3.578452, 0.04522568)
+
+[node name="Candy_Bowl3" parent="Candy_Bowls" instance=ExtResource("50_dtwjb")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, -3.5527137e-15, 0, 3.5527137e-15, 0.99999994, 0, 0, 0)
+
+[node name="Candy_Bowl4" parent="Candy_Bowls" instance=ExtResource("50_dtwjb")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -24.516764, -26.441555, -0.012783587)
+
+[node name="Candy_Bowl5" parent="Candy_Bowls" instance=ExtResource("50_dtwjb")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.27787447, -3.994976, -0.005731404)
