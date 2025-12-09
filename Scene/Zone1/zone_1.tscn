@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=61 format=4 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="1_qup8a"]
 [ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="2_snhcr"]
@@ -38,7 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://7i6xrafmqu1w" path="res://Assets/Map/Decorations/scarecrow.tscn" id="32_0hbvu"]
 [ext_resource type="PackedScene" uid="uid://cqfewv3ymbae8" path="res://Assets/Map/Pumpkin/pumpkin_03_001.tscn" id="32_4k6ea"]
 [ext_resource type="PackedScene" uid="uid://flhv38oof0tb" path="res://Assets/Lightpost/lightpost_single.tscn" id="33_0hrmi"]
-[ext_resource type="PackedScene" uid="uid://tccjai38v8g1" path="res://Assets/Map/Bench/bench_dec.tscn" id="33_4k6ea"]
+[ext_resource type="PackedScene" path="res://Assets/Map/Bench/bench_dec.tscn" id="33_4k6ea"]
 [ext_resource type="PackedScene" uid="uid://cs5qkcv7qp4c3" path="res://Assets/Map/Graveyard/stone_02.tscn" id="37_jl7oh"]
 [ext_resource type="PackedScene" uid="uid://7nvs0crp1e6j" path="res://Assets/Map/Graveyard/stone_03.tscn" id="38_n4eqk"]
 [ext_resource type="PackedScene" uid="uid://u0oyjpx3xt3l" path="res://Assets/Map/Graveyard/stone_05.tscn" id="39_el5rf"]
@@ -48,6 +48,7 @@
 [ext_resource type="Shader" uid="uid://bi3o8elbtqoni" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="44_yh371"]
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="45_lpk8c"]
 [ext_resource type="Script" uid="uid://2juaclm8gc1n" path="res://addons/simplegrasstextured/grass.gd" id="46_jq01e"]
+[ext_resource type="Script" uid="uid://c242or4pguh2r" path="res://Script/UI/candy_label.gd" id="49_xvioe"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_jq01e"]
 vertices = PackedVector3Array(-1.3533859, 0.42989516, -1.0136108, 0.14661407, 0.42989516, -1.2636108, 0.14661407, 0.42989516, -37.26361, -1.6033859, 0.42989516, -0.01361084, -43.103386, 0.42989516, -37.51361, -43.353386, 0.42989516, -0.01361084, 0.8966141, 0.42989516, -1.2636108, 1.6466141, 0.42989516, -0.01361084, 43.396614, 0.42989516, -0.01361084, 43.396614, 0.42989516, -37.01361, -0.103385925, 0.42989516, 36.98639, -0.103385925, 0.42989516, 1.2363892, -1.1033859, 0.42989516, 1.2363892, -43.603386, 0.42989516, 36.73639, 1.3966141, 0.42989516, 0.98638916, 43.146614, 0.42989516, 37.23639)
@@ -187,7 +188,6 @@ environment = SubResource("Environment_0xm2m")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.29315612, 0.9560646, 0, -0.9560646, 0.29315612, -3.6860292, 27.243744, 2.664526)
 light_color = Color(0.69135684, 0.6913568, 0.69135684, 1)
-light_negative = true
 
 [node name="CanvasLayer_Countdown" type="CanvasLayer" parent="."]
 
@@ -1810,3 +1810,12 @@ metadata/SimpleGrassTextured = "2.0.5"
 [node name="Ghost" type="Node3D" parent="Enemies"]
 
 [node name="Zombie" type="Node3D" parent="Enemies"]
+
+[node name="Candy Counter" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Candy Counter"]
+offset_left = 524.0
+offset_top = 2.0
+offset_right = 676.0
+offset_bottom = 64.0
+script = ExtResource("49_xvioe")

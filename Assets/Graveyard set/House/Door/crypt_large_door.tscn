@@ -1,20 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://crtl86tmbqgyf"]
+[gd_scene load_steps=3 format=3 uid="uid://crtl86tmbqgyf"]
 
 [ext_resource type="PackedScene" uid="uid://c5o6hag6n68pf" path="res://Assets/Graveyard set/GLB format/crypt-large-door.glb" id="1_f3yk4"]
-[ext_resource type="Script" uid="uid://cfd2grctdte2o" path="res://Script/Door/Big_Door/crypt_large_door.gd" id="2_qns1n"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qns1n"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f3yk4"]
 points = PackedVector3Array(8.662937e-15, 0.049991485, -0.067499995, 0.049951054, -5.639933e-18, -0.067499995, 8.662937e-15, 0.049991485, 0.067499995, 8.662937e-15, 0.55844325, -0.067499995, 0.049951054, -5.639933e-18, 0.067499995, 0.5799872, -5.639933e-18, -0.067499995, 8.662937e-15, 0.55844325, 0.067499995, 0.01911707, 0.62087834, -0.067499995, 0.5799872, -5.639933e-18, 0.067499995, 0.62999994, 0.049991485, -0.067499995, 0.01911707, 0.62087834, 0.067499995, 0.07652995, 0.6764405, -0.067499995, 0.62999994, 0.049991485, 0.067499995, 0.62999994, 0.55844325, -0.067499995, 0.07652995, 0.6764405, 0.067499995, 0.1817355, 0.7218742, -0.067499995, 0.62999994, 0.55844325, 0.067499995, 0.61075956, 0.62087834, -0.067499995, 0.1817355, 0.7218742, 0.067499995, 0.3149383, 0.73909265, -0.067499995, 0.61075956, 0.62087834, 0.067499995, 0.5534083, 0.6764405, -0.067499995, 0.3149383, 0.73909265, 0.067499995, 0.4482028, 0.7218742, -0.067499995, 0.5534083, 0.6764405, 0.067499995, 0.4482028, 0.7218742, 0.067499995)
 
-[node name="crypt-large-door" instance=ExtResource("1_f3yk4")]
-transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 0, 0, 0)
-script = ExtResource("2_qns1n")
+[node name="crypt-large-door2" instance=ExtResource("1_f3yk4")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="door" parent="crypt-large-door" index="0"]
-transform = Transform3D(0.019913, 0, -0.99980175, 0, 1, 0, 0.99980175, 0, 0.019913, -0.315, 5.6399333e-18, 0)
+transform = Transform3D(1, 0, -3.8754095e-16, 0, 1, 0, 3.8754095e-16, 0, 1, -0.315, 5.639933e-18, 0)
 
-[node name="Area3D" type="Area3D" parent="crypt-large-door/door" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="crypt-large-door/door/Area3D" index="0"]
-transform = Transform3D(1, 0, 1.4901161e-08, 0, 1.0000001, 0, -1.4901161e-08, 0, 1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_qns1n")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="crypt-large-door" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.315, 5.639933e-18, 0)
+shape = SubResource("ConvexPolygonShape3D_f3yk4")

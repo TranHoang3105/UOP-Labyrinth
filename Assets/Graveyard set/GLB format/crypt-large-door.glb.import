@@ -37,6 +37,13 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:crypt-large-door": {
+"node/node_type": "StaticBody3D",
+"node/script": Resource("uid://cfd2grctdte2o", "res://Script/Door/Big_Door/crypt_large_door.gd")
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

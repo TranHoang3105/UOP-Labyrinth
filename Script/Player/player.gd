@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
-# ---------------------
+
 # Movement Variables
-# ---------------------
 var speed
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 7.0
@@ -14,9 +13,8 @@ const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
-# ---------------------
+
 # References
-# ---------------------
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var flashlight: Node3D = $Head/Flashlight
@@ -28,18 +26,27 @@ var t_bob = 0.0
 # Collect sound reference
 @onready var collect_sound = $AudioStreamPlayer_collect  # AudioStreamPlayer 
 
-# ---------------------
+# Interaction ray reference
+@onready var interaction_ray = $Head/Camera3D/InteractionRay
+
+
 # Ready
-# ---------------------
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("player")
 	print("Player ready. Walk/Run sounds loaded.")
-	# collect_sound 不在这里播放，避免开场就响
+	
+	# Make sure interaction ray is properly set up
+	if interaction_ray:
+		interaction_ray.enabled = true
+		interaction_ray.collide_with_areas = true
+		interaction_ray.collide_with_bodies = true
+		print("Interaction ray initialized")
+	else:
+		print("Warning: Interaction ray not found!")
 
-# ---------------------
+
 # Mouse Look
-# ---------------------
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENS)
@@ -62,6 +69,10 @@ func _physics_process(delta: float) -> void:
 	# Flashlight Toggle
 	if Input.is_action_just_pressed("toggle"):
 		flashlight.set_light()
+		
+	# Interaction (Press E)
+	if Input.is_action_just_pressed("interaction"):
+		try_interact()
 
 	# Movement
 	var input_dir = Input.get_vector("up", "down", "right", "left")
@@ -89,11 +100,15 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
+# Head Bob Function
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	return pos
 
+
+# Footstep Sound Functions
 func stop_footsteps():
 	if walk_sound.playing:
 		walk_sound.stop()
@@ -110,7 +125,34 @@ func play_run_sound():
 	if not run_sound.playing:
 		run_sound.play()
 
+# Interaction Functions
+func try_interact():
+	if interaction_ray and interaction_ray.is_colliding():
+		var collider = interaction_ray.get_collider()
+		print("Ray hit:", collider.name)
+		
+		if collider.is_in_group("door"):
+			# Halloween door interaction
+			print("Saying 'Trick or Treat!' to the door...")
+			if collider.has_method("try_open_with_candy"):
+				var success = collider.try_open_with_candy(GameManager.candy_count)
+				#if success and collect_sound:
+					#collect_sound.play()
+			
+		elif collider.is_in_group("candy"):
+			# Candy collection
+			print("🍬 Found candy!")
+			collect_candy(collider)
+			
+		elif collider.is_in_group("candy_bowl"):
+			# Bowl collection
+			print("🥣 Found candy bowl!")
+			collect_candy_bowl(collider)
+	else:
+		print("🎯 No object in sight to interact with")
 
+
+# Collection Functions
 func add_time_with_candy_sound(seconds: float) -> void:
 	TimerManager.add_time(seconds)
 	if collect_sound:

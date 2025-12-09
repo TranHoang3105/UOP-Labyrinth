@@ -1,38 +1,22 @@
+# SimpleInteractUI.gd
 extends Control
 
-@onready var interact_label = $Panel/Label
-@onready var panel = $Panel
-@onready var timer_label = $Panel/RequirementLabel
+@onready var label = $Label
 
 func _ready():
-	# Start hidden
-	panel.visible = false
+	visible = false
 
-func show_interact_prompt(object_name: String, requirement: int = 0):
-	interact_label.text = "Press E to interact with " + object_name
-	
+func show_interact_prompt(title: String, requirement: int = 0):
 	if requirement > 0:
-		var current_candy = GameManager.candy_count
-		var candy_text = "Needs %d candy (You: %d)" % [requirement, current_candy]
-		
-		if current_candy >= requirement:
-			timer_label.text = "[color=green]" + candy_text + "[/color]"
-		else:
-			timer_label.text = "[color=red]" + candy_text + "[/color]"
+		label.text = "%s\nNeed %d candy (You: %d)" % [title, requirement, GameManager.candy_count]
 	else:
-		timer_label.text = ""
-	
-	panel.visible = true
+		label.text = title
+	visible = true
 
 func hide_interact_prompt():
-	panel.visible = false
+	visible = false
 
-func update_candy_display(requirement: int):
-	if panel.visible and requirement > 0:
-		var current_candy = GameManager.candy_count
-		var candy_text = "Needs %d candy (You: %d)" % [requirement, current_candy]
-		
-		if current_candy >= requirement:
-			timer_label.text = "[color=green]" + candy_text + "[/color]"
-		else:
-			timer_label.text = "[color=red]" + candy_text + "[/color]"
+func _on_candy_changed(new_count: int):
+	if visible:
+		# Just update the entire text
+		show_interact_prompt("Trick or Treat!", 2)  # Hardcoded for testing
