@@ -4,9 +4,10 @@ var player = null
 var hp = 15.0
 var state_machine
 
-const SPEED = 5.0
+const SPEED = 3.0
 const ATTACK_RANGE = 3.0
 const DAMAGE = 2.0
+const DETECTION_RANGE = 15.0   # <-- Enemy begins chasing ONLY within this distance
 
 @export var player_path : NodePath
 
@@ -21,19 +22,25 @@ func _physics_process(_delta: float) -> void:
 	if player == null:
 		return
 
-	# Always chase player
-	nav_agent.set_target_position(player.global_position)
-	var next_nav_point = nav_agent.get_next_path_position()
+	var distance = global_position.distance_to(player.global_position)
 
-	velocity = (next_nav_point - global_position).normalized() * SPEED
-	move_and_slide()
+	# Only chase when the player is close enough
+	if distance <= DETECTION_RANGE:
+		nav_agent.set_target_position(player.global_position)
+		var next_nav_point = nav_agent.get_next_path_position()
 
-	# Animation logic
-	if target_in_range():
-		# Play sprint anim when attacking
-		state_machine.travel("sprint")
+		velocity = (next_nav_point - global_position).normalized() * SPEED
+		move_and_slide()
+
+		# Animation logic
+		if distance <= ATTACK_RANGE:
+			state_machine.travel("sprint")   # attacking / rushing
+		else:
+			state_machine.travel("run")      # chasing but not attacking
 	else:
-		# Otherwise no animation (idle)
+		# Player is far → idle and stop moving
+		velocity = Vector3.ZERO
+		move_and_slide()
 		state_machine.travel("idle")
 
 func target_in_range() -> bool:

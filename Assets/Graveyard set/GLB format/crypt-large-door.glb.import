@@ -41,7 +41,7 @@ _subresources={
 "nodes": {
 "PATH:crypt-large-door": {
 "node/node_type": "StaticBody3D",
-"node/script": Resource("uid://cfd2grctdte2o", "res://Script/Door/Big_Door/crypt_large_door.gd")
+"node/script": Resource("uid://cfd2grctdte2o", "res://Script/Door/crypt_large_door.gd")
 }
 }
 }

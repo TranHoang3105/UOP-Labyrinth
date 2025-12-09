@@ -38,7 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://7i6xrafmqu1w" path="res://Assets/Map/Decorations/scarecrow.tscn" id="32_0hbvu"]
 [ext_resource type="PackedScene" uid="uid://cqfewv3ymbae8" path="res://Assets/Map/Pumpkin/pumpkin_03_001.tscn" id="32_4k6ea"]
 [ext_resource type="PackedScene" uid="uid://flhv38oof0tb" path="res://Assets/Lightpost/lightpost_single.tscn" id="33_0hrmi"]
-[ext_resource type="PackedScene" path="res://Assets/Map/Bench/bench_dec.tscn" id="33_4k6ea"]
+[ext_resource type="PackedScene" uid="uid://tccjai38v8g1" path="res://Assets/Map/Bench/bench_dec.tscn" id="33_4k6ea"]
 [ext_resource type="PackedScene" uid="uid://cs5qkcv7qp4c3" path="res://Assets/Map/Graveyard/stone_02.tscn" id="37_jl7oh"]
 [ext_resource type="PackedScene" uid="uid://7nvs0crp1e6j" path="res://Assets/Map/Graveyard/stone_03.tscn" id="38_n4eqk"]
 [ext_resource type="PackedScene" uid="uid://u0oyjpx3xt3l" path="res://Assets/Map/Graveyard/stone_05.tscn" id="39_el5rf"]
