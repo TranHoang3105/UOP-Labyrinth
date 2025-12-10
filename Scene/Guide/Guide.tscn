@@ -1,0 +1,185 @@
+[gd_scene load_steps=12 format=3 uid="uid://bn2pvkb152lac"]
+
+[ext_resource type="Script" uid="uid://dt513km0p8put" path="res://Scene/Guide/Guide.gd" id="1_11nwq"]
+[ext_resource type="Texture2D" uid="uid://bvsq3lafqljbt" path="res://Scene/Guide/0505214578.jpg" id="2_o5n6b"]
+[ext_resource type="FontFile" uid="uid://eny0ektjfrha" path="res://Assets/Fonts/Rubik80sFade-Regular.ttf" id="2_yrmlt"]
+[ext_resource type="Texture2D" uid="uid://btklmuklehtt8" path="res://Scene/Guide/istockphoto-2133590271-612x612.jpg" id="4_rv324"]
+[ext_resource type="Texture2D" uid="uid://u8x3164mcaw" path="res://Scene/Guide/360_F_1569283057_5dxtlCdHMvg8SAMY7OE8VhApVWonGzC6.jpg" id="5_qg2a0"]
+[ext_resource type="Texture2D" uid="uid://ctj7p52bps5t6" path="res://Scene/Guide/360_F_523199806_CUR8GvYjPyVt8ReCxqXdTQBbYraoyE05.jpg" id="6_7prjr"]
+[ext_resource type="Texture2D" uid="uid://dnknc56e3yxu6" path="res://Scene/Guide/images.png" id="7_h3fvc"]
+[ext_resource type="Texture2D" uid="uid://bbawomeffd2o" path="res://Scene/Guide/e-key.jpg" id="8_xwnui"]
+[ext_resource type="Texture2D" uid="uid://b10nbpfo07wtk" path="res://Scene/Guide/istockphoto-1170123423-612x612.jpg" id="9_r3773"]
+[ext_resource type="Texture2D" uid="uid://rvo00i37p1vg" path="res://Scene/Guide/images (1).png" id="10_seyi7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_syaxu"]
+
+[node name="Guide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_11nwq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 1293.158
+offset_bottom = 699.0
+texture = ExtResource("2_o5n6b")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = -27.0
+offset_right = 1070.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0.10220405, 0.7233072, 0.99374837, 0.85490197)
+theme_override_fonts/font = ExtResource("2_yrmlt")
+theme_override_font_sizes/font_size = 128
+text = "Guide"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 1.0
+offset_right = 1154.0
+offset_bottom = 83.0
+alignment = 1
+
+[node name="Button_Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Quit
+"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 90.0
+offset_right = 1148.0
+offset_bottom = 256.0
+theme_override_colors/search_result_color = Color(1, 1, 1, 0)
+theme_override_colors/search_result_border_color = Color(1, 1, 1, 0.4)
+theme_override_colors/caret_background_color = Color(1, 1, 1, 0)
+theme_override_colors/selection_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9490196, 0.8901961, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/current_line_color = Color(1, 1, 1, 0.8)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_syaxu")
+text = "		You've awakened in a strange place where time is slipping away.Creatures lurk in the dark -they hunger not for flesh,but for candy.Candy is your lifeline -collect it to extend time,unlock doors,interact with object.Find the mysterious gate and escape before time runs out -lose your time,lose yourself."
+wrap_mode = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 215.0
+offset_right = 1082.0
+offset_bottom = 373.0
+theme_override_colors/font_color = Color(0.10220405, 0.7233072, 0.99374837, 0.85490197)
+theme_override_fonts/font = ExtResource("2_yrmlt")
+theme_override_font_sizes/font_size = 128
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 361.0
+offset_right = 175.0
+offset_bottom = 591.0
+theme_override_colors/search_result_color = Color(1, 1, 1, 0)
+theme_override_colors/search_result_border_color = Color(1, 1, 1, 0.4)
+theme_override_colors/caret_background_color = Color(1, 1, 1, 0)
+theme_override_colors/selection_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9490196, 0.8901961, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/current_line_color = Color(1, 1, 1, 0.8)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_syaxu")
+text = "Move:
+
+
+Jump:"
+wrap_mode = 1
+
+[node name="Istockphoto2133590271612x612" type="Sprite2D" parent="."]
+position = Vector2(211, 437.00003)
+scale = Vector2(0.24673203, 0.21078432)
+texture = ExtResource("4_rv324")
+
+[node name="360F15692830575DxtlCdHMvg8samy7oe8VhApVWonGzC6" type="Sprite2D" parent="."]
+position = Vector2(212, 577.00006)
+scale = Vector2(0.25555557, 0.30833334)
+texture = ExtResource("5_qg2a0")
+
+[node name="TextEdit3" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 356.0
+offset_right = 486.0
+offset_bottom = 647.0
+theme_override_colors/search_result_color = Color(1, 1, 1, 0)
+theme_override_colors/search_result_border_color = Color(1, 1, 1, 0.4)
+theme_override_colors/caret_background_color = Color(1, 1, 1, 0)
+theme_override_colors/selection_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9490196, 0.8901961, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/current_line_color = Color(1, 1, 1, 0.8)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_syaxu")
+text = "Sprint:
+
+
+Interact:"
+wrap_mode = 1
+
+[node name="TextEdit4" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 353.0
+offset_right = 940.0
+offset_bottom = 648.0
+theme_override_colors/search_result_color = Color(1, 1, 1, 0)
+theme_override_colors/search_result_border_color = Color(1, 1, 1, 0.4)
+theme_override_colors/caret_background_color = Color(1, 1, 1, 0)
+theme_override_colors/selection_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9490196, 0.8901961, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/current_line_color = Color(1, 1, 1, 0.8)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_syaxu")
+text = "Flashlight:
+
+
+Pause:"
+wrap_mode = 1
+
+[node name="360F523199806Cur8GvYjPyVt8ReCxqXdTqBbYraoyE05" type="Sprite2D" parent="."]
+position = Vector2(531.00006, 430.99997)
+scale = Vector2(0.40694454, 0.32222223)
+texture = ExtResource("6_7prjr")
+
+[node name="Images" type="Sprite2D" parent="."]
+position = Vector2(664, 431.00003)
+scale = Vector2(0.52666664, 0.5188889)
+texture = ExtResource("7_h3fvc")
+
+[node name="EKey" type="Sprite2D" parent="."]
+position = Vector2(588, 573)
+scale = Vector2(0.11270835, 0.10520828)
+texture = ExtResource("8_xwnui")
+
+[node name="Istockphoto1170123423612x612" type="Sprite2D" parent="."]
+position = Vector2(955, 579)
+scale = Vector2(0.20915033, 0.21568628)
+texture = ExtResource("9_r3773")
+
+[node name="Images(1)" type="Sprite2D" parent="."]
+position = Vector2(1004, 423)
+scale = Vector2(0.5311111, 0.5133333)
+texture = ExtResource("10_seyi7")
