@@ -145,21 +145,21 @@ buffer = PackedFloat32Array(0.9074885, 0, -0.42007694, 8.159866, 0, 1, 0, -0.070
 
 [node name="Zone1" type="Node3D"]
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_jq01e")
-
-[node name="Player" parent="NavigationRegion3D" instance=ExtResource("4_qup8a")]
+[node name="Player" parent="." instance=ExtResource("4_qup8a")]
 transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, 32.265656, 1.1387722, 1.8904941)
 
-[node name="AudioStreamPlayer_walk" type="AudioStreamPlayer" parent="NavigationRegion3D/Player"]
+[node name="AudioStreamPlayer_walk" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("17_nyuku")
 
-[node name="AudioStreamPlayer_run" type="AudioStreamPlayer" parent="NavigationRegion3D/Player"]
+[node name="AudioStreamPlayer_run" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("18_6gna6")
 
-[node name="AudioStreamPlayer_collect" type="AudioStreamPlayer" parent="NavigationRegion3D/Player"]
+[node name="AudioStreamPlayer_collect" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("8_1i2ph")
 volume_db = 24.0
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_jq01e")
 
 [node name="Map" type="Node3D" parent="NavigationRegion3D"]
 
@@ -176,12 +176,12 @@ transform = Transform3D(2.4999998, 0, -1.8626451e-09, 0, 2.5, 0, -1.8626451e-09,
 shape = SubResource("BoxShape3D_qup8a")
 
 [node name="Enemy" parent="NavigationRegion3D" instance=ExtResource("9_jq01e")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.5998, -2.6388714, 2.592414)
-player_path = NodePath("../Player")
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.5998, -2.5328152, 2.592414)
+player_path = NodePath("../../Player")
 
 [node name="Enemy2" parent="NavigationRegion3D" instance=ExtResource("9_jq01e")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16.02533, -2.6051502, 5.851193)
-player_path = NodePath("../Player")
+player_path = NodePath("../../Player")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0xm2m")
