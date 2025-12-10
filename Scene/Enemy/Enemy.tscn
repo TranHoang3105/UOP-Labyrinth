@@ -573,12 +573,13 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -2.8800876, 0)
 script = ExtResource("1_rxmje")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007171929, 1.2831154, 0.004388829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007171929, 0.4348601, 0.004388829)
 shape = SubResource("CapsuleShape3D_nn6od")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="character-ghost" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8274195, 0)
 
 [node name="root" type="Node3D" parent="character-ghost"]
 
