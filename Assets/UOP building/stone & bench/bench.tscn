@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://didmonvip1fjm"]
+
+[ext_resource type="PackedScene" uid="uid://b5f5vun2gx6g6" path="res://Assets/UOP building/stone & bench/bench.glb" id="1_1pupe"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hraws"]
+points = PackedVector3Array(-1.000388, -0.23823267, -2.3670342, -2.3243532, -0.07165903, -1.0002342, -1.000388, 0.87207484, -2.3670342, 0.99999714, -0.23823267, -2.3670342, 0.99999714, -1, -1.0002342, -1.000388, -0.8163842, -1.0002342, -2.3243532, 0.87207484, -1.0002342, -2.3243532, -0.07165903, 0.999995, 0.99999714, 0.87207484, -2.3670342, 2.5114098, -0.40902102, -1.0002342, 0.99999714, -1, 0.999995, -1.000388, -0.8163842, 0.999995, -2.3243532, 0.87207484, 0.999995, -1.000388, -0.52391833, 2.4263842, 2.5114098, 0.87207484, -1.0002342, 2.5114098, -0.40902102, 0.999995, 0.99999714, -0.52391833, 2.4263842, -1.000388, 0.87207484, 2.4263842, 2.5114098, 0.87207484, 0.999995, 0.99999714, 0.87207484, 2.4263842)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1pupe"]
+points = PackedVector3Array(-1, -1.0000005, -1, -1, 1, -1, 1, -1.0000005, -1, -1, -1.0000005, 3.6061616, 1, 1, -1, -1, 1, 0.99964046, 1, -1.0000005, 0.99964046, 0.99980426, -1.0000005, 3.6061616, -1, 0.99980426, 3.6061616, 1, 1, 0.99964046, 0.99980426, 0.99980426, 3.6061616)
+
+[node name="bench" instance=ExtResource("1_1pupe")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="立方体_005" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="立方体_005/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_hraws")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="立方体_006" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="立方体_006/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_1pupe")

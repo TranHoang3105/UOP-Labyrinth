@@ -7,7 +7,7 @@ signal time_changed(new_time)
 signal game_over()
 
 # Timer Variables
-var current_time: float = 30
+var current_time: float = 60
 var max_time: float = 600.0      # 10 minutes max
 var is_game_active: bool = true
 

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://by08oygh1j6cw"]
+
+[ext_resource type="PackedScene" uid="uid://bymbhaouvicom" path="res://Assets/Map/Fence/ironFence.glb" id="1_84qbf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4skp"]
+albedo_color = Color(0.3137255, 0.34117648, 0.3882353, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_asyeo"]
+points = PackedVector3Array(0.43745106, 0.8239, 0.44999558, 0.45996475, 0.75389755, 0.47249997, 0.45996475, 0.75389755, 0.4275, -0.43754894, 0.8239, 0.44999558, 0.45242757, 4.0607518e-15, 0.4649985, 0.5, 0.089922525, 0.45749706, 0.5, 0.62389296, 0.45749706, -0.46006265, 0.75389755, 0.47249997, 0.5, 0.62389296, 0.44249853, 0.5, 0.089922525, 0.44249853, 0.45242757, 4.0607518e-15, 0.43499705, -0.46006265, 0.75389755, 0.4275, -0.45252544, 4.0607518e-15, 0.4649985, -0.5, 0.62389296, 0.45749706, -0.5, 0.089922525, 0.45749706, -0.45252544, 4.0607518e-15, 0.43499705, -0.5, 0.089922525, 0.44249853, -0.5, 0.62389296, 0.44249853)
+
+[node name="ironFence" instance=ExtResource("1_84qbf")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="ironFence2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y4skp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ironFence2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ironFence2/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_asyeo")

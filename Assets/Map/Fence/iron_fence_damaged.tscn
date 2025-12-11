@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci8tyio5r1rbm"]
+
+[ext_resource type="PackedScene" uid="uid://rexamev7kcf2" path="res://Assets/Map/Fence/ironFenceDamaged.glb" id="1_0bq1i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bq1i"]
+albedo_color = Color(0.3137255, 0.34117648, 0.3882353, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0bq1i"]
+points = PackedVector3Array(0.23404461, 0.8436412, 0.44999558, 0.2519577, 0.77224904, 0.4275, 0.20702821, 0.7752203, 0.4275, -0.43754894, 0.8244932, 0.44999558, 0.20702821, 0.7752203, 0.47249997, 0.2519577, 0.77224904, 0.47249997, 0.45996475, 0.75442165, 0.47249997, 0.43745106, 0.8244932, 0.44999558, 0.45996475, 0.75442165, 0.4275, -0.46006265, 0.75442165, 0.4275, -0.46006265, 0.75442165, 0.47249997, 0.36589664, 0.74930453, 0.47249997, 0.45242757, 0.0005534632, 0.4649985, 0.5, 0.09051584, 0.45749706, 0.5, 0.6244301, 0.45749706, 0.5, 0.6244301, 0.44249853, 0.5, 0.09051584, 0.44249853, 0.45242757, 0.0005534632, 0.43499705, 0.36589664, 0.74930453, 0.4275, -0.26742363, 0.7498823, 0.4275, -0.45252544, 0.0005534632, 0.43499705, -0.5, 0.09051584, 0.44249853, -0.5, 0.6244301, 0.44249853, -0.5, 0.6244301, 0.45749706, -0.5, 0.09051584, 0.45749706, -0.45252544, 0.0005534632, 0.4649985, -0.26742363, 0.7498823, 0.47249997, -0.35346514, 0.00047092888, 0.4649985, -0.35346514, 0.00047092888, 0.43499705)
+
+[node name="ironFenceDamaged" instance=ExtResource("1_0bq1i")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="ironFenceDamaged2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0bq1i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ironFenceDamaged2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ironFenceDamaged2/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_0bq1i")

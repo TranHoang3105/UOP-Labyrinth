@@ -6,7 +6,7 @@ func _ready():
 	$VBoxContainer/Button_Guide.pressed.connect(_on_guide_pressed)
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scene/Zone1/zone_1.tscn")
+	get_tree().change_scene_to_file("res://Scene/Map/Main_World.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()
