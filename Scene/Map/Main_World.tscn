@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://bmcpj6frtoxf3"]
+[gd_scene load_steps=80 format=4 uid="uid://bmcpj6frtoxf3"]
 
 [ext_resource type="PackedScene" uid="uid://7a0le6p6fbv3" path="res://Scene/Enemy/Enemy.tscn" id="1_5gnux"]
 [ext_resource type="Script" uid="uid://cs6k0no2iiw3f" path="res://Scene/Map/countdown.gd" id="2_1d2w2"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ugpv5yiy64kh" path="res://Assets/Map/ground.jpg" id="12_inojl"]
 [ext_resource type="PackedScene" uid="uid://dshw5og747ckf" path="res://Assets/Graveyard set/House/mansion.tscn" id="13_qa4su"]
 [ext_resource type="PackedScene" uid="uid://ddww5yysafqky" path="res://Assets/Graveyard set/House/med_house.tscn" id="14_2nlr2"]
+[ext_resource type="AudioStream" uid="uid://dd4d72gl2jc31" path="res://Sounds Effect/Player/opening-door-411632.mp3" id="14_u270f"]
 [ext_resource type="PackedScene" uid="uid://cfe1erhqqc3qt" path="res://Assets/Graveyard set/House/small_house.tscn" id="15_2po73"]
 [ext_resource type="PackedScene" uid="uid://dscnnea5qunlb" path="res://Assets/Graveyard set/House/mansion1.tscn" id="16_of683"]
 [ext_resource type="PackedScene" uid="uid://drpx5farhnlaw" path="res://Assets/Map/Wall/Stone/stone_wall_column.tscn" id="17_ta816"]
@@ -203,6 +204,7 @@ light_energy = 2.7
 light_negative = true
 
 [node name="CanvasLayer_Countdown" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="Label_Countdown" type="Label" parent="CanvasLayer_Countdown"]
 offset_right = 115.0
@@ -214,6 +216,7 @@ script = ExtResource("2_1d2w2")
 
 [node name="PauseMenuCanvas" type="CanvasLayer" parent="."]
 visible = false
+follow_viewport_enabled = true
 script = ExtResource("3_lvjyg")
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenuCanvas"]
@@ -251,6 +254,7 @@ text = "PAUSE"
 horizontal_alignment = 1
 
 [node name="Candy Counter" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="Label" type="Label" parent="Candy Counter"]
 offset_left = 524.0
@@ -299,7 +303,11 @@ stream = ExtResource("10_vclfv")
 
 [node name="AudioStreamPlayer_collect" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("11_sj2u1")
-volume_db = 24.0
+volume_db = 14.746
+
+[node name="AudioStreamPlayer_door" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("14_u270f")
+volume_db = -9.695
 
 [node name="Zone1" type="Node3D" parent="."]
 

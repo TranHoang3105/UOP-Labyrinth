@@ -23,7 +23,7 @@ var t_bob = 0.0
 
 # Collect sound reference
 @onready var collect_sound = $AudioStreamPlayer_collect  # AudioStreamPlayer 
-
+@onready var door_sound = $AudioStreamPlayer_door
 # Interaction ray reference
 @onready var interaction_ray = $Head/Camera3D/InteractionRay
 
@@ -141,18 +141,24 @@ func try_interact():
 			print("Saying 'Trick or Treat!' to the door...")
 			if collider.has_method("try_open_with_candy"):
 				var success = collider.try_open_with_candy(GameManager.candy_count)
-				if success and collect_sound:
-					collect_sound.play()
+				if success and door_sound:
+					door_sound.play()
 			
 		elif collider.is_in_group("candy"):
 			# Candy collection
 			print("🍬 Found candy!")
 			collect_candy(collider)
+			if collect_sound:
+				collect_sound.play()
+		
 			
 		elif collider.is_in_group("candy_bowl"):
 			# Bowl collection
 			print("🥣 Found candy bowl!")
 			collect_candy_bowl(collider)
+			if collect_sound:
+				collect_sound.play()
+		
 			
 		else:
 			print("Object not in any known group:", collider.name)
@@ -178,6 +184,7 @@ func add_time_with_candy_sound(seconds: float) -> void:
 func collect_candy(candy_node):
 	GameManager.add_candy(1)
 	add_time_with_candy_sound(10.0)
+	play_sound("res://Sounds Effect/Player/item-pick-up-38258.mp3")
 	candy_node.queue_free()
 	print("Collected 1 candy! +5 seconds")
 
@@ -193,3 +200,25 @@ func collect_candy_bowl(bowl_node):
 		add_time_with_candy_sound(random_amount * 10.0)
 		bowl_node.queue_free()
 		print("Collected bowl with ", random_amount, " candies! +", random_amount * 5, " seconds")
+		
+func play_sound(sound_path: String):
+	var sound = load(sound_path)
+	if sound:
+		# Create a temporary AudioStreamPlayer3D
+		var audio_player = AudioStreamPlayer3D.new()
+		audio_player.stream = sound
+		audio_player.max_distance = 10.0
+		audio_player.unit_size = 1.0
+		audio_player.autoplay = true
+		
+		# Position at player location
+		audio_player.global_position = global_position
+		
+		# Add to scene and remove after playing
+		get_tree().root.add_child(audio_player)
+		audio_player.finished.connect(func(): 
+			audio_player.queue_free()
+		)
+		print("Playing sound: ", sound_path)
+	else:
+		print("Warning: Sound not found at ", sound_path)

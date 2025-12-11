@@ -47,6 +47,10 @@ SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
 UIManager="*res://Script/Manager/UIManager.gd"
 FeedBackUI="*res://Scene/UI/FeedBackUI.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/simplegrasstextured/plugin.cfg")
