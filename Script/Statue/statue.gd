@@ -91,18 +91,3 @@ func win_game():
 
 func get_remaining_candy() -> int:
 	return max(0, required_candy - candies_fed)
-
-func get_progress_percentage() -> float:
-	return float(candies_fed) / float(required_candy) * 100.0
-	
-func show_fountain_feedback(amount_fed: int):
-	# Show feedback through UIManager or directly
-	if has_node("/root/FeedBackUI"):
-		var feedback_ui = get_node("/root/FeedBackUI")
-		feedback_ui.show_fountain_feedback(candies_fed, required_candy)
-	elif has_node("/root/UIManager") and UIManager.has_method("show_fountain_feedback"):
-		UIManager.show_fountain_feedback(candies_fed, required_candy)
-	else:
-		# Fallback: print to console
-		print("📊 Fountain: %d/%d (%.1f%%)" % [candies_fed, required_candy, 
-										   (float(candies_fed)/float(required_candy))*100])

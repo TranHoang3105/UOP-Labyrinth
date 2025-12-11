@@ -162,11 +162,11 @@ func try_interact():
 # Fountain Interaction 
 func interact_with_fountain(fountain):
 	if fountain.has_method("interact"):
-		print("🎯 Attempting to feed the fountain...")
-		print("   Your candy:", GameManager.candy_count)
+		print("Attempting to feed the fountain...")
+		print("Your candy:", GameManager.candy_count)
 		fountain.interact()
 	else:
-		print("❌ Fountain doesn't have interact() method")
+		print("Fountain doesn't have interact() method")
 
 func add_time_with_candy_sound(seconds: float) -> void:
 	TimerManager.add_time(seconds)
@@ -193,18 +193,3 @@ func collect_candy_bowl(bowl_node):
 		add_time_with_candy_sound(random_amount * 10.0)
 		bowl_node.queue_free()
 		print("Collected bowl with ", random_amount, " candies! +", random_amount * 5, " seconds")
-
-# ============================================
-# OPTIONAL: DEBUG FUNCTION
-# ============================================
-
-# Add this for testing - press P to print game state
-func _input(event):
-	if event.is_action_pressed("ui_page_up"):  # Press Page Up
-		print("\n=== GAME STATE DEBUG ===")
-		print("Candy:", GameManager.candy_count)
-		print("Time:", TimerManager.get_current_time() if TimerManager else "N/A")
-		print("Looking at:", 
-			interaction_ray.get_collider().name if interaction_ray and interaction_ray.is_colliding() 
-			else "Nothing")
-		print("=======================\n")

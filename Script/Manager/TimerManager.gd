@@ -7,7 +7,7 @@ signal time_changed(new_time)
 signal game_over()
 
 # Timer Variables
-@export var initial_time: float = 60  # 初始倒计时时间，可在 Inspector 修改
+@export var initial_time: float = 120  # 初始倒计时时间，可在 Inspector 修改
 var current_time: float = initial_time
 var max_time: float = 600.0      # 10 minutes max
 var is_game_active: bool = true

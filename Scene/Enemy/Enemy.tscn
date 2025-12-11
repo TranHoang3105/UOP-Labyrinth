@@ -1,11 +1,11 @@
 [gd_scene load_steps=27 format=4 uid="uid://7a0le6p6fbv3"]
 
-[ext_resource type="Script" uid="uid://dynxmqoyo06qn" path="res://Scene/Enemy/Enemy.gd" id="1_rxmje"]
+[ext_resource type="Script" uid="uid://dynxmqoyo06qn" path="res://Script/Enemy/Enemy.gd" id="1_rxmje"]
 [ext_resource type="Texture2D" uid="uid://d1p3u0c03x7rh" path="res://Assets/Graveyard set/GLB format/Textures/colormap.png" id="2_y4lbw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nn6od"]
-radius = 0.37402344
-height = 1.1295166
+radius = 0.2387886
+height = 0.4775772
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlhpv"]
 resource_name = "colormap"
@@ -573,7 +573,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -2.8800876, 0)
 script = ExtResource("1_rxmje")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007171929, 0.4348601, 0.004388829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007171929, 0.39818186, 0.004388829)
 shape = SubResource("CapsuleShape3D_nn6od")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
