@@ -247,7 +247,7 @@ playback_type = 1
 script = ExtResource("7_x6ldl")
 
 [node name="Player" parent="." instance=ExtResource("8_sx0jk")]
-transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, -19.083168, 1.1387722, 1.8904941)
+transform = Transform3D(0.018708795, 0, 0.99982494, 0, 1, 0, -0.99982494, 0, 0.018708795, -75.89456, 1.1387722, 1.8904941)
 
 [node name="AudioStreamPlayer_walk" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("9_g3jy5")
@@ -3912,6 +3912,39 @@ transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08
 
 [node name="Candy_Bowl5" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
 transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, 6.8974304, -40.13833, -0.30298465)
+
+[node name="Candy_Bowl6" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.9999998, -8.742277e-08, -3.8213705e-15, 8.742277e-08, -0.9999998, -8.742277e-08, 3.821371e-15, -8.742277e-08, 0.9999998, -8.724129, -8.566257, 0.0314613)
+
+[node name="Candy_Bowl7" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213705e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.821371e-15, -8.742276e-08, 0.99999976, -7.656891, -8.566256, 0.0314613)
+
+[node name="Candy_Bowl8" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.821371e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213714e-15, -8.742276e-08, 0.99999976, -7.656891, -9.705013, 0.03146124)
+
+[node name="Candy_Bowl9" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213714e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, -8.55069, -9.705011, 0.03146124)
+
+[node name="Candy_Bowl10" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, -9.520493, -9.705009, 0.03146124)
+
+[node name="Candy_Bowl11" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, -9.520493, -10.831852, 0.03146118)
+
+[node name="Candy_Bowl12" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, -8.313591, -11.042938, 0.15955335)
+
+[node name="Candy_Bowl13" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, -7.2310333, -11.042936, 0.15955335)
+
+[node name="Candy_Bowl14" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, -6.7541504, -10.191298, 0.15955329)
+
+[node name="Candy_Bowl15" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, -5.457245, -10.191296, 0.15955329)
+
+[node name="Candy_Bowl16" parent="Zone2/Candy_Bowls" instance=ExtResource("50_6p8o5")]
+transform = Transform3D(-0.99999976, -8.742277e-08, -3.8213718e-15, 8.742277e-08, -0.99999976, -8.742276e-08, 3.8213718e-15, -8.742276e-08, 0.99999976, -5.457245, -11.456262, 0.15955323)
 
 [node name="Buildings" type="Node3D" parent="Zone2"]
 

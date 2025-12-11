@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 # Movement Variables
 var speed
 const WALK_SPEED = 5.0
@@ -12,7 +11,6 @@ const SENS = 0.003
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
 var t_bob = 0.0
-
 
 # References
 @onready var head = $Head
@@ -29,7 +27,6 @@ var t_bob = 0.0
 # Interaction ray reference
 @onready var interaction_ray = $Head/Camera3D/InteractionRay
 
-
 # Ready
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -45,14 +42,12 @@ func _ready():
 	else:
 		print("Warning: Interaction ray not found!")
 
-
 # Mouse Look
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENS)
 		camera.rotate_x(-event.relative.y * SENS)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
-
 
 func _physics_process(delta: float) -> void:
 	# Gravity
@@ -100,13 +95,11 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
 # Head Bob Function
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	return pos
-
 
 # Footstep Sound Functions
 func stop_footsteps():
@@ -125,19 +118,23 @@ func play_run_sound():
 	if not run_sound.playing:
 		run_sound.play()
 
-# Interaction Functions
-func try_interact():
+func try_interact():		
 	if interaction_ray and interaction_ray.is_colliding():
 		var collider = interaction_ray.get_collider()
-		print("Ray hit:", collider.name)
+		print("🎯 Ray hit:", collider.name)
 		
-		if collider.is_in_group("door"):
+		# Check for fountain 
+		if collider.is_in_group("fountain"):
+			print("Found magical fountain!")
+			interact_with_fountain(collider)
+			
+		elif collider.is_in_group("door"):
 			# Halloween door interaction
 			print("Saying 'Trick or Treat!' to the door...")
 			if collider.has_method("try_open_with_candy"):
 				var success = collider.try_open_with_candy(GameManager.candy_count)
-				#if success and collect_sound:
-					#collect_sound.play()
+				if success and collect_sound:
+					collect_sound.play()
 			
 		elif collider.is_in_group("candy"):
 			# Candy collection
@@ -148,11 +145,21 @@ func try_interact():
 			# Bowl collection
 			print("🥣 Found candy bowl!")
 			collect_candy_bowl(collider)
+			
+		else:
+			print("Object not in any known group:", collider.name)
 	else:
-		print("🎯 No object in sight to interact with")
+		print("No object in sight to interact with")
 
+# Fountain Interaction 
+func interact_with_fountain(fountain):
+	if fountain.has_method("interact"):
+		print("🎯 Attempting to feed the fountain...")
+		print("   Your candy:", GameManager.candy_count)
+		fountain.interact()
+	else:
+		print("❌ Fountain doesn't have interact() method")
 
-# Collection Functions
 func add_time_with_candy_sound(seconds: float) -> void:
 	TimerManager.add_time(seconds)
 	if collect_sound:
@@ -166,7 +173,6 @@ func collect_candy(candy_node):
 	candy_node.queue_free()
 	print("Collected 1 candy! +5 seconds")
 
-# Update just the bowl collection part:
 func collect_candy_bowl(bowl_node):
 	# Call the bowl's collect() method if it exists
 	if bowl_node.has_method("collect"):
@@ -179,3 +185,18 @@ func collect_candy_bowl(bowl_node):
 		add_time_with_candy_sound(random_amount * 10.0)
 		bowl_node.queue_free()
 		print("Collected bowl with ", random_amount, " candies! +", random_amount * 5, " seconds")
+
+# ============================================
+# OPTIONAL: DEBUG FUNCTION
+# ============================================
+
+# Add this for testing - press P to print game state
+func _input(event):
+	if event.is_action_pressed("ui_page_up"):  # Press Page Up
+		print("\n=== GAME STATE DEBUG ===")
+		print("Candy:", GameManager.candy_count)
+		print("Time:", TimerManager.get_current_time() if TimerManager else "N/A")
+		print("Looking at:", 
+			interaction_ray.get_collider().name if interaction_ray and interaction_ray.is_colliding() 
+			else "Nothing")
+		print("=======================\n")

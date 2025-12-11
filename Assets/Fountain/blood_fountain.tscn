@@ -1,7 +1,8 @@
-[gd_scene load_steps=106 format=4 uid="uid://bqseig4fykyg1"]
+[gd_scene load_steps=107 format=4 uid="uid://bqseig4fykyg1"]
 
 [ext_resource type="Texture2D" uid="uid://b7bvx81ebppgh" path="res://Assets/Fountain/bloodtemplefbx_7.jpg" id="1_8dhsd"]
 [ext_resource type="Texture2D" uid="uid://c1itujxed0j41" path="res://Assets/Fountain/bloodtemplefbx_5.jpg" id="2_dre64"]
+[ext_resource type="Script" uid="uid://85do87mbdjnn" path="res://Script/Statue/statue.gd" id="2_ih3lg"]
 [ext_resource type="Texture2D" uid="uid://b0u4jitjexh5r" path="res://Assets/Fountain/bloodtemplefbx_6.png" id="3_ih3lg"]
 [ext_resource type="Texture2D" uid="uid://c5msi5ugqyjrb" path="res://Assets/Fountain/bloodtemplefbx_0.jpg" id="4_ppqhd"]
 [ext_resource type="Texture2D" uid="uid://bwsl1be3hth82" path="res://Assets/Fountain/bloodtemplefbx_1.jpg" id="5_smrw2"]
@@ -1448,6 +1449,7 @@ mesh = SubResource("ArrayMesh_133io")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Base/Angel/Angel_angel_26k_u1_v1_0"]
+script = ExtResource("2_ih3lg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Base/Angel/Angel_angel_26k_u1_v1_0/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_8dhsd")
