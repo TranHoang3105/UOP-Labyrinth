@@ -1,4 +1,4 @@
-[gd_scene load_steps=339 format=4 uid="uid://db4arx10gf16p"]
+[gd_scene load_steps=337 format=4 uid="uid://db4arx10gf16p"]
 
 [ext_resource type="Texture2D" uid="uid://bst0fh71f0stn" path="res://Assets/Map/halloween_0.png" id="1_ly3yd"]
 [ext_resource type="Texture2D" uid="uid://c7gtuykrmjjt0" path="res://Assets/Map/halloween_1.png" id="2_1jk4f"]
@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://bc1es4djihesv" path="res://Assets/Map/halloween_25.jpg" id="27_lgjcu"]
 [ext_resource type="Texture2D" uid="uid://c7t7cpchv2ycb" path="res://Assets/Map/halloween_26.png" id="28_njo3a"]
 [ext_resource type="Texture2D" uid="uid://62pwemjhcv41" path="res://Assets/Map/halloween_27.jpg" id="29_036xn"]
+[ext_resource type="PackedScene" uid="uid://darxnqwthuc8x" path="res://Assets/Map/Graveyard/farmland.tscn" id="29_d0jms"]
+[ext_resource type="PackedScene" uid="uid://cr4uxl1u28suy" path="res://Assets/Map/Graveyard/coffin_002.tscn" id="30_38m78"]
 [ext_resource type="Texture2D" uid="uid://tfaa5wg0iv7n" path="res://Assets/Map/halloween_28.png" id="30_qvt6b"]
 [ext_resource type="Texture2D" uid="uid://d4cillfpdj7av" path="res://Assets/Map/halloween_29.png" id="31_b1bsf"]
 [ext_resource type="PackedScene" uid="uid://bywjhcf5316w0" path="res://Assets/Map/Candy/sweets_candy.tscn" id="31_ly3yd"]
@@ -2417,72 +2419,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2k61u")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_r83uu"]
-_surfaces = [{
-"aabb": AABB(-1.0115155, -1.9132712, -0.1489036, 2.0425591, 3.8977735, 0.20102173),
-"format": 34896613377,
-"index_count": 219,
-"index_data": PackedByteArray("IgAjABYAIgAVACMAIgAWAAIAIgACAAAAFgAGAAIAFwAiAAAAFwAVACIAFwAAAAMAFQAkACMAFwAkABUAFgAjABEAEQAjACQAFgAYAAYAFgARABgAGAAIAAYAGQAXAAMAGQAkABcAGQADAAQAGQAPACQAGgAZAAQAGgAPABkAGgAEAAUAJAAPABsAGgAbAA8AEQAkABsAJQAaAAUAJQAbABoAJQAFAAEAEQAbABwAJQAcABsAJgAlAAEAJgAcACUAJgABAAoAHQARABwAGAARAB0AJgAQABwAHQAcABAAFAAmAAoAFAAQACYAFAAKAAkAFAAeABAAHwAUAAkAHwAeABQAHwAJAAsAEAAeACcAHwAnAB4AKAAdABAAJwAoABAAIAAfAAsAIAAnAB8AIAALAAwAIAATACcAKQAgAAwAKQATACAAKQAMAA0AJwATACoAKQAqABMAKgASACcAEgAoACcAIQAqACkAIQApAA0AIQASACoAIQANAA4AKwASACEADgArACEAKwAoABIADgAHACsALAAoACsALAArAAcALAAdACgALAAHAAgAGAAdACwAGAAsAAgA"),
-"lods": [0.06216458, PackedByteArray("AAAVABYAAAAWAAIAFgAGAAIAFwAVAAAAFwAAAAMAFgAVABEAFgAYAAYAFgARABgAGAAIAAYAGQAXAAMAGQADAAQAFwAPABUAGQAPABcAEQAVAA8AGgAZAAQAGgAPABkAGgAEAAUAAQAaAAUAGgAbAA8AAQAbABoAEQAPABsAAQAcABsAEQAbABwACgAcAAEAGAARAB0AHQARABwAGAAdAAgACgAQABwAHQAcABAACAAdABIAEgAdABAACAASAAcAFAAQAAoAFAAKAAkAFAAeABAAHwAUAAkAHwAeABQAHwAJAAsAEAAeABMAHwATAB4AEwASABAAIAAfAAsAIAATAB8AIAASABMAIAALAAwAIAAMAA0AIQASACAAIQAgAA0ABwASACEAIQANAA4ADgAHACEA"), 0.18501282, PackedByteArray("AAAPAAIAAwAPAAAABAAPAAMABQAPAAQAAQAPAAUAAQAQAA8AAgAPABEAEQAPABAAAgARAAYACgAQAAEABgARABIAEgARABAABgASAAgACAASAAcABwASAA4ADgASABMAEwASABAADgATAA0AEwAMAA0AEwALAAwAEAAUABMACwATABQAFAAQAAoACwAUAAkAFAAKAAkA"), 1.055922, PackedByteArray("AAABAAIAAwABAAAABAABAAMABQABAAQAAgABAAYABwAGAAEABgAHAAgACQABAAoAAQAJAAcACwAHAAkABwALAAwABwAMAA0ADgAHAA0A")],
-"name": "Farmland",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 45,
-"vertex_data": PackedByteArray("5P02hwAAAAA6kgAAAAAAAKrtTLQAAAAAtu3AVQAAAAD//6Q2AAAAAPTmPg0AAAAAzugS7wAAAAD6LWnxAAAAAH1q//8AAAAAUw+iDgAAAACcSocEAAAAAN8Qk0kAAAAAAAAhfgAAAAA4B9GzAAAAAOALMd8AAAAAHMxjSP//AACEXoMj//8AABm+GtD//wAAnThsxP//AABwMf58//8AAFgdnxjtjQAA18qtg///AAA939mu7Y0AAEjfHVntjQAAANsl5O2NAAA57+c87Y0AAGPZXRftjQAA+7ztKf//AADKiS4g//8AAMdxj9z//wAAszryKv//AACxHhNO7Y0AAPoPun3tjQAAVhq/1e2NAABk7feF7Y0AAAnB26T//wAAEMFIX///AAB/j1oL7Y0AAAtRdQ/tjQAAojtSVv//AAA4TdPR//8AAEYWaq7tjQAAzTWApP//AAATOETm7Y0AANhsfvPtjQAA")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_aas0e"]
-resource_name = "Sketchfab_Scene_Farmland_Farmland_0"
-_surfaces = [{
-"aabb": AABB(-1.0115155, -1.9132712, -0.1489036, 2.0425591, 3.8977735, 0.20102173),
-"attribute_data": PackedByteArray("bf+Vykniy44I+4XeDPu3tP//9aY4+aeUuPmD+CfHjPmI1///275ElefOzJBGv1SvtbqRxqq8T97svX3x9PHOrkrUf54p7tHqCMqn5afCr5kXyBHGSLditv+dnrnWmGK2nPEFySH3Hdwk9zO2dfu6qfv1rvOB2VPwjPUgmdvtVaEA4AadmMrJoQTDUbEIv2TG1sFQ7Zq5nrm8sJ65kr1itoCtYrZOv5659foIyvTusdf27u24jOHQk6XQoZXZyve0nM+U6yvYd/rjyZ70RcmJ173A69s="),
-"format": 34896613399,
-"index_count": 219,
-"index_data": PackedByteArray("KgArABkAKgAYACsAKgAZAAIAKgACAAAAGQAGAAIAGgAqAAAAGgAYACoAGgAAAAMAGgAsABgAGAAsACsAGwAsABoAGQArABEAEQArACwAGwAPACwAGQAcAAYAGQARABwAHAAIAAYALAAPAB8AEQAsAB8AHgAPABsAHgAfAA8AHgAbAAQAHgAEAAUALQAeAAUALQAfAB4ALQAFAAEAEQAfACAALQAgAB8ALgAtAAEALgAgAC0ALgABAAoAHQARACAAHAARAB0ALgAQACAAHQAgABAAEwAuAAoAEwAKAAkAEwAQAC4AEwAhABAAIgAhABMAEAAhAC8AIgAvACEAMAAdABAALwAwABAAHAAdADEAMQAdADAAHAAxAAgAMQAHAAgAMQAyAAcAMQAwADIADgAHADIAMgAwABIAEgAwAC8ADgAyACQAMgASACQAJAANAA4AMwASAC8AJAASADMALwAUADMAJAA0AA0AJAAzADQANAAzABQANAAMAA0AIwAUAC8ANAAUACMANAAjAAwAIwAvACIAIwALAAwAIwAiAAsAJQAXABUAJQAWABcAJgAnACgAJgApACcA"),
-"lods": [0.06216458, PackedByteArray("AAAYABkAGgAYAAAAGgAAAAMAAAAZAAIAGQAGAAIAGgAPABgAGQAYABEAEQAYAA8AGwAPABoAGQAcAAYAGQARABwAHAAIAAYAHAARAB0AHAAdAAgAHgAPABsAHgAbAAQAHgAEAAUAAQAeAAUAHgAfAA8AAQAfAB4AEQAPAB8AAQAgAB8AEQAfACAAHQARACAACgAgAAEAHQAgABAACgAQACAACAAdABIAEgAdABAAEwAQAAoAEwAKAAkAEwAhABAAIgAhABMAEAAhABQAIgAUACEAFAASABAACAASAAcAIwAUACIAIwASABQAIwAiAAsAIwALAAwAIwAMAA0AJAASACMABwASACQAJAAjAA0ADgAHACQAJAANAA4AJQAXABUAJQAWABcAJgAnACgAJgApACcA"), 0.18501282, PackedByteArray("AAAPAAIAAwAPAAAABAAPAAMABQAPAAQAAQAPAAUAAQAQAA8AAgAPABEAEQAPABAAAgARAAYACgAQAAEABgARABIAEgARABAABgASAAgACAASAAcABwASAA4AEwAQAAoAEwAKAAkAFAASABAAEAATABQADgASABQACwAUABMADgAUAA0AFAALAAwAFAAMAA0AFQAWABcA"), 1.055922, PackedByteArray("AAABAAIAAwABAAAABAABAAMABQABAAQAAgABAAYABwAGAAEABgAHAAgACQABAAoAAQAJAAcACwAHAAkABwALAAwABwAMAA0ADgAHAA0A")],
-"material": SubResource("StandardMaterial3D_k66m3"),
-"name": "Farmland",
-"primitive": 3,
-"uv_scale": Vector4(1.9361832, 2.261437, 0, 0),
-"vertex_count": 53,
-"vertex_data": PackedByteArray("5P02hwAAEGM6kgAAAAAOaartTLQAAPNhtu3AVQAAy1///6Q2AABLZPTmPg0AANhpzugS7wAAX2r6LWnxAAC1aX1q//8AAOdqUw+iDgAAhmmcSocEAADIaN8Qk0kAAJlgAAAhfgAAZGI4B9GzAABLYuALMd8AAN5nHMxjSP//3HeEXoMj//8Zehm+GtD//7l4nThsxP//5nhYHZ8Y7Y1YbHAx/nz//9d43xCTSQAA88VYHZ8Y7Y2rw1MPog4AAHfF18qtg///03g939mu7Y2gakjfHVntjRRqOe/nPO2NHGkA2yXk7Y0hbcdxj9z//995Y9ldF+2NHm77vO0p//93ecqJLiD//7p5szryKv//YHixHhNO7Y2nafoPun3tjfJpVhq/1e2NHmyxHhNO7Y33wjnv5zztjeMytu3AVQAAXDH//6Q2AABfM0jfHVntjU0zZO33he2NNWoJwduk//9CeRDBSF///+d4f49aC+2NXG4LUXUP7Y2MbqI7Ulb//994OE3T0f//QnrYbH7z7Y1qbxM4RObtjRVvzTWApP//RXlGFmqu7Y11asKCBwIUDu50Co1qCVyQFwxAdxwLFkWrRSDBhzf6wvKxBvJji2JGAsUtGAWfWHhp+r15cPtHhlH3VqZtz1yOJw1DGBuaj60rKlGaZePqVObTcXn0+fHh2eQl4xP2pd2h+z1/0gAzj/ULWIjPBmeIigd6sxkrVfM5i5ZIcUDhRug8BgsfdnlXuNqVdYX3+nh5+n+drts558TqQxQjF30bUhvqE4IdpRODFjmALgCXjo0NzIGvAa0MpXXOFxGd93TI9ZTE7rep8jqLFMNFtAaHYfjKhl73")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_r83uu")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_btw2t"]
-_surfaces = [{
-"aabb": AABB(-0.3993121, -1.0944792, -0.06235275, 0.7979199, 1.9828244, 0.10716218),
-"format": 34896613377,
-"index_count": 249,
-"index_data": PackedByteArray("AAABAAIAAgABAAMAAwAEAAIABQACAAQABQAAAAIABgAEAAMABgAFAAQAAQAHAAMACAAGAAMACAADAAcAAQAJAAcACgAIAAcACgAHAAkACwAJAAEACwAKAAkAAAALAAEADAAIAAoADQAGAAgADAANAAgADQAOAAYADgAFAAYADwAKAAsADwAMAAoAEAALAAAAEAAPAAsAEQAAAAUAEQAQAAAADgARAAUADwASAAwADgATABEAEAAUAA8ADwAUABIAEQAVABAAEQATABUAEAAVABQADAASABYAFgASABQADAAWAA0AFQATABcAFwAUABUAFwAWABQADQAWABcADgAXABMADQAXAA4AGAAZABoAGAAbABkAHAAbABgAGgAZAB0AHAAeABsAGgAdAB8AHwAdACAAHwAgACEAGgAfACEAIQAgACIAIQAjABoAIQAiACMAIwAcABoAIwAiACQAHgAcACUAHgAlACYAJgAlACcAHAAnACUAJgAnACgAKQAoACcAHAApACcAKQAqACgAKgApACsAKgArACwALQAsACsAKQAtACsALQAuACwAHAAvACkAKQAvAC0ALwAuAC0AHAAjAC8ALwAwAC4AMAAvADEAMAAxADIALwAjADMALwAzADEAMwAyADEAIwAkADMAMwAkADIA"),
-"name": "Coffin",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 52,
-"vertex_data": PackedByteArray("AUP//xAkAABNqtXvMLsAALFV1e8wuwAAPmO+DDC7AAA5J9jLMLsAAAAAGswQJAAAf1EAABAkAADAnL4MMLsAAH+uAAAQJAAAxdjYyzC7AAD//xrMECQAAP68//8QJAAAKfgnywAAAACmq5kBAAAAAFhUmQEAAAAAQrll/gAAAAC8RmX+AAAAANUHJ8sAAAAAVtPlypC2AACoLOXKkLYAALancO6QtgAASFhw7pC2AAD9mi8OkLYAAAFlLw6QtgAA2ofmtf//AADah0WkpMAAANqHRaT//wAA2ofmtaTAAADah4jH//8AACR4RaSkwAAA2oeIx6TAAAAkeEWk//8AACR45rWkwAAAJHjmtf//AAAkeIjHpMAAACR4iMf//wAAFGOIx6TAAADqnIjH//8AAOqciMekwAAA6py5zf//AADqnLnNpMAAANqHuc3//wAA2oe5zaTAAADah6zW//8AANqHrNakwAAAJHis1v//AAAkeKzWpMAAACR4uc3//wAAJHi5zaTAAAAUY7nN//8AABRjuc2kwAAAFGOIx///AAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_prcio"]
-resource_name = "Sketchfab_Scene_Coffin_002_Coffin_0"
-_surfaces = [{
-"aabb": AABB(-0.3993121, -1.0944792, -0.06235275, 0.7979199, 1.9828244, 0.10716218),
-"attribute_data": PackedByteArray("qCFQ+qNIKOu2KCjrsU9Q+rQjPwosF2jJZioyFl8IpsmxT1D6LVpoyaNIKOv6aKbJXwimybYoKOssF2jJqCFQ+vpopskaQDIWLVpoycxGPwrMRj8KZioyFhpAMha0Iz8KESPQ+KlH2OlITtD4sCnY6cckvws5GYTIVAvCyBArjBdITtD4IFiEyAVmwsipR9jpVAvCyLAp2OkRI9D4ORmEyAVmwshwP4wXuUW/CyBYhMi5Rb8LECuMF8ckvwtwP4wXESPQ+LFPUPqoIVD6SE7Q+EhO0Pj6aKbJsU9Q+gVmwsgFZsLIzEY/Cvpopsm5Rb8LuUW/C7QjPwrMRj8KxyS/C8ckvwtfCKbJtCM/ClQLwshUC8LIqCFQ+l8IpskRI9D43N3ZJIbTFVrc3RVahtPZJFXeFzr+0y5NVd4uTf7TFzrc3d0+htOhCdzdoQmG090+3937ShLTRVrf3UVaEtP7St/dZ0BY7PtKWOxnQBLTZ0CYxGdAmMT7SuTduCiO009C5N1PQo7TuChV3h9O/tNtO1XebTv+0x9O/tMfTlXebTv+0207Vd4fTv7TFzpV3oAg/tOAIFXeFzpV3hc6/tOAIFXegCD+0xc6jtO4KOTdT0KO009C5N24KFXeLk3+0xc6Vd4XOv7TLk3+0207Vd5lIP7TZSBV3m07Vd5tO/7TZSBV3mUg/tNtO9zdFVqG09kk3N3ZJIbTFVrc3aEJhtPdPtzd3T6G06EJZioyFiwXaMm2KCjro0go6xpAMhYtWmjJsCnY6TkZhMgQK4wXqUfY6XA/jBcgWITI390vBBLTLwQS00siEtNnQN/dZ0A="),
-"format": 34896613399,
-"index_count": 249,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABXAFQAWABUAFkAWABZAFoAWABbAFcAVwBbAFwAVwBcAF0AXgBfAGAAXgBhAF8AYgBjAGQAYgBlAGMAZgBnAGgAZgBpAGcAagBrAGwAagBtAGsAbgBvAHAAbgBxAG8AcgBzAHQAcgB1AHMAdgB3AHgAdgB5AHcAegB7AHwAegB9AHsAfgB/AIAAfgCBAH8AggCDAIQAggCFAIMAhgCHAIgAhgCJAIcAigCLAIwAjACNAIoAjQCOAIoAjQCPAI4AkACRAJIAkgCTAJAAkgCUAJMAlACVAJMAlgCXAJgAmACZAJYAmQCaAJYA"),
-"material": SubResource("StandardMaterial3D_0t81n"),
-"name": "Coffin",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 155,
-"vertex_data": PackedByteArray("AUP//xAk7mxNqtXvMLvubLFV1e8wu+5s/rz//xAk7mx/UQAAECT5Zzkn2MswuwJoPmO+DDC7+GcAABrMECQCaP68//8QJIRqxdjYyzC7hGpNqtXvMLuEav//GswQJIRqAAAazBAkhGqxVdXvMLuEajkn2Mswu4RqAUP//xAkhGr//xrMECQCaMCcvgwwu/pnxdjYyzC7Amh/rgAAECT5Z3+uAAAQJMZoPmO+DDC7xmjAnL4MMLvGaH9RAAAQJMZovEZl/gAAb+m2p3DukLZv6UK5Zf4AAG/pSFhw7pC2b+lYVJkBAADK/Kgs5cqQtnv81QcnywAAd/wBZS8OkLbT/EK5Zf4AAKH1VtPlypC2ofUp+CfLAACh9bancO6QtqH11QcnywAAofVIWHDukLah9bxGZf4AAKH1qCzlypC2ofUp+CfLAAB7/P2aLw6Qtsj8pquZAQAAy/xW0+XKkLZ3/KarmQEAAOfkAWUvDpC25+RYVJkBAADn5P2aLw6QtufkvEZl/gAA/tv+vP//ECT+2wFD//8QJP7bQrll/gAA/ttCuWX+AADC9f//GswQJCv1/rz//xAkyPUp+CfLAAAm9Sn4J8sAANT7f64AABAkYvz//xrMECTT+6armQEAAGX8pquZAQAA/tt/UQAAECT+23+uAAAQJP7bWFSZAQAA/ttYVJkBAABi/AAAGswQJNT7f1EAABAkY/zVByfLAADT+9UHJ8sAACj1AUP//xAkxvUAABrMECQj9bxGZf4AAM/12ofmtf//AADah0WkpMAAANqHRaT//wAA2ofmtaTAAADah0Wk//+qKiR4RaSkwKoqJHhFpP//qirah0WkpMCqKiR45rX///+/JHiIx6TA/78keIjH////vyR45rWkwP+/2oe5zf///n8keKzW///+f9qHrNb///5/JHi5zf///n/ah4jH///+f+qcuc3///5/6pyIx////n8keIjH///+fxRjiMf///5/FGO5zf///n8keIjH//+qKhRjiMekwKoqFGOIx///qiokeIjHpMCqKhRjiMf///+/FGO5zaTA/78UY7nN////vxRjiMekwP+/6pyIx6TAAADqnLnN//8AAOqcuc2kwAAA6pyIx///AADah4jHpMCqKuqciMf//6oq6pyIx6TAqirah4jH//+qKtqHuc3//1TV6py5zaTAVNXqnLnN//9U1dqHuc2kwFTVJHi5zaTAVNUUY7nN//9U1RRjuc2kwFTVJHi5zf//VNUkeKzW//9U1dqHrNakwFTV2oes1v//VNUkeKzWpMBU1dqHuc2kwAAA2oes1v//AADah6zWpMAAANqHuc3//wAAJHi5zf///78keKzWpMD/vyR4rNb///+/JHi5zaTA/78keEWk////vyR45rWkwP+/JHjmtf///78keEWkpMD/v9qHiMf//wAA2ofmtaTAAADah+a1//8AANqHiMekwAAAPmO+DDC7/n85J9jLMLv+f7FV1e8wu/5/TarV7zC7/n/AnL4MMLv+f8XY2Mswu/5/SFhw7pC2//+oLOXKkLb//wFlLw6Qtv//tqdw7pC2///9mi8OkLb//1bT5cqQtv//2odFpP///n8keEWk///+fyR45rX///5/JHiIx////n/ah4jH///+f////3////9/////f////38SbFfyE24L8dVrf/Iobv3wDrC1Jg6wtSYOsLUmDrC1JrWm78+1pu/Ptabvz7Wm788Nce8RUHLgE/1w1hFdcvUTAAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38L3BSC0dwTgdncCIHz2zOCgiAqfIIgKnyCICp8giAqfNUDgqDVA4Kg1QOCoNUDgqDp/tBc7/0QXOT9B1z2/tpc////f////3////9/////f////3////9/////f////39k3jiFdeDkglDeToWK4M2CGwH3o9UCS6UYAfWj3AJRpQAA/38AAP9/AAD/fwAA/39KJSt9+CPkfk0lJ330I+h+Jv2BYLX6Vl45/ZJglPo5Xv+//3//v/9//7//f/+//3+qKlTVqipU1aoqVNWqKlTV/3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9///+qKlTVqipU1aoqVNWqKlTV/3////9/////f////3////+//3//v/9//7//f/+//3+qKlTVqipU1aoqVNWqKlTVqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq/7//f/+//3//v/9//7//f/9/////f////3////9/////f////3////9/////f////7//f/+//3//v/9//7//f/9/////f////3////9/////f////3////7//3/+//9/////f/7//3////9//v//f/9/////f////3////9/////f///")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_btw2t")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jvr20"]
 _surfaces = [{
@@ -4935,19 +4871,11 @@ transform = Transform3D(100, 0, 0, 0, -1.6292068e-05, 100, 0, -100, -1.6292068e-
 mesh = SubResource("ArrayMesh_hrv5w")
 skeleton = NodePath("")
 
-[node name="Farmland" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
-transform = Transform3D(96.24822, 0, 0, 0, -1.6292068e-05, 133.62587, 0, -100, -2.1770418e-05, -584.9101, 23.089127, 336.4841)
+[node name="Farmland" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode" instance=ExtResource("29_d0jms")]
+transform = Transform3D(96.24822, 0, 0, 0, -4.371139e-06, 133.62587, 0, -100, -5.8409723e-06, -584.9101, 23.089127, 336.4841)
 
-[node name="Farmland_Farmland_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode/Farmland"]
-mesh = SubResource("ArrayMesh_aas0e")
-skeleton = NodePath("")
-
-[node name="Coffin_002" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
-transform = Transform3D(134.13136, 0, 0, 0, -2.1852773e-05, 134.13136, 0, -134.13136, -2.1852773e-05, -587.5737, 20.739937, 327.42413)
-
-[node name="Coffin_002_Coffin_0" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode/Coffin_002"]
-mesh = SubResource("ArrayMesh_prcio")
-skeleton = NodePath("")
+[node name="Coffin_002" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode" instance=ExtResource("30_38m78")]
+transform = Transform3D(134.13136, 0, 0, 0, -5.863068e-06, 134.13136, 0, -134.13136, -5.863068e-06, -587.5737, 20.739937, 327.42413)
 
 [node name="Farmland_04" type="Node3D" parent="Sketchfab_Scene/Sketchfab_model/halloween_fbx/RootNode"]
 transform = Transform3D(94.238686, 33.452515, 5.4501065e-06, -2.7755576e-15, -1.6292068e-05, 100, 33.452515, -94.238686, -1.535343e-05, -717.084, 3.9981112, 444.67773)

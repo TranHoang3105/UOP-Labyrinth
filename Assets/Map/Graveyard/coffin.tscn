@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://cotgj34v66kjm"]
+[gd_scene load_steps=6 format=4 uid="uid://cotgj34v66kjm"]
 
 [ext_resource type="Texture2D" uid="uid://bn3pu2jbxwgiu" path="res://Assets/Map/halloween_17.png" id="1_q8h6s"]
 
@@ -39,9 +39,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ujopm")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q8h6s"]
+points = PackedVector3Array(-0.4088122, 0.502221, -0.10874081, -0.4088122, 0.502221, 0.19654953, -0.19824351, 0.91941917, -0.10874081, -0.15414494, -1.0806261, -0.10874081, -0.19824351, 0.91941917, 0.19654953, -0.15414494, -1.0806261, 0.19654953, 0.19816342, 0.91941917, -0.10874081, 0.15406486, -1.0806261, -0.10874081, 0.19816342, 0.91941917, 0.19654953, 0.15406486, -1.0806261, 0.19654953, 0.40881214, 0.502221, -0.10874081, 0.40881214, 0.502221, 0.19654953)
+
 [node name="Coffin" type="Node3D"]
 transform = Transform3D(1.341, 0, 0, 0, -5.861697e-08, 1.341, 0, -1.341, -5.861697e-08, 0, 0, 0)
 
 [node name="Coffin_Coffin_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_orjt8")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Coffin_Coffin_0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coffin_Coffin_0/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_q8h6s")
