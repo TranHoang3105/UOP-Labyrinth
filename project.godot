@@ -41,9 +41,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Script/GameManager.gd"
-TimerManager="*res://Script/TimerManager.gd"
+GameManager="*res://Script/Manager/GameManager.gd"
+TimerManager="*res://Script/Manager/TimerManager.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
+UIManager="*res://Script/Manager/UIManager.gd"
+FeedBackUI="*res://Scene/UI/FeedBackUI.tscn"
 
 [editor_plugins]
 

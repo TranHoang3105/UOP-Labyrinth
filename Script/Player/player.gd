@@ -32,7 +32,15 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("player")
 	print("Player ready. Walk/Run sounds loaded.")
+
+	# Create/add Interact UI
+	var interact_scene = load("res://Scene/UI/Interaction.tscn")
+	var interact_ui = interact_scene.instantiate()
+	interact_ui.name = "Interact"
+	add_child(interact_ui)  
 	
+	# Register with UIManager
+	UIManager.register_ui(interact_ui)
 	# Make sure interaction ray is properly set up
 	if interaction_ray:
 		interaction_ray.enabled = true

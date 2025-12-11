@@ -584,7 +584,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8274195, 0)
 [node name="root" type="Node3D" parent="character-ghost"]
 
 [node name="torso" type="MeshInstance3D" parent="character-ghost/root"]
-transform = Transform3D(0.043270625, 0, 0.9990634, 0, 1, 0, -0.9990634, 0, 0.043270625, 0, 1.1458524, -7.2191146e-16)
+transform = Transform3D(0.04327063, 0, 0.9990634, 0, 1, 0, -0.9990634, 0, 0.04327063, 0, 1.1458524, -7.219115e-16)
 mesh = SubResource("ArrayMesh_p3ehc")
 skeleton = NodePath("")
 

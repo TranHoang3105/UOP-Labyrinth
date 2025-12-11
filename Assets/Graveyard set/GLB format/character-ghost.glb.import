@@ -37,6 +37,13 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:character-ghost": {
+"node/node_type": "CharacterBody3D",
+"node/script": Resource("uid://dynxmqoyo06qn", "res://Scene/Enemy/Enemy.gd")
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

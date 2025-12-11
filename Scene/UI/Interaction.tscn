@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c658af04vvknn"]
+
+[ext_resource type="Script" uid="uid://b4e1kiguwjh7o" path="res://Script/UI/InteractUI.gd" id="1_oykeo"]
+
+[node name="Interaction" type="CanvasLayer"]
+script = ExtResource("1_oykeo")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 715.0
+offset_top = 532.0
+offset_right = 1063.0
+offset_bottom = 666.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 36
+text = "Press E to interact 
+"

@@ -21,22 +21,14 @@ func _ready():
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		player_in_range = true
-		show_interact_prompt()
+		print("🎯 Player entered door area")
+		UIManager.show_prompt("Press E to open door")
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
-		hide_interact_prompt()
-
-func show_interact_prompt():
-	var ui = get_tree().root.find_child("InteractUI", true, false)
-	if ui:
-		ui.show_interact_prompt("Trick or Treat!", required_candy)
-
-func hide_interact_prompt():
-	var ui = get_tree().root.find_child("InteractUI", true, false)
-	if ui:
-		ui.hide_interact_prompt()
+		print("👋 Player left door area")
+		UIManager.hide_prompt()
 
 
 func open_door():
@@ -56,7 +48,7 @@ func open_door():
 		disable_collision()
 		
 		# Hide prompt when door opens
-		hide_interact_prompt()
+		UIManager.hide_prompt()
 
 func disable_collision():
 	collision_layer = 0
@@ -73,6 +65,7 @@ func try_open_with_candy(player_candy: int) -> bool:
 	if player_candy >= required_candy:
 		if GameManager.remove_candy(required_candy):
 			open_door()
+			#show_door_feedback(required_candy)
 			return true
 		else:
 			print("Failed to feed the door candy!")

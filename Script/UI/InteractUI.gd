@@ -1,22 +1,33 @@
-# SimpleInteractUI.gd
-extends Control
+# Interact.gd - Attach to CanvasLayer root
+extends CanvasLayer
 
-@onready var label = $Label
+@onready var control = $Control
+@onready var label = $Control/Label
 
 func _ready():
-	visible = false
+	# START HIDDEN
+	hide_prompt()
+	print("✅ Interact UI ready (hidden)")
 
-func show_interact_prompt(title: String, requirement: int = 0):
-	if requirement > 0:
-		label.text = "%s\nNeed %d candy (You: %d)" % [title, requirement, GameManager.candy_count]
-	else:
-		label.text = title
-	visible = true
+func show_prompt(text: String = "Press E to interact"):
+	label.text = text
+	control.visible = true
+	print("📱 Showing:", text)
 
-func hide_interact_prompt():
-	visible = false
+func hide_prompt():
+	control.visible = false
+	print("📱 Hiding prompt")
 
-func _on_candy_changed(new_count: int):
-	if visible:
-		# Just update the entire text
-		show_interact_prompt("Trick or Treat!", 2)  # Hardcoded for testing
+# Optional: Fade animation
+func show_prompt_with_fade(text: String):
+	label.text = text
+	control.visible = true
+	control.modulate = Color(1, 1, 1, 0)
+	
+	var tween = create_tween()
+	tween.tween_property(control, "modulate", Color.WHITE, 0.3)
+
+func hide_prompt_with_fade():
+	var tween = create_tween()
+	tween.tween_property(control, "modulate", Color(1, 1, 1, 0), 0.3)
+	tween.tween_callback(func(): control.visible = false)

@@ -1,12 +1,16 @@
-[gd_scene load_steps=51 format=4 uid="uid://c5xnt4wg33okd"]
+[gd_scene load_steps=50 format=4 uid="uid://birt4gvsu1g4"]
 
-[ext_resource type="Script" uid="uid://dynxmqoyo06qn" path="res://Scene/Enemy/Enemy.gd" id="1_7r6yw"]
-[ext_resource type="Texture2D" uid="uid://d1p3u0c03x7rh" path="res://Assets/Graveyard set/GLB format/Textures/colormap.png" id="1_nibmg"]
+[ext_resource type="Script" uid="uid://dhf5o73v8ox6o" path="res://Script/Enemy/ghost.gd" id="1_sm4r0"]
+[ext_resource type="Texture2D" uid="uid://d1p3u0c03x7rh" path="res://Assets/Graveyard set/GLB format/Textures/colormap.png" id="2_hxaxg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nn6od"]
+radius = 0.37402344
+height = 1.1295166
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlhpv"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("1_nibmg")
+albedo_texture = ExtResource("2_hxaxg")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bbve8"]
 _surfaces = [{
@@ -1618,41 +1622,44 @@ _data = {
 &"wheelchair-sit": SubResource("Animation_vaglh")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7r6yw"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75161"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nibmg"]
-animation = &"interact-right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7elfn"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i2akm"]
 animation = &"sprint"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ix17w"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m47ht"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i1xip"]
-advance_condition = &"Sprint"
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_clt2m"]
+advance_mode = 2
+advance_condition = &"sprint"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_22p2q"]
-advance_condition = &"Idle"
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y4lbw"]
+advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7r6yw"]
-advance_condition = &"interact_right"
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sm4r0"]
+states/End/position = Vector2(860, 98)
+states/Start/position = Vector2(-43, 107.02001)
+states/idle/node = SubResource("AnimationNodeAnimation_75161")
+states/idle/position = Vector2(217.92015, 100.47999)
+states/sprint/node = SubResource("AnimationNodeAnimation_i2akm")
+states/sprint/position = Vector2(409.86017, 93.12998)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_m47ht"), "idle", "sprint", SubResource("AnimationNodeStateMachineTransition_clt2m"), "sprint", "idle", SubResource("AnimationNodeStateMachineTransition_y4lbw")]
+graph_offset = Vector2(-221.49486, -101.85893)
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ggfwd"]
-states/idle/node = SubResource("AnimationNodeAnimation_7r6yw")
-states/idle/position = Vector2(391, 104)
-states/interact-right/node = SubResource("AnimationNodeAnimation_nibmg")
-states/interact-right/position = Vector2(660, 92)
-states/sprint/node = SubResource("AnimationNodeAnimation_7elfn")
-states/sprint/position = Vector2(556, 96)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ix17w"), "idle", "sprint", SubResource("AnimationNodeStateMachineTransition_i1xip"), "sprint", "idle", SubResource("AnimationNodeStateMachineTransition_22p2q"), "sprint", "interact-right", SubResource("AnimationNodeStateMachineTransition_7r6yw")]
+[node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.48665857, 0)
+script = ExtResource("1_sm4r0")
 
-[node name="ghost" type="Node3D"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-script = ExtResource("1_7r6yw")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007171929, -0.5703778, 0.004388829)
+shape = SubResource("CapsuleShape3D_nn6od")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="character-ghost" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8274195, 0)
 
 [node name="root" type="Node3D" parent="character-ghost"]
 
@@ -1662,7 +1669,7 @@ mesh = SubResource("ArrayMesh_p3ehc")
 skeleton = NodePath("")
 
 [node name="arm-right" type="MeshInstance3D" parent="character-ghost/root/torso"]
-transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -0.125, 0.15, 0.0024999976)
+transform = Transform3D(0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, 0, 0, 0, 1, -0.125, 0.15, 0.0024999976)
 mesh = SubResource("ArrayMesh_irm5v")
 skeleton = NodePath("")
 
@@ -1677,8 +1684,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_ggfwd")
+tree_root = SubResource("AnimationNodeStateMachine_sm4r0")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/Idle = false
-parameters/conditions/Sprint = false
-parameters/conditions/interact_right = false
+parameters/conditions/sprint = false
