@@ -61,7 +61,7 @@ layout_mode = 0
 offset_left = 1.0
 offset_top = 90.0
 offset_right = 1148.0
-offset_bottom = 256.0
+offset_bottom = 288.0
 theme_override_colors/search_result_color = Color(1, 1, 1, 0)
 theme_override_colors/search_result_border_color = Color(1, 1, 1, 0.4)
 theme_override_colors/caret_background_color = Color(1, 1, 1, 0)
@@ -71,7 +71,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/current_line_color = Color(1, 1, 1, 0.8)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_syaxu")
-text = "You've awakened in a strange place where time is slipping away. Creatures lurk in the dark - they hunger not for flesh,but for candy. Get touch by them you will lose 1 candy. Candy is your lifeline - collect it to extend time,unlock doors,interact with object. Find the statue and give it 35 candies to escape before time runs out ."
+text = "You’ve awakened in a strange place where time is fading. Candy is your lifeline—creatures in the dark will steal 1 candy if they touch you. Collect candy to gain +5 seconds, unlock doors, and interact with objects. Candy bowls give 2–6 candies at random. Find the statue and offer it 35 candies to escape before time runs out"
 wrap_mode = 1
 
 [node name="Label2" type="Label" parent="."]
